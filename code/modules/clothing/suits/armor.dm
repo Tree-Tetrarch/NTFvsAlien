@@ -250,7 +250,8 @@
 	worn_icon_state = "hos"
 	armor_protection_flags = CHEST|GROIN|ARMS|LEGS
 	item_flags = SYNTH_RESTRICTED
-	soft_armor = list(MELEE = 80, BULLET = 60, LASER = 50, ENERGY = 40, BOMB = 55, BIO = 30, FIRE = 30, ACID = 30) // on par with beret
+	soft_armor = MARINE_ARMOR_MEDIUM // Balanced to Medium armour to be adjacent to normal Command PAS-11 issue.
+	SLOWDOWN_ARMOR_LIGHT = 0.35 // Light slowdown to give some advantage for it's non-modularity and Command status
 	inv_hide_flags = HIDEJUMPSUIT
 	siemens_coefficient = 0.6
 	allowed = list(
