@@ -190,11 +190,11 @@
 
 	fire_delay = 0.2 SECONDS
 	aim_fire_delay = 0.3 SECONDS
-	accuracy_mult = 1.15
+	accuracy_mult = 1
 	scatter = 0
-	accuracy_mult_unwielded = 0.8
+	accuracy_mult_unwielded = 0.5
 	akimbo_additional_delay = 0.9 // Akimbo only gives more shots.
-	scatter_unwielded = 7
+	scatter_unwielded = 10
 
 /obj/item/weapon/gun/revolver/mateba/notmarine
 	name = "\improper Mateba autorevolver"
@@ -208,6 +208,10 @@
 	worn_icon_state = "mateba"
 
 /obj/item/weapon/gun/revolver/mateba/custom/officer
+	fire_delay = 0.1 SECONDS
+	aim_fire_delay = 0.2 SECONDS
+	damage_mult = 1.1
+	accuracy_mult_unwielded = 0.2
 
 //-------------------------------------------------------
 //MARSHALS REVOLVER
