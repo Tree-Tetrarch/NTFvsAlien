@@ -148,6 +148,31 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		to_chat(src, span_warning("We can't carry any more facehuggers!"))
 		return FALSE
 
+GLOBAL_LIST_INIT(ai_hugger_selection, list(
+		/obj/item/clothing/mask/facehugger/larval = 40,
+		/obj/item/clothing/mask/facehugger/combat/slash = 2,
+		/obj/item/clothing/mask/facehugger/combat/chem_injector/neuro = 5,
+		/obj/item/clothing/mask/facehugger/combat/chem_injector/ozelomelyn = 2,
+		/obj/item/clothing/mask/facehugger/combat/chem_injector/aphrotoxin = 5,
+		/obj/item/clothing/mask/facehugger/combat/acid = 1,
+		/obj/item/clothing/mask/facehugger/combat/resin = 30,
+		))
+
+/datum/action/ability/activable/xeno/throw_hugger/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/throw_hugger/ai_should_use(target)
+	var/held = xeno_owner.get_active_held_item()
+	if(!held && can_use_ability(src, TRUE))
+		if(xeno_owner.huggers)
+			xeno_owner.selected_hugger_type = pickweight(GLOB.ai_hugger_selection)
+			held = new xeno_owner.selected_hugger_type(get_turf(xeno_owner), xeno_owner.hivenumber, xeno_owner)
+			xeno_owner.huggers--
+	if(!ishuman(target))
+		return FALSE
+	if(!istype(held, /obj/item/clothing/mask/facehugger))
+		return FALSE
+	return TRUE
 // ***************************************
 // ********* Trap
 // ***************************************
@@ -238,6 +263,12 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 		var/datum/personal_statistics/personal_statistics = GLOB.personal_statistics_list[owner.ckey]
 		personal_statistics.huggers_created++
 
+/datum/action/ability/xeno_action/spawn_hugger/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/xeno_action/spawn_hugger/ai_should_use(target)
+	return TRUE
+
 // ***************************************
 // *********** Drop all hugger, panic button
 // ***************************************
@@ -299,6 +330,12 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 	if(succeed_cost > 0)
 		desc += (succeed_cost == 1 ? " Uses all remaining plasma!" : " Uses [PERCENT(succeed_cost)]% of your maximum plasma!")
 	return ..()
+
+/datum/action/ability/xeno_action/carrier_panic/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/xeno_action/carrier_panic/ai_should_use(target)
+	return TRUE
 
 // ***************************************
 // *********** Choose Hugger Type
@@ -489,3 +526,9 @@ GLOBAL_LIST_INIT(hugger_images_list,  list(
 
 	succeed_activate()
 	add_cooldown()
+
+/datum/action/ability/activable/xeno/call_younger/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/call_younger/ai_should_use(target)
+	return ishuman(target)

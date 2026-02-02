@@ -30,14 +30,21 @@
 		return ..()
 
 	for(var/datum/action/action in ability_list)
-		if(!action.ai_should_use(atom_to_walk_to))
+		if(action.ai_should_use(combat_target))
+			//xeno_action/activable is activated with a different proc for keybinded actions, so we gotta use the correct proc
+			if(istype(action, /datum/action/ability/activable))
+				var/datum/action/ability/activable/xeno_action = action
+				xeno_action.use_ability(combat_target)
+			else
+				action.action_activate()
 			continue
-		//xeno_action/activable is activated with a different proc for keybinded actions, so we gotta use the correct proc
-		if(istype(action, /datum/action/ability/activable))
-			var/datum/action/ability/activable/xeno_action = action
-			xeno_action.use_ability(atom_to_walk_to)
-		else
-			action.action_activate()
+		if(action.ai_should_use(atom_to_walk_to))
+			//xeno_action/activable is activated with a different proc for keybinded actions, so we gotta use the correct proc
+			if(istype(action, /datum/action/ability/activable))
+				var/datum/action/ability/activable/xeno_action = action
+				xeno_action.use_ability(atom_to_walk_to)
+			else
+				action.action_activate()
 	return ..()
 
 /datum/ai_behavior/xeno/state_process(next_target)

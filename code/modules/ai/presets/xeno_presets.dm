@@ -96,6 +96,9 @@
 	. = ..()
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/ranged)
 
+/mob/living/carbon/xenomorph/sentinel/ai/retrograde
+	caste_base_type = /datum/xeno_caste/sentinel/retrograde
+
 /mob/living/carbon/xenomorph/spitter/ai
 
 /mob/living/carbon/xenomorph/spitter/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
@@ -130,3 +133,10 @@
 	hivenumber = _hivenumber || hivenumber
 	. = ..()
 	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+
+/mob/living/carbon/xenomorph/carrier/ai
+
+/mob/living/carbon/xenomorph/carrier/ai/Initialize(mapload, _hivenumber)
+	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/ranged)
