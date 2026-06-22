@@ -319,7 +319,7 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 /obj/structure/droppod/proc/finish_drop(mob/user, turf/reservedturf)
 	GLOB.droppod_reservation.taken_turfs -= reservedturf
 	var/turf/targetturf = locate(target_x, target_y, target_z)
-	for(var/obj/machinery/deployable/mounted/sentry/ads_system/ads in range(GLOB.ads_intercept_range,reservedturf))
+	for(var/obj/machinery/deployable/mounted/sentry/ads_system/ads in range(GLOB.ads_intercept_range,targetturf))
 		if(!COOLDOWN_FINISHED(ads, intercept_cooldown))
 			continue
 		if(ads.try_intercept(reservedturf, src, 1, 10))
