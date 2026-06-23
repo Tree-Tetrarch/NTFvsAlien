@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - qol: "colony req terminals now show up on the minimap"
