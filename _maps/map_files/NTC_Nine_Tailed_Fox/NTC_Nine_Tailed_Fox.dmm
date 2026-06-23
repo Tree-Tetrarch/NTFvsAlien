@@ -814,6 +814,9 @@
 /area/mainship/hallways/hangar)
 "aJk" = (
 /obj/structure/closet/crate/freezer/rations,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/freezer,
 /area/mainship/groundhq/ntf/living/captain_mess{
 	name = "Kitchen"
