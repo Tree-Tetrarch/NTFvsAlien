@@ -372,6 +372,7 @@ GLOBAL_LIST_INIT(quick_loadouts, init_quick_loadouts())
 		"KZ Medic",
 		"KZ Engineer",
 		"KZ Specialist",
+		"KZ Combat Escort",
 		"KZ Squad Leader",
 	)
 

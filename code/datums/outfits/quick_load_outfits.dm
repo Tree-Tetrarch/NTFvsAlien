@@ -3298,7 +3298,6 @@
 
 /datum/outfit/quick/vsd/escort/infiltrator
 	name = "KZ Combat Escort Infiltrator"
-	jobtype = "KZ Combat Escort"
 	desc = "Convenience and timing is key so play your part. Equipped with a KZ Covert Outfit, KZ Rownin Skeleton, MINI-B machinepistol and katana."
 	suit_store = /obj/item/storage/holster/blade/katana/full
 	gloves = /obj/item/clothing/gloves/marine/fingerless
