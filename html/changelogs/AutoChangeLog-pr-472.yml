@@ -1,9 +1,0 @@
-author: "CaputCapital"
-delete-after: True
-changes:
-  - rscadd: "KZ quik-e-quip loadout for Combat Escort"
-  - balance: "removes NVGs from SL and passes them to Combat Escort"
-  - balance: "reduce surplus in KZ specialized armament tab of vendor, gives them a single PTRS rifle with a box"
-  - rscadd: "KZ MINI-B machinepistol for Combat Escort, limited quantity in vendor and for extended mags too"
-  - rscadd: "requisitions imports update, KZ only weapons (except for MINI-B and ammo for now?) can only be bought by KZ"
-  - rscadd: "KZ sneaking suit"
