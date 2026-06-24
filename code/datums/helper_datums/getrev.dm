@@ -25,7 +25,7 @@
 			log_world("REVINFO: No tgs date, file date: date = [date]")
 			if(!date)
 				date = rustg_git_commit_date(commit)
-					log_world("REVINFO: No file date, rust date: date = [date]")
+				log_world("REVINFO: No file date, rust date: date = [date]")
 	// goes to DD log and config_error.txt
 	log_world(get_log_message())
 
