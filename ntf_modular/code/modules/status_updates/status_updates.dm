@@ -34,6 +34,8 @@ GLOBAL_LIST_INIT(mode_to_pingid, list(
 
 /proc/status_update_server_start()
 	var/datum/getrev/revdata = GLOB?.revdata
+	if(!revdata)
+		log_game("revdata not found during startup")
 	var/compile_date = "[revdata?.date]"
 	var/commit = "[revdata?.commit]"
 	var/rev_data_file = file("data/revision.json")
