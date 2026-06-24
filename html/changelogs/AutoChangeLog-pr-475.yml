@@ -1,0 +1,4 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - rscadd: "changed various combat robot heads and torsos, eliminating many monitor heads"

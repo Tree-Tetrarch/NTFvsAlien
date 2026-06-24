@@ -153,3 +153,20 @@
   - balance: Being staggered now increases your scatter by 10 (previously 5)
   - balance: Being staggered now decreases your accuracy by 10 (previously 0)
   - balance: You can't add attachments to ML101 anymore
+2026-06-24:
+  CaputCapital:
+  - bugfix: CM Standard L88 gets an actual assault carbine instead of error
+  - bugfix: L40 PDW medic loadout gets an MRE that they were supposed to have
+  - bugfix: CM Militia Captain tab is in quik vendor now
+  - rscadd: KZ quik-e-quip loadout for Combat Escort
+  - balance: removes NVGs from SL and passes them to Combat Escort
+  - balance: reduce surplus in KZ specialized armament tab of vendor, gives them a
+      single PTRS rifle with a box
+  - rscadd: KZ MINI-B machinepistol for Combat Escort, limited quantity in vendor
+      and for extended mags too
+  - rscadd: requisitions imports update, KZ only weapons (except for MINI-B and ammo
+      for now?) can only be bought by KZ
+  - rscadd: KZ sneaking suit
+  Colfer1:
+  - qol: colony req terminals now show up on the minimap
+  - rscadd: handcrank can now be bought in engineering tab
