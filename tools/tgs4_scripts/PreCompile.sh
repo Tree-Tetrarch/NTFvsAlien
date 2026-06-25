@@ -10,6 +10,8 @@ set -x
 original_dir=$PWD
 cd "$1"
 . dependencies.sh
+git rev-parse HEAD > data/revision.txt
+date +"%Y-%b-%m %H:%M:%S" > data/compile_date.txt
 cd "$original_dir"
 
 #find out what we have (+e is important for this)
