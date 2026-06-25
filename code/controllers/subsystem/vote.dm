@@ -323,13 +323,13 @@ SUBSYSTEM_DEF(vote)
 		switch(vote_type)
 			if("restart")
 				choices.Add("Restart Round", "Continue Playing")
-				if((world.time - SSticker.round_start_time) < 3 HOURS)
-					to_chat(world, "Voteweight for \"Restart Round\" reduced to 0.5 because round duration is less than 3 hours.")
+				if((world.time - SSticker.round_start_time) < 4 HOURS)
+					to_chat(world, "Voteweight for \"Restart Round\" reduced to 0.5 because round duration is less than 4 hours.")
 					voteweights_by_choice["Restart Round"] = 0.5
 			if("endround")
 				choices.Add("End Round and Restart", "Continue Playing")
-				if((world.time - SSticker.round_start_time) < 3 HOURS)
-					to_chat(world, "Voteweight for \"End Round and Restart\" reduced to 0.5 because round duration is less than 3 hours.")
+				if((world.time - SSticker.round_start_time) < 4 HOURS)
+					to_chat(world, "Voteweight for \"End Round and Restart\" reduced to 0.5 because round duration is less than 4 hours.")
 					voteweights_by_choice["End Round and Restart"] = 0.5
 			if("gamemode")
 				multiple_vote = TRUE
