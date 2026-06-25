@@ -3461,7 +3461,7 @@
 	back = /obj/item/weapon/gun/rifle/type71/flamer
 	ears = /obj/item/radio/headset/mainship/vsd
 
-/datum/outfit/quick/vsd/eod/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/quick/vsd/squadlead/eod/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
@@ -3513,7 +3513,7 @@
 	ears = /obj/item/radio/headset/mainship/vsd
 	belt = /obj/item/belt_harness/marine
 
-/datum/outfit/quick/vsd/recon/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/quick/vsd/squadlead/recon/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
