@@ -756,7 +756,7 @@
 
 	var/viewfaction = job?.faction || faction
 	if(viewfaction == FACTION_XENO)
-		var/datum/hive_status/hive = GLOB.hive_datums[get_xeno_hivenumber()].
+		var/datum/hive_status/hive = GLOB.hive_datums[get_xeno_hivenumber()]
 		if(istype(hive))
 			viewfaction = hive.allied_factions[1]
 	var/dat = GLOB.datacore.get_manifest(ooc = FALSE, viewfaction = job?.faction)
