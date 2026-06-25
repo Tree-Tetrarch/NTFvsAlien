@@ -1,8 +1,9 @@
 #!/bin/sh
 set -e
-cd "$(dirname "$0")"
+realdir="$(dirname $(realpath "$0"))"
+cd $realdir
 cd ../../data
 git rev-parse HEAD > revision.txt
 date +"%Y-%b-%m %H:%M:%S" > compile_date.txt
-cd "$(dirname "$0")"
+cd $realdir
 exec ../bootstrap/node build.js "$@"
