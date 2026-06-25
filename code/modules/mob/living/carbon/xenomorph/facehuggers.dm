@@ -122,6 +122,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		UnregisterSignal(source, COMSIG_QDELETING)
 
 	source = S //set and register new source
+	//we use slow animation for player hugger
+	worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face_slow", slot_underwear_str = "facehugger_crotch_slow", slot_shirt_str = "facehugger_back_slow")
+	//
 	RegisterSignal(S, COMSIG_QDELETING, PROC_REF(clear_hugger_source))
 
 /// Sets the fire immunity and adds/removes an outline filter if it gained or lost fire immunity.
