@@ -170,3 +170,11 @@
   Colfer1:
   - qol: colony req terminals now show up on the minimap
   - rscadd: handcrank can now be bought in engineering tab
+2026-06-25:
+  CaputCapital:
+  - bugfix: '**ACTUALLY** fixes the KZ Combat Escort Quick Equip Loadout'
+  Colfer1:
+  - rscadd: changed various combat robot heads and torsos, eliminating many monitor
+      heads
+  Meghan-Rossi:
+  - balance: buffed xenomorph disarms
