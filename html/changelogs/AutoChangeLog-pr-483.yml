@@ -1,0 +1,4 @@
+author: "Ldip999"
+delete-after: True
+changes:
+  - rscadd: "Late joining as humanoid or readying now requires you to either have a character image or at least 100 chars worth of flavour text"
