@@ -493,7 +493,7 @@
 	ready = !ready
 	if(ready)
 		if((length(client.prefs.flavor_text) < 100) && (client.prefs.profile_pic == ""))
-			to_chat(usr,span_warning("Your humanoid flavor text is too short and you don't have an image reference!"))
+			to_chat(src,span_warning("Your humanoid flavor text is too short and you don't have an image reference!"))
 			ready = FALSE
 			return
 		if(!WHITELIST_CHECK(client))
