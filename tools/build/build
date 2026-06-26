@@ -2,6 +2,7 @@
 set -e
 realdir="$(dirname $(realpath "$0"))"
 cd $realdir
+mkdir ../../data
 cd ../../data
 git rev-parse HEAD > revision.txt
 date +"%Y-%b-%m %H:%M:%S" > compile_date.txt
