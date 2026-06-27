@@ -6,7 +6,7 @@ mkdir -p ../../data
 cd ../../data
 git rev-parse HEAD > revision.txt
 date +"%Y-%b-%m %H:%M:%S" > compile_date.txt
-cd ../_ntf_modular/code/__DEFINES
+cd ../_ntf_modular
 printf "#define DEFINE_REVINFO_REVISION \"" >> revinfo.dm
 (git rev-parse HEAD |  tr -d '\n') >> revinfo.dm
 printf "\"\r\n#define DEFINE_REVINFO_COMPILE_DATE \"" >> revinfo.dm
@@ -15,7 +15,7 @@ printf "\"\r\n" >> revinfo.dm
 cd $realdir
 ../bootstrap/node build.js "$@"
 cd $realdir
-cd ../../_ntf_modular/code/__DEFINES
+cd ../../_ntf_modular
 rm revinfo.dm
 echo "//Do not edit manually" > revinfo.dm
 cd $realdir
