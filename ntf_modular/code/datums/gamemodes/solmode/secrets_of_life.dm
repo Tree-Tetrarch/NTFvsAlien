@@ -311,9 +311,11 @@
 			if(QDELETED(frame) || !is_ground_level(frame.z))
 				continue
 			if(istype(frame, /obj/structure/girder))
-				var/obj/structure/girder/placed_thing = new /turf/closed/wall(frame.loc)
-				placed_thing.dir = frame.dir
-				qdel(frame)
+				var/turf/new_wall_turf = get_turf(frame)
+				if(new_wall_turf)
+					var/obj/structure/girder/placed_thing = new_wall_turf.PlaceOnTop(/turf/closed/wall)
+					placed_thing.dir = frame.dir
+					qdel(frame)
 	else //we got xeno bs all over colony
 		for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 			corpse.create_mob()
