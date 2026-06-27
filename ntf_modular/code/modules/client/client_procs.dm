@@ -75,6 +75,9 @@
 				ADD_TRAIT(lecloth, TRAIT_NODROP, "doppleganger_item")
 				lecloth.item_flag |= DELONDROP
 				doppleganger.equip_to_appropriate_slot(lecloth, TRUE)
+				if(isturf(lecloth.loc))
+					stack_trace("Faile to equip [log_details(lecloth)] to doppelganger [logdetails(doppleganger)]")
+					qdel(lecloth)
 
 			//replace nested with doppleganger
 			if(istype(mob.buckled, /obj/structure/bed/nest/wall))
