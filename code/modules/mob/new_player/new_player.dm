@@ -158,7 +158,7 @@
 			var/datum/job/job_datum = locate(href_list["job_selected"])
 			if(!isxenosjob(job_datum))
 				if((length(client.prefs.flavor_text) < 100) && (client.prefs.profile_pic == ""))
-					to_chat(usr,span_warning("Your flavor text is too short and you don't have an image reference!"))
+					to_chat(usr,span_warning("Your flavor text is too short AND you don't have an image reference! You need one or the other at the very least."))
 					return
 				if((SSmonitor.gamestate == SHUTTERS_CLOSED || (SSmonitor.gamestate == GROUNDSIDE && SSmonitor.current_state <= XENOS_LOSING)))
 					var/datum/job/xeno_job = SSjob.GetJobType(/datum/job/xenomorph)
