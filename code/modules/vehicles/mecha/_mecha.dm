@@ -439,6 +439,9 @@
 			mouse_pointer = 'icons/mecha/mecha_mouse.dmi'
 
 	for(var/mob/mob_occupant AS in occupants)
+		var/client = mob_occupant.client
+		if(!client)
+			return
 		mob_occupant.client.mouse_pointer_icon = mouse_pointer // note this is update_mouse_pointer() on tg
 
 //override this proc if you need to split up mecha control between multiple people (see savannah_ivanov.dm)
@@ -511,6 +514,8 @@
 		for(var/obj/item/mecha_parts/mecha_equipment/ME AS in flat_equipment)
 			. += "[icon2html(ME, user)] \A [ME]."
 	if(enclosed)
+		if(length(occupants))
+			.+="It appears to be occupied. In the event of an emergency, the cockpit's release lever can be pried open."
 		return
 	if(mecha_flags & SILICON_PILOT)
 		. += "[src] appears to be piloting itself..."

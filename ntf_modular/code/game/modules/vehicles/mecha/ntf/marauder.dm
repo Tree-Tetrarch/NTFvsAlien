@@ -5,22 +5,15 @@
 	base_icon_state = "marauder"
 	move_delay = 4
 	max_integrity = 500
-	soft_armor = list(MELEE = 60, BULLET = 55, LASER = 40, ENERGY = 30, BOMB = 40, BIO = 0, FIRE = 75, ACID = 100)
+	soft_armor = list(MELEE = 60, BULLET = 55, LASER = 40, ENERGY = 30, BOMB = 40, BIO = 0, FIRE = 75, ACID = 75)
 	max_temperature = 60000
 	wreckage = /obj/structure/mecha_wreckage/marauder
-	mecha_flags = CANSTRAFE | IS_ENCLOSED | HAS_HEADLIGHTS
 	force = 30
-	bumpsmash = FALSE
 	cockpit_armor = COCKPIT_HEAVY
 	step_energy_drain = POWER_USAGE_HEAVY
-
-	equip_by_category = list(
-		MECHA_L_ARM = null,
-		MECHA_R_ARM = null,
-		MECHA_UTILITY = list(),
-		MECHA_POWER = list(),
-		MECHA_ARMOR = list(),
-	)
+	destruction_sleep_duration = 4 SECONDS
+	enter_delay = EGRESS_TIME_SLOW
+	exit_delay = EGRESS_TIME_SLOW
 
 /obj/vehicle/sealed/mecha/ntf/marauder/generate_actions()
 	. = ..()

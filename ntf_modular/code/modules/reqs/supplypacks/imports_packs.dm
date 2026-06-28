@@ -190,37 +190,37 @@
 /datum/supply_packs/imports/gygax_wreck
 	name = "Wreckage of Gygax (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/gygax)
-	cost = 500
+	cost = 400
 
 /datum/supply_packs/imports/durand_wreck
 	name = "Wreckage of Durand (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/durand)
-	cost = 500
+	cost = 400
 
 /datum/supply_packs/imports/phazon_wreck
 	name = "Wreckage of Phazon (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/phazon)
-	cost = 700
+	cost = 600
 
 /datum/supply_packs/imports/clarke_wreck
 	name = "Wreckage of Clarke (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/clarke)
-	cost = 300
+	cost = 200
 
 /datum/supply_packs/imports/ivan_wreck
 	name = "Wreckage of Ivan (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/ivan)
-	cost = 400
+	cost = 250
 
 /datum/supply_packs/imports/mauler_wreck
 	name = "Wreckage of Mauler (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/mauler)
-	cost = 1000
+	cost = 900
 
 /datum/supply_packs/imports/marauder_wreck
 	name = "Wreckage of Marauder (Repairable)"
 	contains = list(/obj/structure/mecha_wreckage/marauder)
-	cost = 1000
+	cost = 900
 
 /datum/supply_packs/imports/seraph_wreck
 	name = "Wreckage of Seraph (Repairable)"
@@ -231,12 +231,12 @@
 
 /datum/supply_packs/imports/exosuit_aer9
 	name = "Exosuit laser rifle"
-	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/exosuit_laser)
+	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/exosuit/laser_rifle)
 	cost = 150
 
 /datum/supply_packs/imports/exosuit_tribeam
 	name = "Exosuit tribeam laser"
-	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/exosuit_tribeam)
+	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/energy/exosuit/laser_scattershot)
 	cost = 150
 
 /datum/supply_packs/imports/exosuit_r84
@@ -258,6 +258,43 @@
 	name = "Exosuit 'Rangemaster' Battle Rifle"
 	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/exosuit_br)
 	cost = 200
+
+/datum/supply_packs/imports/exosuit_minigun
+	name = "Non-Articulated Exosuit Minigun"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/exosuit_minigun)
+	cost = 300
+
+// SS13 mech modules
+
+/datum/supply_packs/imports/exosuit_zoom
+	name = "Exosuit Optics Enhancement"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/ability/zoom)
+	cost = 150
+
+/datum/supply_packs/imports/exosuit_generator
+	name = "Exosuit Phoron Engine"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/generator/exosuit)
+	cost = 200
+
+/datum/supply_packs/imports/exosuit_smoke
+	name = "Exosuit Smoke Generator"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/ability/smoke/cloak_smoke/exosuit)
+	cost = 150
+
+/datum/supply_packs/imports/exosuit_passenger_compartment
+	name = "Exosuit Passenger Compartment"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/passenger_compartment)
+	cost = 100
+
+/datum/supply_packs/imports/exosuit_extinguisher
+	name = "Exosuit Fire Extinguisher"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/extinguisher/exosuit)
+	cost = 100
+
+/datum/supply_packs/imports/exosuit_nightvision
+	name = "Exosuit Night-Vision Module"
+	contains = list(/obj/item/mecha_parts/mecha_equipment/ability/night_vision/exosuit)
+	cost = 300
 
 // SS13 mech ammo
 
@@ -281,7 +318,17 @@
 	contains = list(/obj/item/mecha_ammo/vendable/small_br)
 	cost = 50
 
+/datum/supply_packs/imports/exosuit_minigun_ammo
+	name = "Exosuit Minigun Ammo"
+	contains = list(/obj/item/mecha_ammo/vendable/small_minigun)
+	cost = 75
+
 ///
+
+/datum/supply_packs/imports/exosuit_painter
+	name = "exosuit painter"
+	contains = list(/obj/item/toy/crayon/exosuit_painter)
+	cost = 10
 
 /datum/supply_packs/imports/famas/ammoext
 	name = "FAMAS Assault Rifle Extended Ammo"
