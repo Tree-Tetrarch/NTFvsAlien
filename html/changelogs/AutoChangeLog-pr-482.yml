@@ -1,6 +1,0 @@
-author: "CaputCapital"
-delete-after: True
-changes:
-  - balance: "reworks the AT32 autocannon to remove minimum range accuracy, windup and fire_delay by 0.5."
-  - balance: "reworks AT32 autocannon stats to increase unwielded recoil, unwielded inaccuracy, increases wield delay, slight increase to scatter"
-  - balance: "KZ Spec no longer has smartgun skill and has decreased unarmed skill in exchange for the much more fitting rifle & heavy_weapons skill"
