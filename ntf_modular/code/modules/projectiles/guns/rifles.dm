@@ -124,6 +124,7 @@
 	name = "high caliber bluescreen rifle bullet"
 	hud_state = "sniper_heavy"
 	damage = 50
+	penetration = 10
 	damage_falloff = 0.1
 	shrapnel_chance = 1
 
