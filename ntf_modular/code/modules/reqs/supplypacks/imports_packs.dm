@@ -552,3 +552,13 @@
 	contains = list(/obj/item/reagent_containers/glass/bottle/carpotoxin)
 	faction_lock = list(FACTION_TERRAGOV) //novamed
 	cost = 400
+
+/datum/supply_packs/imports/m41a2/ammo/ap
+	name = "\improper PR-412 AP magazine (10x24mm)"
+	contains = list(/obj/item/ammo_magazine/rifle/ap)
+	cost = 25
+
+/datum/supply_packs/imports/m41a2/ammo/ap/box
+	name = "\improper Big ammo box (10x24mm AP)"
+	contains = list(/obj/item/big_ammo_box/ap)
+	cost = 200
