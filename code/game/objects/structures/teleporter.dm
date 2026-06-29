@@ -13,8 +13,7 @@
 		/mob/living,
 		/obj/machinery,
 		/obj/structure/largecrate,
-		/obj/vehicle/ridden,
-		/obj/vehicle/sealed/mecha/ntf,
+		/obj/vehicle,
 	)
 	var/static/list/teleportable_while_anchored_types = list(
 		/obj/vehicle,
@@ -22,7 +21,7 @@
 	///List of banned teleportable types
 	var/static/list/blacklisted_types = list(
 		/obj/machinery/nuclearbomb,
-		/obj/vehicle/sealed/armored/multitile,
+		/obj/vehicle/sealed/armored,
 	)
 
 /obj/machinery/deployable/teleporter/examine(mob/user)
