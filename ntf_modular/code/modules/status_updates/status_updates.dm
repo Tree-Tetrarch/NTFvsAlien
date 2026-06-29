@@ -50,7 +50,10 @@ GLOBAL_LIST_INIT(mode_to_pingid, list(
 		json = file2text(rev_data_file)
 		file_data = json_decode(json)
 		log_game("loaded revision data : [json]")
-		if(file_data["date"] != compile_date)
+		if((!(file_data["date"])) && (!(file_data["commit"])))
+			msg += "Revision information unavailable. Unable to confirm whether the server has updated.\n"
+			log_world(msg)
+		else if(file_data["date"] != compile_date)
 			msg += "Compile date has changed.  Server has updated.\n"
 			pingid = PINGID_SERVER_UPDATE_NOTIFICATIONS
 			log_world(msg)
