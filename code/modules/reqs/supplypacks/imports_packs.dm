@@ -25,12 +25,12 @@ Imports
 	contains = list(/obj/item/ammo_magazine/rifle)
 	cost = 3
 
-/datum/supply_packs/imports/m41a/ammo/extended
+/datum/supply_packs/imports/m41a2/ammo/extended
 	name = "PR-412 Pulse Rifle Ammo Extended Mag"
 	contains = list(/obj/item/ammo_magazine/rifle/extended)
 	cost = 6
 
-/datum/supply_packs/imports/m41a/ammo/incendiary
+/datum/supply_packs/imports/m41a2/ammo/incendiary
 	name = "PR-412 Pulse Rifle Ammo Incendiary Mag"
 	contains = list(/obj/item/ammo_magazine/rifle/incendiary)
 	cost = 18

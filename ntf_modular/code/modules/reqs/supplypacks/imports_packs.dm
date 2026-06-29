@@ -554,7 +554,7 @@
 	cost = 400
 
 /datum/supply_packs/imports/m41a2/ammo/ap
-	name = "\improper PR-412 AP magazine (10x24mm)"
+	name = "PR-412 Pulse Rifle Ammo AP Mag"
 	contains = list(/obj/item/ammo_magazine/rifle/ap)
 	cost = 25
 
