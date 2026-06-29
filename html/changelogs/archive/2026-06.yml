@@ -200,3 +200,15 @@
       inaccuracy, increases wield delay, slight increase to scatter
   - balance: KZ Spec no longer has smartgun skill and has decreased unarmed skill
       in exchange for the much more fitting rifle & heavy_weapons skill
+2026-06-29:
+  Lewdissar:
+  - rscadd: RPO-S Disposable Rocket Flamethrower, a single use rocket that sets shit
+      on fire, only available through REQ for every faction, 150 a piece.
+  githubuser4141:
+  - rscadd: adds new exosuit modules, allows adding/removing passengers to exosuits,
+      adds a exosuit minigun, adds a exosuit painter to broadly change the color of
+      exosuits. fixes bullets not hitting exosuit weapons, adds exosuit jumping (can't
+      go over obstacles)
+  - balance: exosuits don't drop people on death, changes some armor and stat values
+  - bugfix: removes exosuit SMG from big mech vendor, fixes exosuit equipment not
+      being hittable by bullets

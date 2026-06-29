@@ -1,6 +1,0 @@
-author: "githubuser4141"
-delete-after: True
-changes:
-  - rscadd: "adds new exosuit modules, allows adding/removing passengers to exosuits, adds a exosuit minigun, adds a exosuit painter to broadly change the color of exosuits. fixes bullets not hitting exosuit weapons, adds exosuit jumping (can't go over obstacles)"
-  - balance: "exosuits don't drop people on death, changes some armor and stat values"
-  - bugfix: "removes exosuit SMG from big mech vendor, fixes exosuit equipment not being hittable by bullets"
