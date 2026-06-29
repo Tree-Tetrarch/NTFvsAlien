@@ -453,7 +453,7 @@ Contains most of the procs that are called when a mob is attacked by something
 
 	var/repair_time = 1.5 SECONDS
 	if(src == user)
-		repair_time *= 3
+		repair_time *= 1.5
 
 
 	user.visible_message(span_notice("[user] starts to fix some of the dents on [src]'s [affecting.display_name]."),\
