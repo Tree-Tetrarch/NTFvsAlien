@@ -363,11 +363,14 @@
 /datum/ammo/rocket/oneuse/thermobaric // disposable thermobaric
 	name = "thermobaric Rocket"
 	hud_state = "rpg_thermobaric"
-	damage = 30
-
+	damage = 15
+	accurate_range = 8
+	penetration = 15
+	sundering = 15
+	max_range = 15
 
 /datum/ammo/rocket/oneuse/thermobaric/drop_nade(turf/target_turf, atom/movable/projectile/proj)
-	explosion(target_turf, 0, 4, 5, 0, 4, 4, explosion_cause = proj)
+	explosion(target_turf, 0, 0, 1, 2, 0, 4, explosion_cause = proj)
 
 /datum/ammo/rocket/som/heat //Anti tank, or mech
 	name = "HEAT RPG"
