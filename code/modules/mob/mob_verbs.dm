@@ -184,7 +184,6 @@
 	// List of base choosable factions, taken job is a subtype of these.
 	var/list/static/base_faction_list = list(
 		/datum/job/clf,
-		/datum/job/pmc,
 		/datum/job/icc,
 		/datum/job/vsd,
 		/datum/job/survivor,
@@ -199,7 +198,8 @@
 	var/total_list = hvh_faction_list
 	if(prob(40))
 		total_list = base_faction_list
-
+		if(prob(30))
+			total_list += /datum/job/pmc
 	if(prob(3))
 		total_list = rare_faction_list
 		if(prob(2))
