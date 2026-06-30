@@ -227,7 +227,7 @@
 	if(active)
 		add_filter("conflict_zone", 10, outline_filter(1, COLOR_RED))
 	else
-		remove_filer("conflict_zone")
+		remove_filter("conflict_zone")
 
 /obj/item/disk/intel_disk
 	name = "classified data disk"
