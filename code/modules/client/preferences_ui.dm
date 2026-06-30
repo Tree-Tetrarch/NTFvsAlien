@@ -402,9 +402,25 @@
 			if(!choice)
 				return
 			if(!load_character(text2num(splittext(choice," - ")[1])))
-				random_character()
-				real_name = random_unique_name(gender)
-				save_character()
+				if(splittext(choice," - ")[2] == "\[empty\]")
+					slot = sanitize_integer(slot, 1, MAX_SAVE_SLOTS, initial(default_slot))
+					if(slot != default_slot)
+						WRITE_FILE(S["default_slot"], slot)
+						default_slot = slot
+					S.cd = "/character[slot]"
+					random_character()
+					real_name = random_unique_name(gender)
+					save_character()
+				else
+					var/choice2 = tgui_alert(user,"Your character cannot be loaded at this time. Try again later, possibly reconnect, and if the issue persists, notify staff!", "Character Loading Error!", list("Retry" , "Cancel"))
+					switch(choice2)
+						if("Retry")
+							if(!load_character(text2num(splittext(choice," - ")[1])))
+								tgui_alert(user, "Nope, still nothing... try again later...")
+						if("Cancel")
+							return
+
+
 			update_preview_icon()
 
 		if("tab_change")
