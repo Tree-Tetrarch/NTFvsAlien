@@ -184,6 +184,8 @@
 
 /obj/machinery/computer/intel_computer/examine(mob/user)
 	. = ..()
+	if(active)
+		. += span_boldnotice("It is currently active, making it the source of a conflict zone.")
 	if(printing && faction)
 		. += span_notice("It is being operated by [faction].")
 	. += span_notice("The next disk this computer produces will be worth [supply_reward] supply points, [dropship_reward] dropship points, [round(dropship_reward/2)] credits, and [max_chain ? "be part of an intel chain of length [max_chain]" : "not be part of an intel chain"].")
