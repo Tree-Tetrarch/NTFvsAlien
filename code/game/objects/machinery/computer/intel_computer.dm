@@ -222,6 +222,13 @@
 	playsound(src, SFX_ACID_HIT, 25)
 	set_disabled()
 
+/obj/machinery/computer/intel_computer/update_icon()
+	. = ..()
+	if(active)
+		add_filter("conflict_zone", 10, outline_filter(1, COLOR_RED))
+	else
+		remove_filer("conflict_zone")
+
 /obj/item/disk/intel_disk
 	name = "classified data disk"
 	desc = "Probably, contains some important data."
