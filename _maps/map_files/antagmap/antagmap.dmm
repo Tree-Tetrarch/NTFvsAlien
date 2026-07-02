@@ -2322,7 +2322,6 @@
 /area/antag_ship/som/security/chief)
 "hE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters/mainship/req/ro,
 /obj/machinery/door/window/secure/req{
 	dir = 1;
 	req_one_access = list(213)
@@ -4855,9 +4854,7 @@
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/hall)
 "pH" = (
-/obj/machinery/computer/autodoc_console{
-	dir = 2
-	},
+/obj/machinery/computer/autodoc_console,
 /turf/open/floor/mainship/sterile,
 /area/antag_ship/som/medbay)
 "pJ" = (
@@ -7936,6 +7933,7 @@
 	dir = 8
 	},
 /obj/effect/ai_node,
+/obj/machinery/power/terminal,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/engi)
 "zQ" = (
@@ -8591,6 +8589,9 @@
 /area/antag_ship/icc/generator_room)
 "BR" = (
 /obj/machinery/autodoc,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile,
 /area/antag_ship/som/medbay)
 "BS" = (
@@ -10157,6 +10158,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/machinery/power/terminal,
 /turf/open/floor/plating/plating_catwalk,
 /area/antag_ship/som/engi)
 "GN" = (
@@ -15054,6 +15056,12 @@
 	},
 /turf/open/floor/grayscale/darkblue,
 /area/antag_ship/vsd/med)
+"Wh" = (
+/obj/machinery/floodlight/landing{
+	light_power = 2.5
+	},
+/turf/open/floor/mainship/mono,
+/area/antag_ship/som/hangar)
 "Wi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
@@ -15295,7 +15303,8 @@
 "Xa" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/security/glass{
-	name = "\improper Chief MP's Office"
+	name = "\improper Chief MP's Office";
+	req_access = list(211)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -18100,7 +18109,7 @@ GI
 lK
 VB
 ad
-XC
+Wh
 ad
 ad
 ad
@@ -18109,7 +18118,7 @@ ad
 ad
 ad
 ad
-XC
+Wh
 ad
 qj
 ad
@@ -18868,7 +18877,7 @@ GI
 lK
 VB
 ad
-XC
+Wh
 ad
 ad
 ad
@@ -18877,7 +18886,7 @@ ad
 ad
 ad
 ad
-XC
+Wh
 ad
 qj
 ad
