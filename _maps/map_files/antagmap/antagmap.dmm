@@ -2322,7 +2322,6 @@
 /area/antag_ship/som/security/chief)
 "hE" = (
 /obj/structure/table/reinforced,
-/obj/machinery/door/poddoor/shutters/mainship/req/ro,
 /obj/machinery/door/window/secure/req{
 	dir = 1;
 	req_one_access = list(213)
@@ -4397,6 +4396,12 @@
 /obj/structure/window/framed/prison/reinforced/hull,
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/hall)
+"or" = (
+/obj/machinery/floodlight/landing{
+	light_power = 2.5
+	},
+/turf/open/floor/mainship/mono,
+/area/antag_ship/som/hangar)
 "os" = (
 /obj/structure/bed/chair/east{
 	dir = 2
@@ -4855,9 +4860,7 @@
 /turf/open/floor/iron/dark,
 /area/antag_ship/vsd/hall)
 "pH" = (
-/obj/machinery/computer/autodoc_console{
-	dir = 2
-	},
+/obj/machinery/computer/autodoc_console,
 /turf/open/floor/mainship/sterile,
 /area/antag_ship/som/medbay)
 "pJ" = (
@@ -8591,6 +8594,9 @@
 /area/antag_ship/icc/generator_room)
 "BR" = (
 /obj/machinery/autodoc,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/mainship/sterile,
 /area/antag_ship/som/medbay)
 "BS" = (
@@ -15295,7 +15301,8 @@
 "Xa" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/mainship/security/glass{
-	name = "\improper Chief MP's Office"
+	name = "\improper Chief MP's Office";
+	req_access = list(211)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -18100,7 +18107,7 @@ GI
 lK
 VB
 ad
-XC
+or
 ad
 ad
 ad
@@ -18109,7 +18116,7 @@ ad
 ad
 ad
 ad
-XC
+or
 ad
 qj
 ad
@@ -18868,7 +18875,7 @@ GI
 lK
 VB
 ad
-XC
+or
 ad
 ad
 ad
@@ -18877,7 +18884,7 @@ ad
 ad
 ad
 ad
-XC
+or
 ad
 qj
 ad
