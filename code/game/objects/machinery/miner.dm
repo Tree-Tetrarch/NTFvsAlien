@@ -376,9 +376,11 @@
 	if(add_tick >= required_ticks)
 		set_miner_status() // shouldn't be necessary but should fix the markers breaking
 		if(miner_upgrade_type == MINER_AUTOMATED)
+			var/unblocked = FALSE
 			for(var/direction in GLOB.cardinals)
-				if(!isopenturf(get_step(loc, direction))) //Must be open on one side to operate
-					continue
+				if(isopenturf(get_step(loc, direction))) //Must be open on one side to operate
+					unblocked = TRUE
+			if(unblocked)
 				SSpoints.add_supply_points(faction, mineral_value)  //NTF edit. Forcibly caps req points.
 				SSpoints.add_dropship_points(faction, dropship_bonus)
 				GLOB.round_statistics.points_from_mining += mineral_value
@@ -387,12 +389,16 @@
 				say("Ore shipment has been sold for [mineral_value] points.")
 				add_tick = 0
 				return
-			playsound(loc,'sound/machines/buzz-two.ogg', 35, FALSE)
-			add_tick = 0
-			miner_integrity = 0.66 * max_miner_integrity
-			src.log_message("was disabled due to lack of empty space", LOG_ATTACK)
-			set_miner_status()
-			return
+			else
+				playsound(loc,'sound/machines/buzz-two.ogg', 35, FALSE)
+				add_tick = 0
+				miner_integrity = 0.66 * max_miner_integrity
+				src.log_message("was disabled due to lack of empty space", LOG_ATTACK)
+				set_miner_status()
+				for(var/direction in GLOB.cardinals)
+					var/turf/blocking_turf = get_step(loc, direction)
+					src.log_message("blocked by: [blocking_turf] created at [time2text(blocking_turf.time_created, "YYYY-MM-DD hh:mm:ss")] by [blocking_turf.creation_logdata]")
+				return
 		stored_mineral += 1
 		add_tick = 0
 		say("[stored_mineral] Ore shipment\s is ready to be exported.")

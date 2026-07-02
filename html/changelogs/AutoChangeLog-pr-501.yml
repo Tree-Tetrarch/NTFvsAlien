@@ -1,4 +1,0 @@
-author: "SQLandrusk"
-delete-after: True
-changes:
-  - rscdel: "Removed intel drought processes"
