@@ -1610,7 +1610,7 @@
 /area/antag_ship/som/requisition)
 "ft" = (
 /obj/machinery/door/airlock/mainship/generic/bathroom,
-/turf/closed/wall/mainship/gray,
+/turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/bathroom)
 "fu" = (
 /obj/structure/cable,
@@ -6576,7 +6576,7 @@
 "vA" = (
 /obj/machinery/door/airlock/mainship/generic/bathroom,
 /obj/structure/cable,
-/turf/closed/wall/mainship/gray,
+/turf/open/floor/tile/white/hall/full,
 /area/antag_ship/icc/bathroom)
 "vB" = (
 /obj/machinery/light/mainship{
@@ -13675,9 +13675,10 @@
 /turf/open/floor/mainship/sterile/white,
 /area/antag_ship/som/bathroom)
 "RX" = (
-/obj/machinery/door/airlock/mainship/generic/bathroom,
-/turf/open/space/basic,
-/area/antag_ship/icc/bathroom)
+/obj/structure/cable,
+/obj/machinery/power/geothermal/reinforced,
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/som/engi)
 "RY" = (
 /obj/structure/bed/chair/sofa/left{
 	dir = 8
@@ -19760,7 +19761,7 @@ Zt
 YH
 RB
 Zx
-xS
+RX
 vi
 xS
 jE
@@ -22580,7 +22581,7 @@ zb
 Ne
 ft
 Ne
-RX
+ft
 Ne
 ft
 Ne
