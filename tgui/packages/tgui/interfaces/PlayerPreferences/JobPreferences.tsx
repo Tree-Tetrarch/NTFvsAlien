@@ -74,6 +74,8 @@ export const JobPreferences = (props) => {
     'SOM Chief Medical Officer',
     'SOM Chief Engineer',
     'SOM Requisitions Officer',
+    'SOM Military Police',
+    'SOM Chief MP',
     'SOM Field Commander',
     'SOM Commander',
   ];
