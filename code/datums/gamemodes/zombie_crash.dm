@@ -109,6 +109,7 @@
 	var/num_humans = 0
 	var/num_zombies = 0
 
+	for(var/z in z_levels)
 		for(var/mob/living/carbon/human/H  in GLOB.humans_by_zlevel["[z]"])
 			if(!istype(H)) // Small fix?
 				continue
