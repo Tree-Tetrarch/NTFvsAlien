@@ -337,11 +337,12 @@
 	playsound(loc, 'sound/machines/hiss.ogg', 25, 1)
 	UnregisterSignal(occupant, list(COMSIG_STARTED_SEX_UPON,COMSIG_RECEIVED_SEX,COMSIG_CAME_INTO,COMSIG_CAME_INTO_BY,COMSIG_CAME_ONTO,COMSIG_CAME_ONTO_BY))
 	log_combat(usr, occupant, "fullcryoed", src)
+	for(var/obj/item/W in src)
+		W.store_in_cryo(occupant.faction)
+	sex_records = list()
 	occupant.despawn()
 	occupant = null
 	update_icon()
-	for(var/obj/item/W in src)
-		W.store_in_cryo()
 
 /obj/structure/bed/chair/stasis/verb/store_items()
 	set name = "Store Worn Items"
