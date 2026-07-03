@@ -15845,6 +15845,10 @@
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/wood,
 /area/antag_ship/som/office/commander)
+"YJ" = (
+/obj/effect/landmark/start/job/vsd_synthetic,
+/turf/open/floor/prison/plate,
+/area/antag_ship/vsd/engi)
 "YK" = (
 /obj/effect/landmark/start/job/som/icc_admin,
 /obj/structure/bed/chair/north,
@@ -19898,7 +19902,7 @@ DR
 Sz
 is
 pk
-Ux
+YJ
 ll
 mg
 sa
