@@ -314,6 +314,10 @@
 /obj/structure/bookcase/manuals/medical,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/office/officers)
+"bk" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/mainship/mono,
+/area/antag_ship/som/preparation)
 "bl" = (
 /obj/effect/decal/cleanable/blood/splatter/girlcum,
 /turf/open/floor/mainship/mono,
@@ -820,6 +824,13 @@
 /area/antag_ship/som/hangar)
 "cR" = (
 /turf/closed/wall/mainship/gray/outer,
+/area/antag_ship/som/engi)
+"cS" = (
+/obj/machinery/door/airlock/multi_tile/mainship/engineering/glass{
+	name = "\improper Engineering";
+	req_one_access = null
+	},
+/turf/closed/wall/mainship/gray,
 /area/antag_ship/som/engi)
 "cT" = (
 /obj/machinery/door/airlock/mainship/security{
@@ -6876,6 +6887,16 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/freezer,
 /area/antag_ship/som/mess)
+"wy" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction/flipped{
+	dir = 8
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/som/preparation)
 "wz" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/mainship/blue{
@@ -9010,7 +9031,7 @@
 "De" = (
 /obj/machinery/door/airlock/multi_tile/mainship/engineering/glass{
 	name = "\improper Engineering";
-	req_one_access = null
+	req_one_access = list(208)
 	},
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/engi)
@@ -13170,7 +13191,8 @@
 "Qu" = (
 /obj/machinery/door/airlock/mainship/marine/general{
 	dir = 2;
-	name = "\improper Squad Engineer Preparations"
+	name = "\improper Squad Engineer Preparations";
+	req_one_access = list(208)
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
@@ -20139,7 +20161,7 @@ bD
 Ni
 bD
 bD
-lC
+cS
 ji
 rm
 GZ
@@ -21480,8 +21502,8 @@ CX
 Li
 bD
 bD
-Ni
-bD
+wy
+bk
 Pc
 cH
 jT
