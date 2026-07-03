@@ -350,12 +350,12 @@
 
 ///Despawn the mob, remove its job and store its item
 /mob/living/proc/despawn()
-	//This is done when the body is deleted, so this was doing it twice
+	/*This is done when the body is deleted, so this was doing it twice
 	//Handle job slot/tater cleanup.
-	if(issynth(src)) //edit: we need synths to clean up cause undefibbable proc is not useable for synths
-		if(job in SSjob.active_joinable_occupations)
-			log_game("Freeing 1 [job.title] slot due to [logdetails(src)] being cryoed.")
-			job.free_job_positions(1)
+	if(job in SSjob.active_joinable_occupations)
+		log_game("Freeing 1 [job.title] slot due to [logdetails(src)] being cryoed.")
+		job.free_job_positions(1)
+	*/
 
 	for(var/obj/item/W in src)
 		temporarilyRemoveItemFromInventory(W)

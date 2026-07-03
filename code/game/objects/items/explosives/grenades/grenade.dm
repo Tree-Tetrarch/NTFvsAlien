@@ -20,10 +20,8 @@
 	///bonus impact damage if launched from a UGL/grenade launcher
 	var/launchforce = 10
 	var/det_time = 4 SECONDS
-	///Does it make a danger overlay for humans?
+	///Does it make a danger overlay for humans? Can synths use it?
 	var/dangerous = TRUE
-	//Can synths use it?
-	var/lethal = TRUE
 	var/arm_sound = 'sound/weapons/armbomb.ogg'
 	var/hud_state = "grenade_he"
 	var/hud_state_empty = "grenade_empty"
@@ -46,7 +44,7 @@
 		balloon_alert(user, "not enough dexterity!")
 		return
 
-	if(issynth(user) && lethal && (SSsecurity_level.get_current_level_as_number() < SEC_LEVEL_RED) && !CONFIG_GET(flag/allow_synthetic_gun_use))
+	if(issynth(user) && dangerous && !CONFIG_GET(flag/allow_synthetic_gun_use))
 		balloon_alert(user, "against your programming!")
 		return
 

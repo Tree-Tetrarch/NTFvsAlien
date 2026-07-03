@@ -5,7 +5,6 @@
 	worn_icon_state = "training_grenade"
 	hud_state = "grenade_dummy"
 	dangerous = FALSE
-	lethal = FALSE
 	icon_state_mini = "grenade_white"
 
 /obj/item/explosive/grenade/training/prime()
