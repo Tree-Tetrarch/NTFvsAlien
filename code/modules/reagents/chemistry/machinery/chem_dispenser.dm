@@ -571,7 +571,9 @@
 		/datum/reagent/medicine/tricordrazine,
 		/datum/reagent/medicine/dylovene,
 		/datum/reagent/medicine/inaprovaline,
+		/datum/reagent/medicine/paracetamol,
 		/datum/reagent/medicine/leporazine,
+		/datum/reagent/medicine/saline_glucose,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/water,
 	)
