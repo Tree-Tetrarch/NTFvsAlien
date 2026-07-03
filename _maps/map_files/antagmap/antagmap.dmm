@@ -9010,7 +9010,7 @@
 "De" = (
 /obj/machinery/door/airlock/multi_tile/mainship/engineering/glass{
 	name = "\improper Engineering";
-	req_one_access = list(208)
+	req_one_access = null
 	},
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/engi)
@@ -13170,8 +13170,7 @@
 "Qu" = (
 /obj/machinery/door/airlock/mainship/marine/general{
 	dir = 2;
-	name = "\improper Squad Engineer Preparations";
-	req_one_access = list(208)
+	name = "\improper Squad Engineer Preparations"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
