@@ -314,6 +314,10 @@
 /obj/structure/bookcase/manuals/medical,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/office/officers)
+"bk" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/mainship/mono,
+/area/antag_ship/som/preparation)
 "bl" = (
 /obj/effect/decal/cleanable/blood/splatter/girlcum,
 /turf/open/floor/mainship/mono,
@@ -820,6 +824,13 @@
 /area/antag_ship/som/hangar)
 "cR" = (
 /turf/closed/wall/mainship/gray/outer,
+/area/antag_ship/som/engi)
+"cS" = (
+/obj/machinery/door/airlock/multi_tile/mainship/engineering/glass{
+	name = "\improper Engineering";
+	req_one_access = null
+	},
+/turf/closed/wall/mainship/gray,
 /area/antag_ship/som/engi)
 "cT" = (
 /obj/machinery/door/airlock/mainship/security{
@@ -6884,6 +6895,16 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/freezer,
 /area/antag_ship/som/mess)
+"wy" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction/flipped{
+	dir = 8
+	},
+/turf/open/floor/plating/plating_catwalk,
+/area/antag_ship/som/preparation)
 "wz" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/mainship/blue{
@@ -15066,9 +15087,9 @@
 /area/antag_ship/vsd/med)
 "Wh" = (
 /obj/machinery/floodlight/landing{
-	light_power = 2.5
+	light_power = 4
 	},
-/turf/open/floor/mainship/mono,
+/turf/open/floor/plating,
 /area/antag_ship/som/hangar)
 "Wi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -18121,7 +18142,6 @@ GI
 lK
 VB
 ad
-Wh
 ad
 ad
 ad
@@ -18130,7 +18150,8 @@ ad
 ad
 ad
 ad
-Wh
+ad
+ad
 ad
 qj
 ad
@@ -18217,6 +18238,7 @@ YD
 Yf
 VB
 ad
+Wh
 YD
 YD
 YD
@@ -18225,8 +18247,7 @@ YD
 YD
 YD
 YD
-YD
-YD
+Wh
 ad
 qj
 ad
@@ -18793,6 +18814,7 @@ YD
 Yf
 VB
 ad
+Wh
 YD
 YD
 YD
@@ -18801,8 +18823,7 @@ YD
 YD
 YD
 YD
-YD
-YD
+Wh
 ad
 qj
 ad
@@ -18889,7 +18910,6 @@ GI
 lK
 VB
 ad
-Wh
 ad
 ad
 ad
@@ -18898,7 +18918,8 @@ ad
 ad
 ad
 ad
-Wh
+ad
+ad
 ad
 qj
 ad
@@ -20151,7 +20172,7 @@ bD
 Ni
 bD
 bD
-lC
+cS
 ji
 rm
 GZ
@@ -21492,8 +21513,8 @@ CX
 Li
 bD
 bD
-Ni
-bD
+wy
+bk
 Pc
 cH
 jT
