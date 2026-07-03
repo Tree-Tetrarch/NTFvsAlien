@@ -564,15 +564,13 @@
 	name = "NM Ez-Chem dispenser"
 	desc = "Simplified basic medicine dispenser, for ages 3 and up."
 	color =  COLOR_BLUE_GRAY
-	var/list/dispensable_reagents = list(
+	dispensable_reagents = list(
 		/datum/reagent/medicine/bicaridine,
 		/datum/reagent/medicine/kelotane,
 		/datum/reagent/medicine/tramadol,
 		/datum/reagent/medicine/tricordrazine,
 		/datum/reagent/medicine/dylovene,
 		/datum/reagent/medicine/inaprovaline,
-		/datum/reagent/medicine/paracetamol,
-		/datum/reagent/medicine/isotonic,
 		/datum/reagent/medicine/leporazine,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/water,
