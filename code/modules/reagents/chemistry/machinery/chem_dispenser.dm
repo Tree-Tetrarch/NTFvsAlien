@@ -574,5 +574,7 @@
 		/datum/reagent/medicine/paracetamol,
 		/datum/reagent/medicine/isotonic,
 		/datum/reagent/medicine/leporazine,
+		/datum/reagent/consumable/sugar,
+		/datum/reagent/water,
 	)
 	needs_medical_training = FALSE
