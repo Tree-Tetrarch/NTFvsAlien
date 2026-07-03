@@ -15058,9 +15058,9 @@
 /area/antag_ship/vsd/med)
 "Wh" = (
 /obj/machinery/floodlight/landing{
-	light_power = 2.5
+	light_power = 4
 	},
-/turf/open/floor/mainship/mono,
+/turf/open/floor/plating,
 /area/antag_ship/som/hangar)
 "Wi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -18109,7 +18109,6 @@ GI
 lK
 VB
 ad
-Wh
 ad
 ad
 ad
@@ -18118,7 +18117,8 @@ ad
 ad
 ad
 ad
-Wh
+ad
+ad
 ad
 qj
 ad
@@ -18205,6 +18205,7 @@ YD
 Yf
 VB
 ad
+Wh
 YD
 YD
 YD
@@ -18213,8 +18214,7 @@ YD
 YD
 YD
 YD
-YD
-YD
+Wh
 ad
 qj
 ad
@@ -18781,6 +18781,7 @@ YD
 Yf
 VB
 ad
+Wh
 YD
 YD
 YD
@@ -18789,8 +18790,7 @@ YD
 YD
 YD
 YD
-YD
-YD
+Wh
 ad
 qj
 ad
@@ -18877,7 +18877,6 @@ GI
 lK
 VB
 ad
-Wh
 ad
 ad
 ad
@@ -18886,7 +18885,8 @@ ad
 ad
 ad
 ad
-Wh
+ad
+ad
 ad
 qj
 ad
