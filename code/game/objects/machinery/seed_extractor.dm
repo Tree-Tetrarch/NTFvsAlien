@@ -4,8 +4,8 @@
 	icon = 'icons/obj/machines/hydroponics.dmi'
 	icon_state = "sextractor"
 	density = TRUE
-	anchored = FALSE
-
+	anchored = TRUE
+	wrenchable = TRUE
 
 /obj/machinery/seed_extractor/attackby(obj/item/I, mob/user, params)
 	. = ..()

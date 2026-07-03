@@ -24,6 +24,22 @@
 	///the radio plugged into this pod
 	var/obj/item/radio/radio
 
+/obj/structure/bed/chair/stasis/wrench_act(mob/living/user, obj/item/I)
+	if(!user.Adjacent(src))
+		return
+	I.play_tool_sound(src, 50)
+	anchored = !anchored
+	if(anchored)
+		user.visible_message(
+			"[user] anchors \the [src].",
+			span_notice("You anchor \the [src]."),
+			span_italics("You hear ratchet."))
+	else
+		user.visible_message(
+			"[user] unanchors \the [src].",
+			span_notice("You unanchor \the [src]."),
+			span_italics("You hear ratchet."))
+
 //keep facing south unless north
 /obj/structure/bed/chair/stasis/setDir(newdir)
 	if(newdir == EAST)
