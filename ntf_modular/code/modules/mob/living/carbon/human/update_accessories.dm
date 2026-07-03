@@ -204,9 +204,9 @@
 	else
 		bodypart_name = "[bodypart]"
 
-	if(has_taur_body() && bodypart_name in list("l_leg", "r_leg", "l_foot", "r_foot"))
+	if(has_taur_body() && (bodypart_name in list("l_leg", "r_leg", "l_foot", "r_foot")))
 		return TRUE
-	if(uses_combined_digitigrade_legs() && bodypart_name in list("l_foot", "r_foot"))
+	if(uses_combined_digitigrade_legs() && (bodypart_name in list("l_foot", "r_foot")))
 		return TRUE
 	return FALSE
 
