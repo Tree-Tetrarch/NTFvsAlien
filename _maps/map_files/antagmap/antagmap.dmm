@@ -4581,7 +4581,7 @@
 	},
 /area/antag_ship/icc/hangar/east)
 "oP" = (
-/obj/structure/table/black,
+/obj/machinery/chem_dispenser/marine,
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 4
 	},
@@ -5136,6 +5136,10 @@
 	dir = 4
 	},
 /area/antag_ship/vsd/armory)
+"qH" = (
+/obj/machinery/chem_dispenser/marine,
+/turf/open/floor/mainship/sterile,
+/area/antag_ship/som/medbay)
 "qI" = (
 /turf/open/floor/mainship/blue/corner{
 	dir = 1
@@ -5397,6 +5401,10 @@
 /obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/security/cell)
+"rA" = (
+/obj/machinery/chem_dispenser/marine,
+/turf/open/floor/mainship/mono,
+/area/antag_ship/icc/medical_room)
 "rB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
@@ -7770,9 +7778,7 @@
 /turf/open/floor/mainship/mono,
 /area/antag_ship/som/mess)
 "zq" = (
-/obj/structure/bed/chair/stasis{
-	anchored = 1
-	},
+/obj/machinery/chem_dispenser/marine,
 /turf/open/floor/prison/whitegreen{
 	dir = 4
 	},
@@ -8119,6 +8125,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/machinery/chem_dispenser/marine,
 /turf/open/floor/plating/asteroidfloor,
 /area/antag_ship/clf_base/medbay)
 "Ax" = (
@@ -16780,7 +16787,7 @@ bc
 aK
 ba
 Uc
-iH
+qH
 nL
 Ee
 pP
@@ -26325,7 +26332,7 @@ Oo
 Oo
 aa
 KC
-sg
+rA
 sg
 sg
 sg

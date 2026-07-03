@@ -28,6 +28,8 @@
 
 	var/obj/item/reagent_containers/beaker = null
 	var/hackedcheck = 0
+	name = "chem dispenser"
+	desc = "Creates and dispenses chemicals."
 	var/list/dispensable_reagents = list(
 		/datum/reagent/aluminum,
 		/datum/reagent/carbon,
@@ -556,3 +558,21 @@
 
 /obj/machinery/chem_dispenser/beer/nopower
 	use_power = NO_POWER_USE
+
+//bitchass normie dispenser usable by marines
+/obj/machinery/chem_dispenser/marine
+	name = "NM Ez-Chem dispenser"
+	desc = "Simplified basic medicine dispenser, for ages 3 and up."
+	color =  COLOR_BLUE_GRAY
+	var/list/dispensable_reagents = list(
+		/datum/reagent/medicine/bicaridine,
+		/datum/reagent/medicine/kelotane,
+		/datum/reagent/medicine/tramadol,
+		/datum/reagent/medicine/tricordrazine,
+		/datum/reagent/medicine/dylovene,
+		/datum/reagent/medicine/inaprovaline,
+		/datum/reagent/medicine/paracetamol,
+		/datum/reagent/medicine/isotonic,
+		/datum/reagent/medicine/leporazine,
+	)
+	needs_medical_training = FALSE
