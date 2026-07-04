@@ -30,8 +30,8 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	worn_layer = FACEHUGGER_LAYER
 	layer = FACEHUGGER_LAYER
 	strip_delay = 2 SECONDS
-	worn_item_state_slots = list(slot_underwear_str = "facehugger_crotch", slot_shirt_str = "facehugger_back")
-	worn_icon_list = list(slot_underwear_str = 'ntf_modular/icons/Xeno/Effects.dmi', slot_shirt_str = 'ntf_modular/icons/Xeno/Effects.dmi')
+	worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face", slot_underwear_str = "facehugger_crotch", slot_shirt_str = "facehugger_back")
+	worn_icon_list = list(slot_wear_mask_str = 'ntf_modular/icons/Xeno/Effects.dmi', slot_underwear_str = 'ntf_modular/icons/Xeno/Effects.dmi', slot_shirt_str = 'ntf_modular/icons/Xeno/Effects.dmi')
 
 	///Whether the hugger is dead, active or inactive
 	var/stat = CONSCIOUS
@@ -122,6 +122,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		UnregisterSignal(source, COMSIG_QDELETING)
 
 	source = S //set and register new source
+	//we use slow animation for player hugger
+	worn_item_state_slots = list(slot_wear_mask_str = "facehugger_face_slow", slot_underwear_str = "facehugger_crotch_slow", slot_shirt_str = "facehugger_back_slow")
+	//
 	RegisterSignal(S, COMSIG_QDELETING, PROC_REF(clear_hugger_source))
 
 /// Sets the fire immunity and adds/removes an outline filter if it gained or lost fire immunity.
@@ -717,9 +720,9 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 	var/as_planned = target?.wear_mask == src  || target?.w_underwear == src || target?.w_undershirt == src
 	if((target.can_be_facehugged(src, FALSE, FALSE, TRUE)) && !sterile && as_planned && can_implant_embryo(target)) //is hugger still on face and can they still be impregnated
 		if(source && (hivenumber == source.get_xeno_hivenumber()))
-			implant_embryo(target, source = source)
+			implant_embryo(target, target_hole, source = source)
 		else
-			implant_embryo(target, force_xenohive = hivenumber)
+			implant_embryo(target, target_hole, force_xenohive = hivenumber)
 		sterile = TRUE
 		kill_hugger()
 	else
@@ -1031,4 +1034,8 @@ GLOBAL_LIST_EMPTY(alive_hugger_list)
 		return FALSE
 	return TRUE
 
+/obj/item/clothing/mask/facehugger/combat/harmless/attack_self(mob/user)
+	return
+
+#undef FACEHUGGER_DEATH
 #undef IMPREGNATION_TIME

@@ -23,7 +23,7 @@
 
 /datum/ammo/bullet/shotgun/slug/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(ishuman(target_mob))
-		staggerstun(target_mob, proj, paralyze = 0, stun = 1 SECONDS, stagger = 2 SECONDS, knockback = 1, slowdown = 2)
+		staggerstun(target_mob, proj, paralyze = 0, stun = 0, stagger = 3 SECONDS, knockback = 1, slowdown = 2)
 	else
 		staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 2 SECONDS, knockback = 1, slowdown = 2)
 
@@ -59,7 +59,7 @@
 
 /datum/ammo/bullet/shotgun/incendiary/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(ishuman(target_mob))
-		staggerstun(target_mob, proj, paralyze = 0, stun = 1 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
+		staggerstun(target_mob, proj, paralyze = 0, stun = 0, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 	else
 		staggerstun(target_mob, proj, paralyze = 2 SECONDS, stagger = 2 SECONDS, knockback = 2, slowdown = 0.5, max_range = 3)
 
@@ -113,7 +113,7 @@
 
 /datum/ammo/bullet/shotgun/buckshot/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
 	if(ishuman(target_mob))
-		staggerstun(target_mob, proj, paralyze = 0, stun = 1 SECONDS, slowdown = 2, stagger = 3 SECONDS, knockback = 2)
+		staggerstun(target_mob, proj, paralyze = 0, stun = 0, slowdown = 2, stagger = 3 SECONDS, knockback = 2)
 	else
 		staggerstun(target_mob, proj, paralyze = 2 SECONDS, slowdown = 2, stagger = 3 SECONDS, knockback = 2)
 
@@ -150,6 +150,7 @@
 	bonus_projectiles_amount = 2
 	bonus_projectiles_scatter = 6
 	accuracy_variation = 8
+	accuracy = -20
 	max_range = 15
 	damage = 10
 	damage_falloff = 0.5
@@ -193,6 +194,7 @@
 /datum/ammo/bullet/shotgun/heavy_buckshot
 	name = "heavy buckshot shell"
 	handful_icon_state = "heavy_shotgun_buckshot"
+	handful_icon = 'ntf_modular/icons/obj/items/ammo/handful.dmi'
 	icon_state = "buckshot"
 	hud_state = "shotgun_buckshot"
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/heavy_spread
@@ -202,7 +204,7 @@
 	accurate_range = 3
 	max_range = 6
 	damage = 55
-	damage_falloff = 7
+	damage_falloff = 6
 
 /datum/ammo/bullet/shotgun/heavy_spread
 	name = "additional buckshot"
@@ -211,7 +213,7 @@
 	accurate_range = 3
 	max_range = 6
 	damage = 50
-	damage_falloff = 7
+	damage_falloff = 6
 
 /datum/ammo/bullet/shotgun/heavy_buckshot/on_hit_turf(turf/target_turf, atom/movable/projectile/proj)
 	if(iswallturf(target_turf))
@@ -232,13 +234,14 @@
 /datum/ammo/bullet/shotgun/barrikada_slug
 	name = "heavy metal slug"
 	handful_icon_state = "heavy_shotgun_barrikada"
+	handful_icon = 'ntf_modular/icons/obj/items/ammo/handful.dmi'
 	hud_state = "shotgun_slug"
 	ammo_behavior_flags = AMMO_BALLISTIC
 	shell_speed = 3
 	max_range = 13
-	damage = 120
-	penetration = 25
-	sundering = 9
+	damage = 110
+	penetration = 20
+	sundering = 30
 	damage_falloff = 1.5
 	var/vehicle_stun_duration = 1.5 SECONDS
 
@@ -270,6 +273,7 @@
 /datum/ammo/bullet/shotgun/heavy_flechette
 	name = "heavy flechette shell"
 	handful_icon_state = "heavy_shotgun_flechette"
+	handful_icon = 'ntf_modular/icons/obj/items/ammo/handful.dmi'
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
 	ammo_behavior_flags = AMMO_BALLISTIC
@@ -279,7 +283,7 @@
 	accuracy_variation = 8
 	max_range = 10
 	damage = 65
-	penetration = 20
+	penetration = 25
 	sundering = 15
 
 /datum/ammo/bullet/shotgun/flechette/heavy_flechette_spread
@@ -335,13 +339,12 @@
 	bonus_projectiles_amount = 4
 	bonus_projectiles_scatter = 2
 	max_range = 15
-	damage = 40
+	damage = 20
 	damage_falloff = 0.25
 	penetration = 15
 	sundering = 1.5
 
 /datum/ammo/bullet/shotgun/tx15_flechette/spread
-	name = "additional flechette"
 
 /datum/ammo/bullet/shotgun/tx15_slug
 	name = "shotgun slug"
@@ -350,7 +353,7 @@
 	ammo_behavior_flags = AMMO_BALLISTIC
 	shell_speed = 3
 	max_range = 15
-	damage = 80
+	damage = 60
 	penetration = 20
 	sundering = 3.5
 
@@ -482,7 +485,7 @@
 	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_LEAVE_TURF
 	shell_speed = 2.5
 	max_range = 8
-	damage = 40
+	damage = 30
 	penetration = 0
 	sundering = 0
 	shrapnel_chance = 0
@@ -511,7 +514,8 @@
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/sh410_buckshot/spread
 	bonus_projectiles_amount = 4
 	bonus_projectiles_scatter = 5
-	accuracy_variation = 10
+	accuracy = -4
+	accuracy_variation = 12
 	max_range = 10
 	damage = 20
 	damage_falloff = 0.5

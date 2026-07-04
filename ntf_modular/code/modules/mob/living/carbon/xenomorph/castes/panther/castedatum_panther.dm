@@ -12,7 +12,7 @@
 	gib_flick = "gibbed-a-runner"
 
 	// *** Melee Attacks *** //
-	melee_damage = 18
+	melee_damage = 23
 	attack_delay = 6
 
 	// *** Speed *** //
@@ -25,7 +25,7 @@
 	plasma_icon_state = "fury"
 
 	// *** Health *** //
-	max_health = 240
+	max_health = 260
 
 	// *** Flags *** //
 	caste_flags = CASTE_INNATE_PLASMA_REGEN|CASTE_PLASMADRAIN_IMMUNE|CASTE_EVOLUTION_ALLOWED|CASTE_MUTATIONS_ALLOWED

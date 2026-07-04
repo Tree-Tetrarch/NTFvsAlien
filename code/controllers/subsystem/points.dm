@@ -120,6 +120,14 @@ SUBSYSTEM_DEF(points)
 	var/obj/docking_port/mobile/supply_shuttle = SSshuttle.getShuttle(SHUTTLE_SUPPLY)
 	if(O.faction == FACTION_SOM)
 		supply_shuttle = SSshuttle.getShuttle(SHUTTLE_SOM_SUPPLY)
+	if(O.faction == FACTION_CLF)
+		supply_shuttle = SSshuttle.getShuttle("supplyclf")
+	if(O.faction == FACTION_VSD)
+		supply_shuttle = SSshuttle.getShuttle("supplykz")
+	if(O.faction == FACTION_ICC)
+		supply_shuttle = SSshuttle.getShuttle("supplyicc")
+	if(O.faction == FACTION_NEUTRAL)
+		supply_shuttle = SSshuttle.getShuttle("supplycolony")
 	if(length(shoppinglist[O.faction]) >= supply_shuttle.return_number_of_turfs())
 		return
 	requestlist -= "[O.id]"
@@ -222,7 +230,7 @@ SUBSYSTEM_DEF(points)
 		stack_trace("adding [faction] to supply_points via add_supply_points without new_faction set")
 		message_admins("added new faction \"[faction]\" to supply points list.  This is okay if you meant to do that but might be a bug.  This faction will now be eligible to recive points from supply point increase events.")
 	var/startingsupplypoints = supply_points[faction]
-	if(startingsupplypoints > HUMAN_FACTION_ABSOLUTE_MAX_POINTS)
+	if(startingsupplypoints >= HUMAN_FACTION_ABSOLUTE_MAX_POINTS)
 		return
 	var/simplenewamount1 = startingsupplypoints + amount
 	var/countoverflowfrom = max(HUMAN_FACTION_MAX_POINTS, startingsupplypoints)
@@ -234,11 +242,11 @@ SUBSYSTEM_DEF(points)
 		var/overflowamount2 = simplenewamount2 - HUMAN_FACTION_ABSOLUTE_MAX_POINTS
 		if(overflowamount2 > 0)
 			supply_points[faction] = HUMAN_FACTION_ABSOLUTE_MAX_POINTS
-			minor_announce("Operational requisitions budget exceeded absolute maximum capacity, 100% of points over [HUMAN_FACTION_ABSOLUTE_MAX_POINTS] goes towards factional goals.", title = "[faction] accounting division")
+			faction_announce("Operational requisitions budget exceeded absolute maximum capacity, 100% of points over [HUMAN_FACTION_ABSOLUTE_MAX_POINTS] goes towards factional goals.", title = "[faction] accounting division", should_play_sound = FALSE, to_faction = faction)
 		else
 			supply_points[faction] = simplenewamount2
 			if(startingsupplypoints < HUMAN_FACTION_MAX_POINTS)
-				minor_announce("Operational requisitions budget exceeded normal maximum capacity, 85% of points over [HUMAN_FACTION_MAX_POINTS] goes towards factional goals.", title = "[faction] accounting division")
+				faction_announce("Operational requisitions budget exceeded normal maximum capacity, 85% of points over [HUMAN_FACTION_MAX_POINTS] goes towards factional goals.", title = "[faction] accounting division", should_play_sound = FALSE, to_faction = faction)
 	else
 		supply_points[faction] = simplenewamount1
 
@@ -247,7 +255,7 @@ SUBSYSTEM_DEF(points)
 		stack_trace("adding [faction] to dropship_points via add_dropship_points without new_faction set")
 		message_admins("added new faction \"[faction]\" to dropship points list.  This is okay if you meant to do that but might be a bug.")
 	var/startingdropshippoints = dropship_points[faction]
-	if(startingdropshippoints > HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS)
+	if(startingdropshippoints >= HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS)
 		return
 	var/simplenewamount1 = startingdropshippoints + amount
 	var/countoverflowfrom = max(HUMAN_FACTION_MAX_DROPSHIP_POINTS, startingdropshippoints)
@@ -259,10 +267,10 @@ SUBSYSTEM_DEF(points)
 		var/overflowamount2 = simplenewamount2 - HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS
 		if(overflowamount2 > 0)
 			dropship_points[faction] = HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS
-			minor_announce("Operational dropship budget exceeded absolute maximum capacity, 100% of points over [HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS] goes towards factional goals.", title = "[faction] accounting division")
+			faction_announce("Operational dropship budget exceeded absolute maximum capacity, 100% of points over [HUMAN_FACTION_ABSOLUTE_MAX_DROPSHIP_POINTS] goes towards factional goals.", title = "[faction] accounting division", should_play_sound = FALSE, to_faction = faction)
 		else
 			dropship_points[faction] = simplenewamount2
 			if(startingdropshippoints < HUMAN_FACTION_MAX_DROPSHIP_POINTS)
-				minor_announce("Operational dropship budget exceeded normal maximum capacity, 85% of points over [HUMAN_FACTION_MAX_DROPSHIP_POINTS] goes towards factional goals.", title = "[faction] accounting division")
+				faction_announce("Operational dropship budget exceeded normal maximum capacity, 85% of points over [HUMAN_FACTION_MAX_DROPSHIP_POINTS] goes towards factional goals.", title = "[faction] accounting division", should_play_sound = FALSE, to_faction = faction)
 	else
 		dropship_points[faction] = simplenewamount1

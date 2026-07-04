@@ -144,6 +144,11 @@
 	desc = "A warning sign which reads 'LIVE AMMUNITION RANGE'."
 	icon_state = "firingrange"
 
+/obj/structure/sign/gunnery
+	name = "\improper Smartgunner Preparation"
+	desc = "A sign which reads 'Smartgunner Preparation Area'."
+	icon_state = "gunnery"
+
 /obj/structure/sign/biohazard
 	name = "\improper BIOHAZARD"
 	desc = "A warning sign which reads 'BIOHAZARD'."
@@ -431,7 +436,8 @@
 /obj/structure/sign/fixedinplace/hangar
 	name = "\improper Hangar bay"
 	desc = "A direction sign, pointing out which way the Hangar bay is."
-	icon_state = "direction_hangar"
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "hangar"
 
 /obj/structure/sign/fixedinplace/cryo
 	name = "\improper Cryogenics bay"

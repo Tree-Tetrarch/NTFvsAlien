@@ -288,7 +288,11 @@ directive is properly returned.
 /atom/proc/set_greyscale_colors(list/colors, update=TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(istype(colors))
+		if(!length(colors))
+			return
 		colors = colors.Join("")
+	if(!colors)
+		return
 	if(greyscale_colors == colors)
 		return
 	greyscale_colors = colors
@@ -715,8 +719,11 @@ directive is properly returned.
 
 /atom/proc/max_stack_merging(obj/item/stack/S)
 	SHOULD_CALL_PARENT(TRUE)
-	SEND_SIGNAL(src, ATOM_MAX_STACK_MERGING, S)
-	return FALSE //But if they do, limit is not an issue.
+	var/list/max_list = list() //yes this is dumb, please do a better solution
+	SEND_SIGNAL(src, ATOM_MAX_STACK_MERGING, S, max_list)
+	if(length(max_list))
+		return max_list[1]
+	return 0
 
 /atom/proc/recalculate_storage_space()
 	SHOULD_CALL_PARENT(TRUE)
@@ -1026,4 +1033,3 @@ directive is properly returned.
 		if(new_alpha >= alpha)
 			continue
 		alpha = new_alpha
-

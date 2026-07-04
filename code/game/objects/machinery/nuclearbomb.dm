@@ -275,6 +275,8 @@
 		balloon_alert(user, "ineligible detonation site!")
 		return
 	if(!timer_enabled)
+		if(user.faction)
+			faction = user.faction
 		enable(key_name(user))
 		balloon_alert(user, "timer started")
 	else
@@ -370,7 +372,7 @@
 ///Change minimap icon if its on or off
 /obj/machinery/nuclearbomb/proc/update_minimap_icon()
 	SSminimaps.remove_marker(src)
-	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips_large.dmi', null, "nuke[timer_enabled ? "_on" : "_off"]", MINIMAP_LOCATOR_LAYER))
+	SSminimaps.add_marker(src, MINIMAP_FLAG_ALL, image('icons/UI_icons/map_blips_large.dmi', null, "nuke[timer_enabled ? "_on" : "_off"]", MINIMAP_NUKE_LAYER))
 
 #undef NUKE_STAGE_NONE
 #undef NUKE_STAGE_COVER_REMOVED

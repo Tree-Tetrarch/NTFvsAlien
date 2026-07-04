@@ -32,6 +32,8 @@
 	var/melee_ap = 0
 	///number of ticks between attacks for a caste.
 	var/attack_delay = CLICK_CD_MELEE
+	///how much extra damage done to a exosuit from slash attacks
+	var/exosuit_slash_damage_multiplier = 1
 
 	// *** Tackle *** //
 	///The minimum amount of random paralyze applied to a human upon being 'pulled' multiplied by 20 ticks
@@ -225,6 +227,8 @@
 
 ///Add needed component to the xeno
 /datum/xeno_caste/proc/on_caste_applied(mob/xenomorph)
+	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ENCOUNTER))
+		ADD_TRAIT(xenomorph, TRAIT_INNATE_HEALING, XENO_TRAIT)
 	for(var/trait in caste_traits)
 		ADD_TRAIT(xenomorph, trait, XENO_TRAIT)
 	xenomorph.AddComponent(/datum/component/bump_attack)
@@ -234,6 +238,8 @@
 /datum/xeno_caste/proc/on_caste_removed(mob/xenomorph)
 	xenomorph.remove_component(/datum/component/bump_attack)
 	xenomorph.UnregisterSignal(xenomorph, COMSIG_XENOMORPH_ATTACK_LIVING)
+	if(CHECK_BITFIELD(SSticker.mode?.round_type_flags, MODE_ENCOUNTER))
+		REMOVE_TRAIT(xenomorph, TRAIT_INNATE_HEALING, XENO_TRAIT)
 	for(var/trait in caste_traits)
 		REMOVE_TRAIT(xenomorph, trait, XENO_TRAIT)
 
@@ -313,6 +319,8 @@ GLOBAL_LIST_INIT(strain_list, init_glob_strain_list())
 
 	///State tracking of hive status toggles
 	var/status_toggle_flags = HIVE_STATUS_DEFAULTS
+	///Whether this xeno is currently opted into hive target directives.
+	var/hive_target_participation = FALSE
 	///Handles displaying the various wound states of the xeno.
 	var/atom/movable/vis_obj/xeno_wounds/wound_overlay
 	///Handles displaying the various wound states of the xeno.

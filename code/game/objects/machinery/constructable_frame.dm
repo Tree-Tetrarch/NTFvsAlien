@@ -17,8 +17,8 @@
 	var/list/req_components = null
 	var/list/req_component_names = null
 	var/state = CONSTRUCTION_STATE_BEGIN
-	var/required_skill = SKILL_CONSTRUCTION_ADVANCED
-	var/required_dismantle_skill = SKILL_ENGINEER_PLASTEEL
+	var/required_skill = SKILL_CONSTRUCTION_DEFAULT
+	var/required_dismantle_skill = SKILL_CONSTRUCTION_DEFAULT
 
 /obj/machinery/constructable_frame/state_2
 	icon_state = "box_1"
@@ -84,7 +84,7 @@
 					return
 				playsound(src.loc, 'sound/items/Ratchet.ogg', 25, 1)
 				to_chat(huser, span_notice(" You dismantle the frame..."))
-				new /obj/item/stack/sheet/metal(src.loc, 5)
+				new /obj/item/stack/sheet/metal(src.loc, 3)
 				qdel(src)
 		if(CONSTRUCTION_STATE_PROGRESS)
 			if(istype(P, /obj/item/circuitboard/machine))

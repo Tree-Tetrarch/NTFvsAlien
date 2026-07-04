@@ -9,7 +9,7 @@
 			continue
 		if(gender == FEMALE && S.gender == MALE)
 			continue
-		if(!(species in S.species_allowed))
+		if(!can_use_hair_accessory(S, species))
 			continue
 		valid_hairstyles[hairstyle] = GLOB.hair_styles_list[hairstyle]
 
@@ -27,7 +27,7 @@
 			continue
 		if(gender == FEMALE && S.gender == MALE)
 			continue
-		if(!(species in S.species_allowed))
+		if(!can_use_hair_accessory(S, species))
 			continue
 
 		valid_facialhairstyles[facialhairstyle] = GLOB.facial_hair_styles_list[facialhairstyle]
@@ -36,6 +36,17 @@
 		return "Shaved"
 
 	return pick(valid_facialhairstyles)
+
+/proc/can_use_hair_accessory(datum/sprite_accessory/accessory, species)
+	if(!accessory)
+		return FALSE
+	if(!length(accessory.species_allowed))
+		return TRUE
+	if(species in accessory.species_allowed)
+		return TRUE
+	if("Human" in accessory.species_allowed)
+		return TRUE
+	return FALSE
 
 ///returns a random tts voice based on gender. Assumes theres 30 voices, not actually how many there are but yolo. todo should return based on gender but we need voice tags for that
 /proc/random_tts_voice()
@@ -49,8 +60,14 @@
 		return null
 	return pick(voices)
 
-/proc/get_playable_species()
-	return GLOB.roundstart_species
+/proc/get_playable_species(viewer_ckey)
+	if(viewer_ckey != "khanivore")
+		return GLOB.roundstart_species
+
+	var/list/playable_species = GLOB.roundstart_species.Copy()
+	if(GLOB.all_species["Teshari"])
+		playable_species["Teshari"] = GLOB.all_species["Teshari"]
+	return playable_species
 
 
 /proc/do_mob(mob/user, mob/target, delay = 30, user_display, target_display, prog_bar = PROGRESS_GENERIC, ignore_flags = NONE, datum/callback/extra_checks)

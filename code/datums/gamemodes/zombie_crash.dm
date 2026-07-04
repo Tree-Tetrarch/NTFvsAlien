@@ -3,7 +3,7 @@
 	config_tag = "Zombie Crash"
 	round_type_flags = MODE_ALLOW_MARINE_QUICKBUILD|MODE_XENO_GRAB_DEAD_ALLOWED|MODE_INFESTATION|MODE_PSY_POINTS|MODE_SILO_RESPAWN|MODE_MUTATIONS_OBTAINABLE
 	xeno_abilities_flags = ABILITY_ALL_GAMEMODE //Non pvp
-	round_type_flags2 = MODE_2_CHILL_RULES
+	round_type_flags2 = MODE_2_CAMPAIGN_LITE_SUPPORT|MODE_2_SINGLE_USE_NUKE_DISK_GENERATOR|MODE_2_CHILL_RULES
 	required_players = 1
 	valid_job_types = list(
 		/datum/job/terragov/squad/standard = -1,
@@ -58,6 +58,10 @@
 	for(var/i in GLOB.zombie_crash_vendor_landmarks)
 		new /obj/machinery/marine_selector/zombie_crash(get_turf(i))
 
+	for(var/obj/structure/xeno/silo/silossy in GLOB.xeno_resin_silos_by_hive)
+		if(istype(silossy, /obj/structure/xeno/silo))
+			qdel(silossy) //they are on top of zombie spawners and is loud
+
 	addtimer(CALLBACK(src, PROC_REF(balance_scales)), 1 SECONDS)
 	RegisterSignal(SSdcs, COMSIG_GLOB_ZOMBIE_TUNNEL_DESTROYED, PROC_REF(on_tunnel_destroyed))
 	RegisterSignal(SSdcs, COMSIG_GLOB_DISK_GENERATED, PROC_REF(disk_printed))
@@ -104,17 +108,8 @@
 /datum/game_mode/infestation/crash/zombie/proc/count_humans_and_zombies(list/z_levels = SSmapping.levels_by_any_trait(list(ZTRAIT_MARINE_MAIN_SHIP, ZTRAIT_GROUND, ZTRAIT_RESERVED)), count_flags)
 	var/num_humans = 0
 	var/num_zombies = 0
-	var/num_xenos = 0
 
 	for(var/z in z_levels)
-		for(var/mob/living/carbon/xenomorph/beno in GLOB.alive_xeno_list)
-			if(!istype(beno))
-				continue
-			if(count_flags & COUNT_IGNORE_XENO_SSD && !beno.client && beno.afk_status == MOB_DISCONNECTED)
-				continue
-			if(isspaceturf(beno.loc))
-				continue
-			num_xenos++
 		for(var/mob/living/carbon/human/H  in GLOB.humans_by_zlevel["[z]"])
 			if(!istype(H)) // Small fix?
 				continue
@@ -126,7 +121,7 @@
 			if(isspaceturf(H.loc))
 				continue
 			num_humans++
-	return list(num_humans, num_zombies, num_xenos)
+	return list(num_humans, num_zombies)
 
 /datum/game_mode/infestation/crash/zombie/balance_scales()
 	if(GLOB.zombie_spawners == 0)
@@ -165,15 +160,14 @@
 		round_finished = MODE_INFESTATION_M_MAJOR
 		return TRUE
 
-	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_HUMAN_SSD| COUNT_GREENOS_TOWARDS_MARINES )
+	var/list/living_player_list = count_humans_and_xenos(count_flags = COUNT_IGNORE_HUMAN_SSD| COUNT_GREENOS_TOWARDS_MARINES)
 	var/num_humans = living_player_list[1]
-	var/num_xenos = living_player_list[3]
 	if(num_humans && planet_nuked == INFESTATION_NUKE_NONE && marines_evac == CRASH_EVAC_NONE && !force_end)
 		return FALSE
 
 	switch(planet_nuked)
 		if(INFESTATION_NUKE_NONE)
-			if(!num_humans && !num_xenos)
+			if(!num_humans)
 				message_admins("Round finished: [MODE_ZOMBIE_Z_MAJOR]") //zombies wiped out ALL the marines
 				round_finished = MODE_ZOMBIE_Z_MAJOR
 				return TRUE

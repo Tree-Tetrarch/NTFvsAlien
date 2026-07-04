@@ -8,20 +8,10 @@
 	contains = list(/obj/item/ammo_magazine/sentry/ads_system)
 	cost = 50
 
-/datum/supply_packs/weapons/ar18_ap
+/datum/supply_packs/weapons/tx55/ap
 	name = "AR-18 AP magazine (10x24mm)"
 	contains = list(/obj/item/ammo_magazine/rifle/standard_carbine/ap)
 	cost = 50
-
-/datum/supply_packs/weapons/m412_ap
-	name = "\improper PR-412 AP magazine (10x24mm)"
-	contains = list(/obj/item/ammo_magazine/rifle/ap)
-	cost = 25
-
-/datum/supply_packs/weapons/apbox10x24
-	name = "\improper Big ammo box (10x24mm AP)"
-	contains = list(/obj/item/big_ammo_box/ap)
-	cost = 200
 
 /datum/supply_packs/weapons/dragoon
 	name = "Dragoon Mk1 Rapid Engagement Rifle"
@@ -38,6 +28,15 @@
 	contains = list(/obj/item/ammo_magazine/rifle/boltclip/dragoon/pox)
 	cost = 100
 
+/datum/supply_packs/weapons/laserweapons
+	name = "Standard laser weapon bundle" // Since we can buy an xray laser rifle but not regular ones?
+	contains = list(/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine,
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle,
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper,
+/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser,
+/obj/item/cell/lasgun/volkite/powerpack/marine,
+/obj/item/cell/lasgun/volkite/powerpack/marine/backpack,)
+	cost = 250
 
 //factional things down here
 /datum/supply_packs/weapons/unity
@@ -83,16 +82,16 @@
 	cost = 400
 
 /datum/supply_packs/weapons/moonbeam_ammo
-	name = "Moonbeam NL sniper rifle tranq magazine"
-	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/tranq)
+	name = "Moonbeam NL sniper rifle tranq magazine (x3)"
+	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/tranq, /obj/item/ammo_magazine/rifle/chamberedrifle/tranq, /obj/item/ammo_magazine/rifle/chamberedrifle/tranq)
 	faction_lock = list(FACTION_TERRAGOV)
-	cost = 30
+	cost = 10 //easily expended
 
 /datum/supply_packs/weapons/moonbeam_ammo_bluescreen
 	name = "Moonbeam NL sniper rifle bluescreen magazine"
-	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen)
+	contains = list(/obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen, /obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen, /obj/item/ammo_magazine/rifle/chamberedrifle/bluescreen)
 	faction_lock = list(FACTION_TERRAGOV)
-	cost = 60
+	cost = 20
 
 /datum/supply_packs/weapons/bikeautocannonammo
 	name = "heavy motorbike AC-32 autocannon ammo rack (x2)"

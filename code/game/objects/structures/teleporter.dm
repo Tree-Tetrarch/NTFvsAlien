@@ -13,6 +13,7 @@
 		/mob/living,
 		/obj/machinery,
 		/obj/structure/largecrate,
+		/obj/vehicle,
 	)
 	var/static/list/teleportable_while_anchored_types = list(
 		/obj/vehicle,
@@ -20,7 +21,7 @@
 	///List of banned teleportable types
 	var/static/list/blacklisted_types = list(
 		/obj/machinery/nuclearbomb,
-		/obj/vehicle/sealed/armored/multitile,
+		/obj/vehicle/sealed/armored,
 	)
 
 /obj/machinery/deployable/teleporter/examine(mob/user)
@@ -153,9 +154,11 @@
 	var/list/atom/movable/teleporting = list()
 	for(var/atom/movable/thing AS in loc)
 		if(thing.anchored)
-			continue
-		if(!is_type_in_list(thing, teleportable_types))
-			continue
+			if(!is_type_in_list(thing, teleportable_while_anchored_types))
+				continue
+		else
+			if(!is_type_in_list(thing, teleportable_types))
+				continue
 		if(is_type_in_list(thing, blacklisted_types))
 			continue
 		teleporting += thing
@@ -245,6 +248,7 @@
 		. += "It is currently lacking a power cell."
 	else
 		. += "It has [round(cell.percent())]% power remaining."
+		. += "Cell energy : [DisplayEnergyFrac(cell.charge * (2/GLOB.CELLRATE), cell.maxcharge * (2/GLOB.CELLRATE))]"
 	if(linked_teleporter)
 		if(isobserver(user))
 			. += "It is currently linked to Teleporter #[linked_teleporter.self_tele_tag][FOLLOW_LINK(user, linked_teleporter)] at [get_area(linked_teleporter)]"

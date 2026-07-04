@@ -30,6 +30,7 @@
 #define BE_ALIEN_UNREVIVABLE (1<<5)
 #define BE_SSD_RANDOM_NAME (1<<6)
 #define BE_HIVE_TARGET (1<<7)
+#define BE_HIVE_TARGET_XENO (1<<8)
 
 #define BE_SPECIAL_DEFAULT (BE_DEATHMATCH)
 
@@ -137,8 +138,10 @@
 	"Cult of Dismas",\
 	"Cult of Sinius",\
 	"Cult of Tenebrase",\
+	"Cult of Evolution",\
 	"Some Old world religion",\
 	"Atheism",\
+	"Other",\
 	"None"\
 	)
 
@@ -190,7 +193,8 @@
 	"Join as Chestburster" = BE_ALIEN,\
 	"Take Own Chestburster" = BE_ALIEN_UNREVIVABLE,\
 	"End of Round Deathmatch" = BE_DEATHMATCH,\
-	"Eligible for Hive Target" = BE_HIVE_TARGET,\
+	"Become Hive Target" = BE_HIVE_TARGET,\
+	"Receive Hive Target" = BE_HIVE_TARGET_XENO,\
 	"Prefer Squad over Role" = BE_SQUAD_STRICT\
 	)
 	//"Use random name when taking SSD mobs" = BE_SSD_RANDOM_NAME

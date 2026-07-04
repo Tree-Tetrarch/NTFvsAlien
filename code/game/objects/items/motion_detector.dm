@@ -73,6 +73,7 @@
 	var/range = 16
 	///The list of all the blips
 	var/list/obj/effect/blip/blips_list = list()
+	var/quiet = FALSE
 
 /obj/item/attachable/motiondetector/Destroy()
 	operator = null
@@ -85,6 +86,8 @@
 		clean_operator()
 		return TRUE
 	operator = user
+	UnregisterSignal(operator, list(COMSIG_QDELETING, COMSIG_GUN_USER_UNSET))
+	UnregisterSignal(src, list(COMSIG_ITEM_EQUIPPED_TO_SLOT, COMSIG_ITEM_REMOVED_INVENTORY))
 	RegisterSignals(operator, list(COMSIG_QDELETING, COMSIG_GUN_USER_UNSET), PROC_REF(clean_operator))
 	RegisterSignals(src, list(COMSIG_ITEM_EQUIPPED_TO_SLOT, COMSIG_ITEM_REMOVED_INVENTORY), PROC_REF(clean_operator))
 	UnregisterSignal(operator, COMSIG_GUN_USER_SET)
@@ -161,11 +164,12 @@
 		if(nearby_xeno.last_move_time + effective_sensitivity < world.time )
 			continue
 		prepare_blip(nearby_xeno, nearby_xeno.get_iff_signal() & operator.get_iff_signal() ?  MOTION_DETECTOR_FRIENDLY : MOTION_DETECTOR_HOSTILE)
-	if(hostile_detected)
-		//playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
-		playsound(loc, pick('ntf_modular/sound/items/detector_ping_1.ogg', 'ntf_modular/sound/items/detector_ping_2.ogg', 'ntf_modular/sound/items/detector_ping_3.ogg', 'ntf_modular/sound/items/detector_ping_4.ogg'), 60, 0, 7, 2)
-	else
-		playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
+	if(!quiet)
+		if(hostile_detected)
+			//playsound(loc, 'sound/items/tick.ogg', 100, 0, 7, 2)
+			playsound(loc, pick('ntf_modular/sound/items/detector_ping_1.ogg', 'ntf_modular/sound/items/detector_ping_2.ogg', 'ntf_modular/sound/items/detector_ping_3.ogg', 'ntf_modular/sound/items/detector_ping_4.ogg'), 60, 0, 7, 2)
+		else
+			playsound(loc, 'ntf_modular/sound/items/detector.ogg', 60, 0, 7, 2)
 
 	addtimer(CALLBACK(src, PROC_REF(clean_blips)), 1 SECONDS, TIMER_STOPPABLE|TIMER_DELETE_ME)
 
@@ -179,7 +183,7 @@
 
 ///Prepare the blip to be print on the operator screen
 /obj/item/attachable/motiondetector/proc/prepare_blip(mob/target, status)
-	if(!operator.client)
+	if(!operator?.client || !target)
 		return
 	if(status == MOTION_DETECTOR_HOSTILE)
 		hostile_detected = TRUE
@@ -188,6 +192,8 @@
 	var/viewX = actualview[1]
 	var/viewY = actualview[2]
 	var/turf/center_view = get_view_center(operator)
+	if(!center_view || !target.z)
+		return
 	var/screen_pos_y = target.y - center_view.y + round(viewY * 0.5) + 1
 	var/dir
 	if(screen_pos_y < 1)

@@ -219,7 +219,7 @@
 
 //gets paygrade from ID
 //paygrade is a user's actual rank, as defined on their ID.  size 1 returns an abbreviation, size 0 returns the full rank name, the third input is used to override what is returned if no paygrade is assigned.
-/mob/living/carbon/human/get_paygrade(size = 1)
+/mob/living/carbon/human/get_paygrade(size = PAYGRADE_SHORT)
 	var/obj/item/card/id/id = wear_id
 	if(istype(id))
 		return get_paygrades(id.paygrade, size, gender)
@@ -754,6 +754,11 @@
 	set name = "View Crew Manifest"
 	set category = "IC"
 
+	var/viewfaction = job?.faction || faction
+	if(viewfaction == FACTION_XENO)
+		var/datum/hive_status/hive = GLOB.hive_datums[get_xeno_hivenumber()]
+		if(istype(hive))
+			viewfaction = hive.allied_factions[1]
 	var/dat = GLOB.datacore.get_manifest(ooc = FALSE, viewfaction = job?.faction)
 
 	var/datum/browser/popup = new(src, "manifest", "<div align='center'>Crew Manifest</div>", 370, 420)

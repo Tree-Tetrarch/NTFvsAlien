@@ -1,7 +1,15 @@
 import { useState } from 'react';
-import { Box, Button, Section, Stack, TextArea } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  Section,
+  Stack,
+  TextArea,
+} from 'tgui-core/components';
 
 import { useBackend } from '../../backend';
+import { SelectFieldPreference, TextFieldPreference } from './FieldPreferences';
 
 export const BackgroundInformation = (props) => {
   const { act, data } = useBackend<BackgroundInformationData>();
@@ -27,6 +35,21 @@ export const BackgroundInformation = (props) => {
   const [xenoprofilePic, setXenoProfilePic] = useState(xenoprofile_pic);
   return (
     <Section title="Background information">
+      <Section title="Identity">
+        <LabeledList>
+          <TextFieldPreference label={'Age'} value={'age'} />
+          <SelectFieldPreference
+            label={'Citizenship'}
+            value={'citizenship'}
+            action={'citizenship'}
+          />
+          <SelectFieldPreference
+            label={'Religion'}
+            value={'religion'}
+            action={'religion'}
+          />
+        </LabeledList>
+      </Section>
       <Section
         title="Character Description"
         buttons={
@@ -236,7 +259,7 @@ export const BackgroundInformation = (props) => {
               onChange={(value) => setProfilePic(value)}
             />
             {profile_pic ? (
-              <img src={profile_pic} width={350} height={400} />
+              <img src={profile_pic} width={300} height={350} />
             ) : (
               ''
             )}
@@ -272,7 +295,7 @@ export const BackgroundInformation = (props) => {
               onChange={(value) => setNSFWProfilePic(value)}
             />
             {nsfwprofile_pic ? (
-              <img src={nsfwprofile_pic} width={350} height={400} />
+              <img src={nsfwprofile_pic} width={300} height={350} />
             ) : (
               ''
             )}
@@ -308,7 +331,7 @@ export const BackgroundInformation = (props) => {
               onChange={(value) => setXenoProfilePic(value)}
             />
             {xenoprofile_pic ? (
-              <img src={xenoprofile_pic} width={350} height={400} />
+              <img src={xenoprofile_pic} width={300} height={350} />
             ) : (
               ''
             )}

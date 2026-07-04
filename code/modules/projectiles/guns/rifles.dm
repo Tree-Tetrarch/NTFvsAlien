@@ -374,7 +374,7 @@
 	unload_sound = 'sound/weapons/guns/interact/m41a_unload.ogg'
 	reload_sound = 'sound/weapons/guns/interact/m41a_reload.ogg'
 	caliber = CALIBER_10X24_CASELESS //codex
-	max_shells = 40 //codex
+	max_shells = 50 //codex
 	default_ammo_type = /obj/item/ammo_magazine/rifle
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/rifle,
@@ -426,6 +426,7 @@
 	burst_amount = 3
 	aim_slowdown = 0.4
 	damage_mult = 1.05 //Has smaller magazines
+	akimbo_scatter_mod = 12
 
 /obj/item/weapon/gun/rifle/m412/freelancer
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/weapon/gun/grenade_launcher/underslung, /obj/item/attachable/extended_barrel)
@@ -883,11 +884,48 @@
 /obj/item/weapon/gun/rifle/m16/freelancer
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/bayonet/converted, /obj/item/weapon/gun/shotgun/combat/masterkey)
 
+/obj/item/weapon/gun/rifle/m16/cmsl
+	starting_attachment_types = list(/obj/item/attachable/reddot, /obj/item/attachable/compensator, /obj/item/weapon/gun/shotgun/combat/masterkey)
+
 /obj/item/weapon/gun/rifle/m16/ugl
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/bayonet/converted, /obj/item/weapon/gun/grenade_launcher/underslung)
 
 /obj/item/weapon/gun/rifle/m16/spec_op
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/suppressor, /obj/item/weapon/gun/shotgun/combat/masterkey)
+
+/obj/item/weapon/gun/rifle/m16/extinguisher
+	attachable_allowed = list(
+		/obj/item/attachable/suppressor,
+		/obj/item/attachable/bayonet/converted,
+		/obj/item/attachable/bayonet,
+		/obj/item/attachable/bayonet/som,
+		/obj/item/attachable/reddot,
+		/obj/item/attachable/verticalgrip,
+		/obj/item/attachable/angledgrip,
+		/obj/item/attachable/gyro,
+		/obj/item/attachable/flashlight,
+		/obj/item/attachable/flashlight/under,
+		/obj/item/attachable/lasersight,
+		/obj/item/attachable/foldable/bipod,
+		/obj/item/attachable/extended_barrel,
+		/obj/item/attachable/compensator,
+		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/motiondetector,
+		/obj/item/attachable/m16sight,
+		/obj/item/attachable/scope,
+		/obj/item/attachable/scope/mini,
+		/obj/item/weapon/gun/pistol/plasma_pistol,
+		/obj/item/weapon/gun/shotgun/combat/masterkey,
+		/obj/item/weapon/gun/pistol/g22/tranq,
+		/obj/item/weapon/gun/flamer/mini_flamer,
+		/obj/item/weapon/gun/grenade_launcher/underslung,
+		/obj/item/attachable/buildasentry,
+		/obj/item/weapon/gun/rifle/pepperball/pepperball_mini,
+		/obj/item/attachable/shoulder_mount,
+		/obj/item/weapon/gun/flamer/hydro_cannon,
+	)
+	default_ammo_type = /obj/item/ammo_magazine/rifle/m16_quadstack
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/compensator, /obj/item/weapon/gun/flamer/hydro_cannon)
 
 //-------------------------------------------------------
 //FAMAS rifle, based on the F1
@@ -906,13 +944,17 @@
 	reload_sound = 'sound/weapons/guns/interact/m16_reload.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/m16_cocked.ogg'
 	default_ammo_type = /obj/item/ammo_magazine/rifle/famas
-	allowed_ammo_types = list(/obj/item/ammo_magazine/rifle/famas)
-	aim_slowdown = 0.4
+	allowed_ammo_types = list(/obj/item/ammo_magazine/rifle/famas, /obj/item/ammo_magazine/rifle/famasext)
+	aim_slowdown = 0.2
 	attachable_allowed = list(
 		/obj/item/attachable/suppressor,
 		/obj/item/attachable/bayonet/converted,
 		/obj/item/attachable/bayonet,
 		/obj/item/attachable/bayonet/som,
+		/obj/item/attachable/scope,
+		/obj/item/attachable/scope/marine,
+		/obj/item/attachable/scope/mini,
+		/obj/item/attachable/reddot,
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/angledgrip,
 		/obj/item/attachable/gyro,
@@ -923,6 +965,7 @@
 		/obj/item/attachable/compensator,
 		/obj/item/attachable/burstfire_assembly,
 		/obj/item/attachable/magnetic_harness,
+		/obj/item/attachable/motiondetector,
 		/obj/item/weapon/gun/pistol/plasma_pistol,
 		/obj/item/weapon/gun/shotgun/combat/masterkey,
 		/obj/item/weapon/gun/pistol/g22/tranq,
@@ -936,15 +979,22 @@
 	attachable_offset = list("muzzle_x" = 38, "muzzle_y" = 17,"rail_x" = 22, "rail_y" = 24, "under_x" = 28, "under_y" = 12, "stock_x" = 19, "stock_y" = 13)
 
 	fire_delay = 0.15 SECONDS
-	burst_delay = 0.15 SECONDS
+	burst_delay = 0.1 SECONDS
 	accuracy_mult = 1.15
-	wield_delay = 0.7 SECONDS
+	wield_delay = 0.65 SECONDS
 	damage_mult = 1.2
-	scatter = 1
+	scatter = 2
 	movement_acc_penalty_mult = 4
 
 /obj/item/weapon/gun/rifle/famas/freelancermedic
 	starting_attachment_types = list(/obj/item/attachable/lasersight, /obj/item/attachable/magnetic_harness, /obj/item/attachable/bayonet/converted)
+
+/obj/item/weapon/gun/rifle/famas/iccmedic
+	starting_attachment_types = list(/obj/item/attachable/gyro, /obj/item/attachable/magnetic_harness, /obj/item/attachable/compensator)
+
+/obj/item/weapon/gun/rifle/famas/iccsquadlead
+	default_ammo_type = /obj/item/ammo_magazine/rifle/famasext
+	starting_attachment_types = list(/obj/item/attachable/gyro, /obj/item/attachable/motiondetector, /obj/item/attachable/compensator)
 
 //-------------------------------------------------------
 //MG-42 Light Machine Gun
@@ -1350,7 +1400,7 @@
 	starting_attachment_types = list(/obj/item/attachable/stock/tx15, /obj/item/attachable/magnetic_harness, /obj/item/weapon/gun/grenade_launcher/underslung)
 
 /obj/item/weapon/gun/rifle/standard_autoshotgun/standard
-	starting_attachment_types = list(/obj/item/attachable/stock/tx15, /obj/item/attachable/magnetic_harness, /obj/item/attachable/heavy_barrel, /obj/item/weapon/gun/grenade_launcher/underslung)
+	starting_attachment_types = list(/obj/item/attachable/stock/tx15, /obj/item/attachable/magnetic_harness, /obj/item/attachable/bayonet, /obj/item/weapon/gun/grenade_launcher/underslung)
 
 /obj/item/weapon/gun/rifle/standard_autoshotgun/plasma_pistol
 	starting_attachment_types = list(/obj/item/attachable/stock/tx15, /obj/item/attachable/motiondetector, /obj/item/attachable/extended_barrel, /obj/item/weapon/gun/pistol/plasma_pistol)
@@ -1485,6 +1535,7 @@
 	fire_sound =  'sound/weapons/guns/fire/spottingrifle.ogg'
 	caliber = CALIBER_12x7
 	slot = ATTACHMENT_SLOT_UNDER
+	gun_skill_category = SKILL_SMARTGUN
 	max_shells = 5
 	default_ammo_type =/obj/item/ammo_magazine/rifle/standard_spottingrifle
 	allowed_ammo_types = list(
@@ -2702,6 +2753,9 @@
 	scatter = 0
 	movement_acc_penalty_mult = 5
 
+/obj/item/weapon/gun/rifle/icc_sharpshooter/standard
+	starting_attachment_types = list(/obj/item/attachable/stock/icc_sharpshooter, /obj/item/attachable/scope/marine, /obj/item/attachable/angledgrip, /obj/item/attachable/heavy_barrel)
+
 /obj/item/weapon/gun/rifle/icc_sharpshooter/medic
 	starting_attachment_types = list(/obj/item/attachable/stock/icc_sharpshooter, /obj/item/attachable/reddot, /obj/item/attachable/verticalgrip, /obj/item/attachable/heavy_barrel)
 
@@ -2911,7 +2965,7 @@
 	attachable_offset = list("muzzle_x" = 30, "muzzle_y" = 26,"rail_x" = 26, "rail_y" = 24, "under_x" = 40, "under_y" = 16, "stock_x" = 26, "stock_y" = 13)
 	gun_skill_category = SKILL_SHOTGUNS
 
-	fire_delay = 0.9 SECONDS
+	fire_delay = 0.7 SECONDS
 	accuracy_mult = 1.15
 	damage_mult = 0.5
 	aim_slowdown = 0.6
@@ -2933,10 +2987,16 @@
 	icon = 'icons/obj/items/guns/rifles64.dmi'
 	icon_state = "l88"
 	worn_icon_state = "l88"
+	worn_icon_list = list(
+		slot_l_hand_str = 'icons/mob/inhands/guns/rifles_left_1.dmi',
+		slot_r_hand_str = 'icons/mob/inhands/guns/rifles_right_1.dmi',
+		slot_s_store_str = 'ntf_modular/icons/mob/suit_slot.dmi',
+		slot_back_str = 'ntf_modular/icons/mob/clothing/back.dmi',
+	)
 
 	caliber = CALIBER_556X45 //codex
 	max_shells = 30 //codex
-	fire_sound = 'sound/weapons/guns/fire/famas.ogg'
+	fire_sound = 'sound/weapons/guns/fire/aug.ogg'
 	unload_sound = 'sound/weapons/guns/interact/m16_unload.ogg'
 	reload_sound = 'sound/weapons/guns/interact/m16_reload.ogg'
 	cocked_sound = 'sound/weapons/guns/interact/m16_cocked.ogg'
@@ -2944,6 +3004,7 @@
 	allowed_ammo_types = list(
 		/obj/item/ammo_magazine/rifle/icc_assaultcarbine,
 		/obj/item/ammo_magazine/rifle/icc_assaultcarbine/export,
+		/obj/item/ammo_magazine/rifle/icc_assaultcarbinelbar,
 	)
 	attachable_allowed = list(
 		/obj/item/attachable/suppressor,
@@ -2981,7 +3042,7 @@
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC, GUN_FIREMODE_BURSTFIRE, GUN_FIREMODE_AUTOBURST)
 	attachable_offset = list("muzzle_x" = 44, "muzzle_y" = 19,"rail_x" = 8, "rail_y" = 21, "under_x" = 28, "under_y" = 12, "stock_x" = 19, "stock_y" = 13)
 
-	fire_delay = 0.2 SECONDS
+	fire_delay = 0.15 SECONDS
 	burst_delay = 0.1 SECONDS
 	extra_delay = 0.15 SECONDS
 	accuracy_mult = 1.15
@@ -2989,7 +3050,11 @@
 	damage_falloff_mult = 1.5
 	wield_delay = 0.85 SECONDS
 	aim_slowdown = 0.2
-	scatter = 0
+	scatter = 1
+	movement_acc_penalty_mult = 3
+
+/obj/item/weapon/gun/rifle/icc_assaultcarbinecm
+	starting_attachment_types = list(/obj/item/attachable/gyro, /obj/item/attachable/compensator, /obj/item/attachable/magnetic_harness)
 
 /obj/item/weapon/gun/rifle/icc_assaultcarbine/export
 	name = "\improper L&S EM-88 assault carbine"
@@ -3139,7 +3204,7 @@
 
 /obj/item/weapon/gun/rifle/vsd_rifle
 	name = "\improper CC/67 combat rifle"
-	desc = "Crash Core's next-gen combat rifle, chambered in 10x27mm. The KZ SOP manual recommends using the CC/67 at medium range to maximize stopping power and accuracy. The CC/67 has a few caveats for being difficult to handle in close quarters and loses effectiveness at longer distances due to falloff. This Crash Core combat rifle is still hard hitting and suppression worthy, it will pack a kick to anyone standing in front of you."
+	desc = "Crash Core's next-gen combat rifle, chambered in 6.8mm. The KZ SOP manual recommends using the CC/67 at medium range to maximize stopping power and accuracy. The CC/67 has a few caveats for being difficult to handle in close quarters and loses effectiveness at longer distances due to falloff. This Crash Core combat rifle is still hard hitting and suppression worthy, it will pack a kick to anyone standing in front of you."
 	icon = 'icons/obj/items/guns/rifles64.dmi'
 	icon_state = "c550"
 	worn_icon_state = "c550"
@@ -3149,6 +3214,7 @@
 		slot_l_hand_str = 'icons/mob/inhands/guns/rifles_left_1.dmi',
 		slot_r_hand_str = 'icons/mob/inhands/guns/rifles_right_1.dmi',
 	)
+	caliber = CALIBER_68X43 //codex
 	fire_sound = 'sound/weapons/guns/fire/t21.ogg'
 	dry_fire_sound = 'sound/weapons/guns/fire/deagle_empty.ogg'
 	unload_sound = 'sound/weapons/guns/interact/m41a_unload.ogg'
@@ -3183,6 +3249,7 @@
 		/obj/item/weapon/gun/pistol/g22/tranq,
 		/obj/item/weapon/gun/flamer/mini_flamer,
 		/obj/item/weapon/gun/grenade_launcher/underslung,
+		/obj/item/weapon/gun/grenade_launcher/underslung/battle_rifle,
 		/obj/item/attachable/motiondetector,
 		/obj/item/attachable/buildasentry,
 		/obj/item/weapon/gun/rifle/pepperball/pepperball_mini,
@@ -3192,17 +3259,18 @@
 
 	attachable_offset = list("muzzle_x" = 63, "muzzle_y" = 19,"rail_x" = 27, "rail_y" = 23, "under_x" = 40, "under_y" = 15, "stock_x" = 8, "stock_y" = 13)
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC, GUN_FIREMODE_BURSTFIRE, GUN_FIREMODE_AUTOBURST)
+	actions_types = list(/datum/action/item_action/aim_mode)
 	aim_fire_delay = 0.2 SECONDS
 	aim_speed_modifier = 2
 
 	fire_delay = 0.3 SECONDS
-	burst_delay = 0.125 SECONDS
-	extra_delay = 0.225 SECONDS
+	burst_delay = 0.15 SECONDS
+	extra_delay = 0.2 SECONDS
 	accuracy_mult = 1.1
 	scatter = 0
 	burst_amount = 3
 	movement_acc_penalty_mult = 6
-	damage_falloff_mult = 2.5
+	damage_falloff_mult = 2
 
 /obj/item/weapon/gun/rifle/vsd_rifle/standard
 	starting_attachment_types = list(/obj/item/attachable/reddot, /obj/item/attachable/verticalgrip, /obj/item/attachable/extended_barrel)
@@ -3210,15 +3278,44 @@
 /obj/item/weapon/gun/rifle/vsd_rifle/medic
 	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/verticalgrip, /obj/item/attachable/suppressor)
 
-/obj/item/weapon/gun/rifle/vsd_rifle/export
+/obj/item/weapon/gun/rifle/vsd_rifle/export // Slightly better wield delay, better fire delay, faster burst-cycling, better aim slowdown and slightly better movement accuracy stats in exchange for worse falloff, slightly slower bullet velocity, slightly less base accuracy, less damage, and slightly increased scatter and burst scatter
+	name = "\improper CC/67 exported CQB rifle 'MASADA'"
+	desc = "Crash Core's next-gen combat rifle, chambered in 6.5mm but refurbished for close quarters combat. The rifle maintains its accuracy and has better rate of fire despite the slight increase in spread and different caliber. Fortunately it handles better in close quarters environments than its mass-produced counterpart and has improved ergonomics. Engraved into the receiver lists the name 'MASADA' and notes that it's based on an old-world design."
+	icon = 'ntf_modular/icons/obj/items/guns/rifles64.dmi'
 	icon_state = "c550_export"
 	worn_icon_state = "c550_export"
+	caliber = CALIBER_65X39 //codex
+	fire_sound = 'sound/weapons/guns/fire/t22.ogg'
+	attachable_offset = list("muzzle_x" = 52, "muzzle_y" = 19,"rail_x" = 27, "rail_y" = 23, "under_x" = 40, "under_y" = 15, "stock_x" = 8, "stock_y" = 13)
+	aim_fire_delay = 0.1 SECONDS
+	aim_speed_modifier = 2.5
+	aim_slowdown = 0.45
+	scatter_unwielded = 36
+	akimbo_scatter_mod = 26
+	wield_delay =  1 SECONDS
+	default_ammo_type = /obj/item/ammo_magazine/rifle/vsd_sbr
+	allowed_ammo_types = list(/obj/item/ammo_magazine/rifle/vsd_sbr)
 	worn_icon_list = list(
 		slot_s_store_str = 'ntf_modular/icons/mob/suit_slot.dmi',
 		slot_back_str = 'ntf_modular/icons/mob/clothing/back.dmi',
-		slot_l_hand_str = 'icons/mob/inhands/guns/rifles_left_1.dmi',
-		slot_r_hand_str = 'icons/mob/inhands/guns/rifles_right_1.dmi',
+		slot_l_hand_str = 'ntf_modular/icons/mob/inhands/guns/rifles_left_1.dmi',
+		slot_r_hand_str = 'ntf_modular/icons/mob/inhands/guns/rifles_right_1.dmi',
 	)
+
+	fire_delay = 0.25 SECONDS
+	burst_delay = 0.1 SECONDS
+	extra_delay = 0.2 SECONDS
+	accuracy_mult = 1.05
+	scatter = 4
+	burst_amount = 3
+	movement_acc_penalty_mult = 4
+	damage_falloff_mult = 3
+
+/obj/item/weapon/gun/rifle/vsd_rifle/export/operator
+	starting_attachment_types = list(/obj/item/attachable/magnetic_harness, /obj/item/attachable/verticalgrip, /obj/item/attachable/suppressor)
+
+/obj/item/weapon/gun/rifle/vsd_rifle/export/sof
+	starting_attachment_types = list(/obj/item/attachable/reddot, /obj/item/attachable/angledgrip, /obj/item/attachable/compensator)
 
 // CC/74
 
@@ -3465,12 +3562,12 @@
 	gun_skill_category = SKILL_SHOTGUNS
 	fire_delay = 0.6 SECONDS
 	burst_amount = 3
-	burst_scatter_mult = 2
+	burst_scatter_mult = 2.2
 	burst_delay = 0.3 SECONDS
 	extra_delay = 1.3 SECONDS
 	accuracy_mult = 1
-	scatter = 2
-	burst_scatter_mult = 2
+	scatter = 3
+	damage_mult = 0.85
 	damage_falloff_mult = 1
 
 //-------------------------------------------------------

@@ -338,6 +338,7 @@ WEAPONS
 	name = "PB-12 pepperball gun"
 	contains = list(/obj/item/weapon/gun/rifle/pepperball)
 	cost = 100
+	available_against_xeno_only = TRUE
 
 /datum/supply_packs/weapons/pepperball/mag
 	name = "PB-12 pepperball gun magazine (x1)"
@@ -571,6 +572,12 @@ WEAPONS
 	cost = 100
 	available_against_xeno_only = TRUE
 
+/datum/supply_packs/weapons/rpgoneuse/thermobaric
+	name = "RPO-S Disposable Rocket Flamethrower"
+	contains = list(/obj/item/weapon/gun/launcher/rocket/oneuse/thermobaric)
+	cost = 150
+	available_against_xeno_only = TRUE
+
 /datum/supply_packs/weapons/mateba
 	name = "Mateba Autorevolver belt"
 	contains = list(/obj/item/storage/holster/belt/mateba/full)
@@ -640,12 +647,7 @@ WEAPONS
 	contains = list(/obj/item/ammo_magazine/pistol/standard_pistol/smart_pistol)
 	cost = 10
 
-/datum/supply_packs/weapons/laserweapons
-	name = "Standard laser weapon bundle" // Since we can buy an xray laser rifle but not regular ones?
-	contains = list(/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine,
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle,
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper,
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser,
-/obj/item/cell/lasgun/volkite/powerpack/marine,
-/obj/item/cell/lasgun/volkite/powerpack/marine/backpack,)
-	cost = 250
+/datum/supply_packs/weapons/sledgehammer
+	name = "Sledgehammer"
+	contains = list(/obj/item/weapon/twohanded/sledgehammer)
+	cost = 50

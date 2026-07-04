@@ -19,6 +19,7 @@
 	var/g_hair = 0
 	var/b_hair = 0
 	var/h_style = "Crewcut"
+	var/hair_emissive = FALSE
 
 	// Gradient color and style
 	var/r_grad = 0
@@ -36,9 +37,12 @@
 	var/r_eyes = 0
 	var/g_eyes = 0
 	var/b_eyes = 0
+	var/eye_emissive = FALSE
 
 	///The character's ethnicity
 	var/ethnicity = "Western"
+	///Human-family body sprite style.
+	var/human_body_style = HUMAN_BODY_STYLE_TGMC
 
 	//Skin colour
 	var/r_skin = 0
@@ -47,6 +51,14 @@
 
 	//Species specific
 	var/moth_wings = "Plain"
+	var/allow_emissives = FALSE
+	var/synthetic_appearance_species = "Human"
+	var/synthetic_body_base = "Human"
+	var/robot_body_base = "Combat Robot"
+	var/robot_head_base = "Combat Robot"
+	var/custom_supersoldier_parts = FALSE
+	var/supersoldier_body_base = "Human"
+	var/supersoldier_head_base = "Human"
 
 	///The style of the makeup the mob currently has applied. Used to determine the right icon state for on the mob.
 	var/makeup_style = ""
@@ -95,6 +107,60 @@
 	var/obj/item/r_store
 	///The item currently in the left pocket
 	var/obj/item/l_store
+
+	///Tail variables
+	var/tail = "None"
+	var/tail_color = "#FFFFFF"
+	var/tail_color_secondary = "#FFFFFF"
+	var/tail_color_tertiary = "#FFFFFF"
+	var/list/tail_emissive = list(FALSE, FALSE, FALSE)
+	var/snout = "None"
+	var/snout_color = "#FFFFFF"
+	var/snout_color_secondary = "#FFFFFF"
+	var/snout_color_tertiary = "#FFFFFF"
+	var/list/snout_emissive = list(FALSE, FALSE, FALSE)
+	var/ears = "None"
+	var/ears_color = "#FFFFFF"
+	var/ears_color_secondary = "#FFFFFF"
+	var/ears_color_tertiary = "#FFFFFF"
+	var/list/ears_emissive = list(FALSE, FALSE, FALSE)
+	var/horns = "None"
+	var/horns_color = "#FFFFFF"
+	var/horns_color_secondary = "#FFFFFF"
+	var/horns_color_tertiary = "#FFFFFF"
+	var/list/horns_emissive = list(FALSE, FALSE, FALSE)
+	var/wings = "None"
+	var/wings_color = "#FFFFFF"
+	var/wings_color_secondary = "#FFFFFF"
+	var/wings_color_tertiary = "#FFFFFF"
+	var/list/wings_emissive = list(FALSE, FALSE, FALSE)
+	var/synth_antenna = "None"
+	var/synth_antenna_color = "#FFFFFF"
+	var/synth_antenna_color_secondary = "#FFFFFF"
+	var/synth_antenna_color_tertiary = "#FFFFFF"
+	var/list/synth_antenna_emissive = list(FALSE, FALSE, FALSE)
+	var/fluff = "None"
+	var/fluff_color = "#FFFFFF"
+	var/fluff_color_secondary = "#FFFFFF"
+	var/fluff_color_tertiary = "#FFFFFF"
+	var/list/fluff_emissive = list(FALSE, FALSE, FALSE)
+	var/taur_body = "None"
+	var/taur_body_color = "#FFFFFF"
+	var/taur_body_color_secondary = "#FFFFFF"
+	var/taur_body_color_tertiary = "#FFFFFF"
+	var/list/taur_body_emissive = list(FALSE, FALSE, FALSE)
+	var/xenodorsal = "None"
+	var/xenodorsal_color = "#FFFFFF"
+	var/list/xenodorsal_emissive = list(FALSE, FALSE, FALSE)
+	var/xenohead = "None"
+	var/xenohead_color = "#FFFFFF"
+	var/xenohead_color_secondary = "#FFFFFF"
+	var/xenohead_color_tertiary = "#FFFFFF"
+	var/list/xenohead_emissive = list(FALSE, FALSE, FALSE)
+	var/digitigrade_legs = "Normal"
+	var/body_color = "#FFFFFF"
+	var/spines = "None"
+	var/list/body_markings = list()
 
 	///The current standing icon
 	var/icon/stand_icon

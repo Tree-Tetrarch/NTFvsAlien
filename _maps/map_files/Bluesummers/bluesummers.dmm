@@ -1956,6 +1956,10 @@
 /obj/item/frame/table/mainship,
 /turf/open/floor/tile/dark/brown2/corner,
 /area/bluesummers/inside/industrial)
+"bGV" = (
+/obj/docking_port/stationary/supplycolony,
+/turf/open/floor/mainship/empty,
+/area/bluesummers/inside/industrial)
 "bHe" = (
 /obj/structure/table/mainship,
 /obj/item/tank/emergency_oxygen/engi,
@@ -12253,6 +12257,7 @@
 /area/bluesummers/caves/mining)
 "koA" = (
 /obj/effect/landmark/start/job/xenomorph,
+/obj/effect/landmark/patrol_point/xeno/xeno_11,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/north)
 "koC" = (
@@ -20239,6 +20244,9 @@
 /obj/structure/cable,
 /turf/open/floor/plating/ground/drought,
 /area/bluesummers/inside/eva)
+"qxP" = (
+/turf/open/floor/mainship/empty,
+/area/bluesummers/inside/industrial)
 "qxT" = (
 /obj/structure/table/mainship,
 /obj/item/paper_map,
@@ -21770,6 +21778,16 @@
 /obj/structure/cable,
 /turf/open/floor/plating/ground/drought/cave,
 /area/bluesummers/caves/cryostorage/south)
+"rJB" = (
+/obj/structure/prop/mainship/railing{
+	dir = 4
+	},
+/obj/machinery/computer/supplycomp/colony,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/plating,
+/area/bluesummers/inside/industrial)
 "rJK" = (
 /obj/structure/flora/drought/barrel_cactus,
 /obj/structure/cable,
@@ -22687,6 +22705,10 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plating/plating_catwalk,
 /area/bluesummers/caves/cryostorage/south)
+"sxo" = (
+/obj/effect/landmark/patrol_point/xeno/xeno_21,
+/turf/open/floor/plating/ground/drought,
+/area/bluesummers/inside/space_port)
 "sxq" = (
 /obj/structure/largecrate/random/mini{
 	pixel_y = 8;
@@ -28084,6 +28106,13 @@
 	},
 /turf/open/floor/mainship,
 /area/bluesummers/inside/data_processing)
+"xeq" = (
+/obj/structure/prop/mainship/railing{
+	dir = 8
+	},
+/obj/effect/urban/decal/dirt,
+/turf/open/floor/plating,
+/area/bluesummers/inside/industrial)
 "xeP" = (
 /obj/item/clothing/head/hardhat,
 /obj/item/clothing/head/hardhat{
@@ -39246,7 +39275,7 @@ lSo
 rOc
 rOc
 iRY
-blR
+rJB
 tkO
 tkO
 tkO
@@ -39428,7 +39457,7 @@ iwj
 lSo
 lSo
 iRY
-aQZ
+qxP
 tkO
 cEc
 rkS
@@ -39610,8 +39639,8 @@ lSo
 wUz
 cdT
 qtW
-aox
-tkO
+bGV
+lJS
 rkS
 aHy
 tkO
@@ -39792,7 +39821,7 @@ cdT
 lSo
 lSo
 mdo
-fQB
+qxP
 uOb
 tkO
 tkO
@@ -39974,7 +40003,7 @@ agn
 cdT
 lSo
 iRY
-iiT
+xeq
 uOb
 pJw
 viR
@@ -47500,7 +47529,7 @@ bMd
 byr
 mBd
 ohZ
-ohZ
+sxo
 fUE
 ohZ
 ohZ

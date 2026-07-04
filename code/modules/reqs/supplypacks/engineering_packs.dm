@@ -51,6 +51,11 @@ ENGINEERING
 	contains = list(/obj/item/tool/pickaxe/plasmacutter/)
 	cost = 300
 
+/datum/supply_packs/engineering/handcrank
+	name = "Hand held charger"
+	contains = list(/obj/item/tool/handheld_charger)
+	cost = 500
+
 /datum/supply_packs/engineering/quikdeploycade
 	name = "Quikdeploy barricade"
 	contains = list(/obj/item/quikdeploy/cade)
@@ -59,7 +64,7 @@ ENGINEERING
 /datum/supply_packs/engineering/pacman
 	name = "P.A.C.M.A.N. Portable Generator"
 	notes = "Uses phoron sheets as fuel to produce power. Fuel not included, buy it separately."
-	contains = list(/obj/machinery/power/port_gen/pacman)
+	contains = list(/obj/machinery/power/port_gen/pacman/empty)
 	cost = 150
 	containertype = null
 
@@ -72,7 +77,7 @@ ENGINEERING
 /datum/supply_packs/engineering/pacman_super
 	name = "S.U.P.E.R.P.A.C.M.A.N. Portable Generator"
 	notes = "Uses uranium sheets as fuel to produce power. Fuel not included, buy it separately."
-	contains = list(/obj/machinery/power/port_gen/pacman/super)
+	contains = list(/obj/machinery/power/port_gen/pacman/super/empty)
 	cost = 750
 	containertype = null
 
@@ -134,7 +139,7 @@ ENGINEERING
 /datum/supply_packs/engineering/foam_grenade
 	name = "Foam Grenade"
 	contains = list(/obj/item/explosive/grenade/chem_grenade/metalfoam)
-	cost = 30
+	cost = 20
 
 /datum/supply_packs/engineering/floodlight
 	name = "Deployable Floodlight"

@@ -33,7 +33,7 @@
 	. = ..()
 	for(var/obj/structure/table/evil_table in loc)
 		if(evil_table != src)
-			stack_trace("Duplicate table found in ([x], [y], [z])")
+			log_mapping("Duplicate table found in ([x], [y], [z]); deleting duplicate [evil_table.type].")
 			qdel(evil_table)
 	if(!flipped)
 		update_icon()
@@ -343,7 +343,7 @@
 	AddElement(/datum/element/debris, DEBRIS_WOOD, -40, 5)
 
 /obj/structure/table/wood/footstep_override(atom/movable/source, list/footstep_overrides)
-	footstep_overrides[FOOTSTEP_WOOD] = layer
+	footstep_overrides[FOOTSTEP_WOOD] = get_footstep_layer(layer, plane)
 
 /obj/structure/table/wood/fancy
 	name = "fancy wooden table"

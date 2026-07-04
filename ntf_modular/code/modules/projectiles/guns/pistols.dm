@@ -4,6 +4,10 @@
 	icon = 'ntf_modular/icons/obj/items/guns/pistols.dmi'
 	icon_state = "nt105"
 	worn_icon_state = "nt105"
+	worn_icon_list = list(
+		slot_l_hand_str = 'ntf_modular/icons/mob/inhands/guns/pistols_left_1.dmi',
+		slot_r_hand_str = 'ntf_modular/icons/mob/inhands/guns/pistols_right_1.dmi',
+	)
 	caliber = CALIBER_357 //codex
 	max_shells = 6
 	default_ammo_type = /obj/item/ammo_magazine/pistol/ntunity
@@ -58,7 +62,7 @@
 //mom i want a mateba, we got a mateba at home, mateba at home:
 /datum/ammo/bullet/revolver/heavy/foxfire/on_hit_mob(mob/target_mob, atom/movable/projectile/proj)
     if(ishuman(target_mob))
-        staggerstun(target_mob, proj, paralyze = 0, stun = 1 SECONDS, stagger = 1 SECONDS, slowdown = 1, knockback = 1)
+        staggerstun(target_mob, proj, paralyze = 0, stun = 0, stagger = 1 SECONDS, slowdown = 1, knockback = 1)
     else
         staggerstun(target_mob, proj, paralyze = 1 SECONDS, stagger = 1 SECONDS, slowdown = 1, knockback = 1)
 

@@ -33,6 +33,13 @@
 	burn_heal = 1.2
 	blood_gain = 0.4
 
+/datum/reagent/consumable/milk/human
+	name = "Human Milk"
+	description = "An opaque white liquid from the mammary glands of a human being."
+	color = "#ebebeb"
+	taste_description = "warm milk"
+	reagent_ui_priority =  REAGENT_UI_MUNDANE
+
 /datum/reagent/consumable/nutriment/cum/xeno/resin
 	name = "Xenomorphic Resin"
 	description = "Strange xenomorph ejaculate thet numbs the victim, slowing them and also it's extremely hard to clean from orifices due how sticky it is."
@@ -65,6 +72,55 @@
 	blood_gain = 0.7
 	color = "#dadada63"
 
+// Start of various cum research options, for squad sluts, or for med researchers
+
+/datum/chemical_reaction/milkresearch
+	results = null
+	required_reagents = list(/datum/reagent/consumable/milk/human = 10)
+	required_catalysts = list(/datum/reagent/medicine/lemoline = 5)
+
+/datum/chemical_reaction/milkresearch/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.get_holder())
+	new /obj/item/research_resource/humancum(location)
+
+/datum/chemical_reaction/girlresearch
+	results = null
+	required_reagents = list(/datum/reagent/consumable/nutriment/cum/girl = 10)
+	required_catalysts = list(/datum/reagent/medicine/lemoline = 5)
+
+/datum/chemical_reaction/girlresearch/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.get_holder())
+	new /obj/item/research_resource/humancum(location)
+
+/datum/chemical_reaction/boyresearch
+	results = null
+	required_reagents = list(/datum/reagent/consumable/nutriment/cum = 10)
+	required_catalysts = list(/datum/reagent/medicine/lemoline = 5)
+
+/datum/chemical_reaction/boyresearch/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.get_holder())
+	new /obj/item/research_resource/humancum(location)
+
+/datum/chemical_reaction/xoyresearch
+	results = null
+	required_reagents = list(/datum/reagent/consumable/nutriment/cum/xeno = 30)
+	required_catalysts = list(/datum/reagent/medicine/lemoline = 5)
+
+/datum/chemical_reaction/xoyresearch/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.get_holder())
+	new /obj/item/research_resource/xenocum(location)
+
+/datum/chemical_reaction/xirlresearch
+	results = null
+	required_reagents = list(/datum/reagent/consumable/milk/xeno = 30)
+	required_catalysts = list(/datum/reagent/medicine/lemoline = 5)
+
+/datum/chemical_reaction/xirlresearch/on_reaction(datum/reagents/holder, created_volume)
+	var/location = get_turf(holder.get_holder())
+	new /obj/item/research_resource/xenocum(location)
+
+// End of various cum based researches
+
 ///ADRENALINE, basically old synaptizine with buffs?
 /datum/reagent/medicine/adrenaline
 	name = "Adrenaline"
@@ -80,10 +136,10 @@
 	if(TIMER_COOLDOWN_RUNNING(L, name))
 		return
 	L.adjustStaminaLoss(-30 * effect_str)
-	to_chat(L, span_userdanger("You feel a burst of energy as the adrenaline courses through you! Time to go fast!"))
+	to_chat(L, span_userdanger("You feel a burst of energy as the adrenaline courses through you!!"))
 
 	if(L.health < L.health_threshold_crit && volume >= 3)
-		to_chat(L, span_userdanger("Heart explosion! Power flows through your veins!"))
+		to_chat(L, span_userdanger("Power flows through your veins!"))
 		L.adjustBruteLoss(-L.getBruteLoss(TRUE) * 0.40)
 		L.jitter(5)
 

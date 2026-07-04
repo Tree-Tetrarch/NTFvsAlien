@@ -263,7 +263,7 @@
 		log_combat(user, blame_mob, "was milked into a container ([logdetails(C)]) by")
 	user.visible_message(span_lovebold("[user] lactates into [C]!"))
 	if(ishuman(user))
-		C.reagents.add_reagent(/datum/reagent/consumable/milk, reagent_amount(blame_mob))
+		C.reagents.add_reagent(/datum/reagent/consumable/milk/human, reagent_amount(blame_mob))
 	else if(isxeno(user))
 		C.reagents.add_reagent(/datum/reagent/consumable/milk/xeno, reagent_amount(blame_mob))
 	handle_ejaculation_drain(blame_mob)
@@ -296,7 +296,10 @@
 	if(isxeno(user))
 		GLOB.round_statistics.xeno_orgasms++
 	if(ishuman(user))
-		GLOB.round_statistics.human_orgasms++
+		if(ismonkey(user))
+			GLOB.round_statistics.monkey_orgasms++
+		else
+			GLOB.round_statistics.human_orgasms++
 
 /datum/sex_controller/proc/after_intimate_climax()
 	if(user == target)

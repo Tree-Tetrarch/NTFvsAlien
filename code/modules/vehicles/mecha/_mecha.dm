@@ -242,6 +242,8 @@
 	var/dash_cooldown = 10 SECONDS
 	///determines if the mech does the footstep particles
 	var/no_footstep_particle = FALSE
+	///can the mech be dragged in maintenance mode?
+	var/can_be_moved_in_maints = FALSE // NTF EDIT
 
 /obj/item/radio/mech //this has to go somewhere
 	subspace_transmission = TRUE
@@ -333,6 +335,7 @@
 			personal_statistics.mission_mechs_destroyed ++
 
 	spark_system?.start()
+	playsound(loc, 'sound/effects/metal_crash.ogg', 75)
 
 	var/mob/living/silicon/ai/unlucky_ais
 	for(var/mob/living/occupant AS in occupants)
@@ -347,9 +350,9 @@
 	if(wreckage)
 		var/obj/structure/mecha_wreckage/WR = new wreckage(loc, unlucky_ais)
 		for(var/obj/item/mecha_parts/mecha_equipment/E in flat_equipment)
-			if(E.detachable && prob(30))
+			if(E.detachable)
 				WR.crowbar_salvage += E
-				E.detach(WR) //detaches from src into WR
+				E.detach(WR)  // NTF EDIT, forces equipment into wrecks
 				E.activated = TRUE
 			else
 				E.detach(loc)
@@ -386,6 +389,16 @@
 	add_mob_blood(crushed)
 	var/turf/below_us = get_turf(src)
 	below_us.add_mob_blood(crushed)
+
+	if(iszombie(crushed))
+		var/mob/living/carbon/human/H = crushed
+		var/datum/limb/limb = pick(H.limbs)
+		if(limb.body_part == CHEST || limb.body_part == GROIN)
+			limb = H.get_limb(BODY_ZONE_HEAD)//Total chance 3/11 = 27%
+
+		if(!(limb.limb_status & LIMB_DESTROYED))
+			H.visible_message(span_danger("[H]'s [parse_zone(limb.name)] is pulped by [src]!"))
+			limb.droplimb(FALSE, TRUE, FALSE, TRUE)
 
 	if(crushed.stat == DEAD)
 		return
@@ -426,6 +439,9 @@
 			mouse_pointer = 'icons/mecha/mecha_mouse.dmi'
 
 	for(var/mob/mob_occupant AS in occupants)
+		var/client = mob_occupant.client
+		if(!client)
+			return
 		mob_occupant.client.mouse_pointer_icon = mouse_pointer // note this is update_mouse_pointer() on tg
 
 //override this proc if you need to split up mecha control between multiple people (see savannah_ivanov.dm)
@@ -498,6 +514,8 @@
 		for(var/obj/item/mecha_parts/mecha_equipment/ME AS in flat_equipment)
 			. += "[icon2html(ME, user)] \A [ME]."
 	if(enclosed)
+		if(length(occupants))
+			.+="It appears to be occupied. In the event of an emergency, the cockpit's release lever can be pried open."
 		return
 	if(mecha_flags & SILICON_PILOT)
 		. += "[src] appears to be piloting itself..."

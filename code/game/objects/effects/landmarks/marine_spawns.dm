@@ -287,6 +287,14 @@
 	icon_state = "MP"
 	job = /datum/job/vsd_squad/spec
 
+/obj/effect/landmark/start/job/vsd_escort
+	icon_state = "MP"
+	job = /datum/job/vsd_squad/escort
+
+/obj/effect/landmark/start/job/vsd_synthetic
+	icon_state = "Synth"
+	job = /datum/job/vsd_squad/silicon/synthetic
+
 /obj/effect/landmark/start/job/vsd_leader
 	icon_state = "MP"
 	job = /datum/job/vsd_squad/leader
@@ -302,3 +310,15 @@
 /obj/effect/landmark/start/job/usl_leader
 	icon_state = "MP"
 	job = /datum/job/usl_squad/leader
+
+/obj/effect/landmark/start/job/som/icc_commander
+	icon_state = "som_staff_officer"
+	job = /datum/job/icc/commander
+
+/obj/effect/landmark/start/job/som/icc_fieldcommander
+	icon_state = "som_staff_officer"
+	job = /datum/job/icc/fieldcommander
+
+/obj/effect/landmark/start/job/som/icc_admin
+	icon_state = "som_staff_officer"
+	job = /datum/job/icc/administrator

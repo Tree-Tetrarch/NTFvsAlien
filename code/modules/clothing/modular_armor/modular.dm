@@ -253,7 +253,7 @@
 	icon_state = "rownin_skeleton"
 	worn_icon_state = "rownin_skeleton"
 	allowed_uniform_type = /obj/item/clothing/under
-	slowdown = -0.5
+	slowdown = -0.3
 	attachments_allowed = list(
 		/obj/item/armor_module/module/better_shoulder_lamp,
 		/obj/item/armor_module/module/valkyrie_autodoc,
@@ -303,7 +303,7 @@
 
 /obj/item/clothing/suit/modular/rownin/emp_act(severity)
 	. = ..()
-	wearer.add_movespeed_modifier("rownin_emp", 10, override = TRUE, multiplicative_slowdown = slowdown * -1, conflict = TRUE)
+	wearer.add_movespeed_modifier("rownin_emp", TRUE, 10, override = TRUE, multiplicative_slowdown = slowdown * -1, conflict = TRUE)
 	addtimer(CALLBACK(src, PROC_REF(rownin_emp_end), wearer), severity * 2 SECONDS)
 
 /obj/item/clothing/suit/modular/rownin/proc/rownin_emp_end(mob/living/carbon/human/wearussy)
@@ -353,6 +353,14 @@
 		/obj/item/armor_module/storage/ammo_mag,
 	)
 	slowdown = -0.3
+
+/obj/item/clothing/suit/modular/rownin/vsdelite/escort
+	name = "\improper KZ Rownin Skeleton"
+	starting_attachments = list(
+		/obj/item/armor_module/module/eshield/vsd/overclocked,
+		/obj/item/armor_module/module/valkyrie_autodoc_beta,
+		/obj/item/armor_module/storage/general,
+	)
 
 /obj/item/clothing/suit/modular/rownin/vsdelitealt
 	name = "\improper Rownin Skeleton"

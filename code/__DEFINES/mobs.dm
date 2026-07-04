@@ -5,8 +5,36 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 ///Comment out if you don't want VOX to be enabled and have players download the voice sounds.
 #define AI_VOX
 
+#define COCK_STORAGE_SHEATH "sheath"
+#define COCK_STORAGE_SLIT "slit"
+#define COCK_STATE_STORED "stored"
+#define COCK_STATE_FLACCID "flaccid"
+#define COCK_STATE_PARTIAL "partial"
+#define COCK_STATE_ERECT "erect"
+
+#define TAUR_CLOTHING_SNAKE "snake"
+#define TAUR_CLOTHING_PAW "paw"
+#define TAUR_CLOTHING_HOOF "hoof"
+#define TAUR_CLOTHING_BIG "big"
+
+#define HUMAN_BODY_STYLE_SPLURT "SPLURT"
+#define HUMAN_BODY_STYLE_TGMC "TGMC"
+
 // Overlay Indexes
-#define GENITAL_LAYER 33 //totally nothing bad is going to happen.
+#define ACCESSORY_XENOHEAD_LAYER 46
+#define ACCESSORY_XENODORSAL_LAYER 45
+#define ACCESSORY_TAUR_LAYER 44
+#define HAIR_EMISSIVE_LAYER 43
+#define EYE_EMISSIVE_LAYER 42
+#define BODY_MARKINGS_EMISSIVE_LAYER 41
+#define ACCESSORY_FLUFF_LAYER 40
+#define ACCESSORY_ANTENNA_LAYER 39
+#define ACCESSORY_HORNS_LAYER 38
+#define ACCESSORY_WINGS_LAYER 37
+#define ACCESSORY_EARS_LAYER 36
+#define SNOUT_LAYER 35
+#define GENITAL_LAYER 34 //totally nothing bad is going to happen.
+#define LIZARD_TAIL_LAYER 33
 #define BODYPARTS_LAYER 32
 #define WOUND_LAYER 31
 #define MOTH_WINGS_LAYER 30
@@ -40,11 +68,25 @@ GLOBAL_VAR_INIT(max_larva_count_per_mob, 3) //Added for adminbus reasons
 #define FIRE_LAYER 2 //If you're on fire
 #define LASER_LAYER 1 //For sniper targeting laser
 
-#define TOTAL_LAYERS 33
+#define TOTAL_LAYERS 46
 
+#define TOTAL_UNDERLAYS 6
 #define MOTH_WINGS_BEHIND_LAYER 1
 
-#define TOTAL_UNDERLAYS 1
+#define LIZARD_TAIL_BEHIND_LAYER 2
+#define ACCESSORY_EARS_BEHIND_LAYER 3
+#define ACCESSORY_WINGS_BEHIND_LAYER 4
+#define ACCESSORY_TAUR_BEHIND_LAYER 5
+#define ACCESSORY_XENODORSAL_BEHIND_LAYER 6
+
+// SPLURT-style visual bodypart render layer names. These are text keys used in
+// sprite icon states, then mapped to TGMC draw layers by visual_overlay_draw_layer().
+#define BODY_OVERLAY_LAYER_BEHIND "BEHIND"
+#define BODY_OVERLAY_LAYER_ADJ "ADJ"
+#define BODY_OVERLAY_LAYER_FRONT "FRONT"
+#define BODY_OVERLAY_LAYER_FRONT_UNDER "FRONT_UNDER"
+#define BODY_OVERLAY_LAYER_FRONT_OVER "FRONT_OVER"
+#define BODY_OVERLAY_LAYER_FRONT_OVER_HAIR "FRONT_OVER_HAIR"
 
 //Mob movement define
 
@@ -569,6 +611,8 @@ GLOBAL_LIST_INIT(layers_to_offset, list(
 
 #define HIVE_CAN_HIJACK (1<<0)
 #define HIVE_CAN_COLLAPSE_FROM_SILO (1<<1)
+///All xenos in the hive can build, allows non building castes to not block building
+#define HIVE_ALL_CAN_BUILD (1<<1)
 
 #define XENO_PULL_CHARGE_TIME 2 SECONDS
 #define XENO_SLOWDOWN_REGEN 0.4

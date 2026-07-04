@@ -16,6 +16,7 @@
 	melee_damage = 25
 	melee_ap = 10
 	attack_delay = 7
+	exosuit_slash_damage_multiplier = 1.5
 
 	// *** Speed *** //
 	speed = -1.3
@@ -26,7 +27,7 @@
 	plasma_gain = 30
 
 	// *** Health *** //
-	max_health = 360
+	max_health = 375
 
 	// *** Evolution *** //
 	evolution_threshold = 225
