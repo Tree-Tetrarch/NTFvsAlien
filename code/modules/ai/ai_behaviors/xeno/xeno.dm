@@ -54,7 +54,7 @@
 /datum/ai_behavior/xeno/state_process(next_target)
 	if(current_action != MOVING_TO_NODE && current_action != FOLLOWING_PATH)
 		return
-	if(can_heal && mob_parent.health <= minimum_health * 2 * mob_parent.maxHealth)
+	if(can_heal && mob_parent.health < min(minimum_health * 2 * mob_parent.maxHealth, mob_parent.maxHealth))
 		try_to_heal() //If we have some damage, look for some healing
 		return
 
