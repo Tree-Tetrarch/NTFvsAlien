@@ -15,6 +15,12 @@
 	xeno_owner.toggle_resting()
 	return succeed_activate()
 
+/datum/action/ability/xeno_action/xeno_resting/ai_should_start_consider()
+	return FALSE
+
+/datum/action/ability/xeno_action/xeno_resting/ai_should_use(target)
+	return FALSE
+
 // ***************************************
 // *********** Drone-y abilities
 // ***************************************

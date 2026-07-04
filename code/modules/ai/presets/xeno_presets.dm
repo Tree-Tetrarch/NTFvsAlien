@@ -136,7 +136,38 @@
 
 /mob/living/carbon/xenomorph/carrier/ai
 
-/mob/living/carbon/xenomorph/carrier/ai/Initialize(mapload, _hivenumber)
+/datum/ai_behavior/xeno/ranged/carrier
+	minimum_health = 0.5
+
+/mob/living/carbon/xenomorph/carrier/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
 	hivenumber = _hivenumber || hivenumber
 	. = ..()
-	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/ranged)
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno/ranged/carrier)
+
+/mob/living/carbon/xenomorph/king/ai
+
+/mob/living/carbon/xenomorph/king/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+
+/mob/living/carbon/xenomorph/king/conqueror/ai
+
+/mob/living/carbon/xenomorph/king/conqueror/ai/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+
+/mob/living/carbon/xenomorph/shrike/ai
+
+/mob/living/carbon/xenomorph/shrike/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)
+
+/mob/living/carbon/xenomorph/dragon/ai
+
+/mob/living/carbon/xenomorph/dragon/Initialize(mapload, do_not_set_as_ruler, _hivenumber)
+	hivenumber = _hivenumber || hivenumber
+	. = ..()
+	AddComponent(/datum/component/ai_controller, /datum/ai_behavior/xeno)

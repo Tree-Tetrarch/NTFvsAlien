@@ -34,17 +34,21 @@
 			//xeno_action/activable is activated with a different proc for keybinded actions, so we gotta use the correct proc
 			if(istype(action, /datum/action/ability/activable))
 				var/datum/action/ability/activable/xeno_action = action
-				xeno_action.use_ability(combat_target)
+				if(xeno_action.can_use_ability(combat_target, TRUE, ABILITY_IGNORE_SELECTED_ABILITY))
+					xeno_action.use_ability(combat_target)
 			else
-				action.action_activate()
+				if(action.can_use_action(TRUE, ABILITY_IGNORE_SELECTED_ABILITY, FALSE))
+					action.action_activate()
 			continue
 		if(action.ai_should_use(atom_to_walk_to))
 			//xeno_action/activable is activated with a different proc for keybinded actions, so we gotta use the correct proc
 			if(istype(action, /datum/action/ability/activable))
 				var/datum/action/ability/activable/xeno_action = action
-				xeno_action.use_ability(atom_to_walk_to)
+				if(xeno_action.can_use_ability(atom_to_walk_to, TRUE, ABILITY_IGNORE_SELECTED_ABILITY))
+					xeno_action.use_ability(atom_to_walk_to)
 			else
-				action.action_activate()
+				if(action.can_use_action(TRUE, ABILITY_IGNORE_SELECTED_ABILITY, FALSE))
+					action.action_activate()
 	return ..()
 
 /datum/ai_behavior/xeno/state_process(next_target)

@@ -168,6 +168,7 @@ GLOBAL_LIST_INIT(ai_hugger_selection, list(
 			xeno_owner.selected_hugger_type = pickweight(GLOB.ai_hugger_selection)
 			held = new xeno_owner.selected_hugger_type(get_turf(xeno_owner), xeno_owner.hivenumber, xeno_owner)
 			xeno_owner.huggers--
+			xeno_owner.put_in_hands(held)
 	if(!ishuman(target))
 		return FALSE
 	if(!istype(held, /obj/item/clothing/mask/facehugger))

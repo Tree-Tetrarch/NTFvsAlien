@@ -118,3 +118,33 @@
 	spawnamount = 4
 	spawndelay = 10 SECONDS
 	maxamount = 10
+
+/obj/effect/ai_node/spawner/xeno/king
+	spawntypes = list(/mob/living/carbon/xenomorph/king/ai)
+	spawnamount = 4
+	spawndelay = 10 SECONDS
+	maxamount = 10
+
+/obj/effect/ai_node/spawner/xeno/king/conqueror
+	spawntypes = list(/mob/living/carbon/xenomorph/king/conqueror/ai)
+	spawnamount = 4
+	spawndelay = 10 SECONDS
+	maxamount = 10
+
+/obj/effect/ai_node/spawner/xeno/shrike
+	spawntypes = list(/mob/living/carbon/xenomorph/shrike/ai)
+	spawnamount = 4
+	spawndelay = 10 SECONDS
+	maxamount = 10
+
+/obj/effect/ai_node/spawner/dragon
+	spawntypes = list(/mob/living/carbon/xenomorph/dragon/ai)
+	spawnamount = 4
+	spawndelay = 10 SECONDS
+	maxamount = 10
+
+/obj/effect/ai_node/spawner/tierfours
+	spawntypes = list(/mob/living/carbon/xenomorph/queen/ai,/mob/living/carbon/xenomorph/king/ai,/mob/living/carbon/xenomorph/king/conqueror/ai,/mob/living/carbon/xenomorph/shrike/ai,/mob/living/carbon/xenomorph/dragon/ai)
+	spawnamount = 4
+	spawndelay = 10 SECONDS
+	maxamount = 10
