@@ -3515,6 +3515,7 @@
 /obj/machinery/door/airlock/mainship/security{
 	name = "\improper Corpsec Office"
 	},
+/obj/structure/cable,
 /turf/open/floor/mainship/mono,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "cRd" = (
@@ -3810,7 +3811,6 @@
 /obj/machinery/door/airlock/mainship/security{
 	name = "\improper Corpsec Office"
 	},
-/obj/structure/cable,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
 	},
@@ -8333,6 +8333,7 @@
 "gSE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment,
+/obj/structure/cable,
 /turf/open/floor/plating/plating_catwalk,
 /area/mainship/groundhq/ntf/shipboard/brig)
 "gTy" = (
