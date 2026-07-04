@@ -3383,7 +3383,7 @@
 /datum/outfit/quick/vsd/escort/surveillant
 	name = "KZ Combat Escort Surveyor"
 	desc = "With a plan in your hand and a map of the land, may nobody and nothing escape your gaze. Equipped with a KZ Covert Outfit, KZ Rownin Skeleton and Valerian assault carbine equipped with a night vision scope."
-	suit_store = /obj/item/weapon/gun/rifle/valerian/surveillant
+	suit_store = /obj/item/weapon/gun/rifle/valerian/vantage/surveillant
 	gloves = /obj/item/clothing/gloves/marine/fingerless
 	ears = /obj/item/radio/headset/mainship/vsd
 	wear_suit = /obj/item/clothing/suit/modular/rownin/vsdelite/escort
@@ -4036,15 +4036,15 @@
 
 /datum/outfit/quick/icc/standard/icc_battlecarbine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/oxycodone, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/isotonic, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/barcaridine, SLOT_IN_HEAD)
-		
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/icc_dpistol, SLOT_IN_R_POUCH)
@@ -4064,7 +4064,7 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_ACCESSORY)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_battlecarbine, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_battlecarbine, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_battlecarbine, SLOT_IN_BELT)
@@ -4090,12 +4090,12 @@
 
 /datum/outfit/quick/icc/standard/icc_sharpshooter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/oxycodone, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/isotonic, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/booniebars, SLOT_IN_HEAD)
-			
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_SUIT)
@@ -4116,8 +4116,8 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/mine, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/mine, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/mine, SLOT_IN_ACCESSORY)
-	H.equip_to_slot_or_del(new /obj/item/explosive/mine, SLOT_IN_ACCESSORY)	
-	
+	H.equip_to_slot_or_del(new /obj/item/explosive/mine, SLOT_IN_ACCESSORY)
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_BELT)
@@ -4143,12 +4143,12 @@
 
 /datum/outfit/quick/icc/standard/icc_assaultcarbine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/oxycodone, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/isotonic, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/chunk, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/grenade_launcher/single_shot, SLOT_IN_SUIT)
@@ -4169,14 +4169,14 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/m15, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/emp, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/emp, SLOT_IN_ACCESSORY)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_assaultcarbine, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_assaultcarbine, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_assaultcarbine, SLOT_IN_BELT)
@@ -4202,12 +4202,12 @@
 
 /datum/outfit/quick/icc/standard/icc_autoshotgun/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/oxycodone, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/isotonic, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/snacks/wrapped/berrybar, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
@@ -4231,7 +4231,7 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_ACCESSORY)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
@@ -4268,7 +4268,7 @@
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/defibrillator, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/medevac_beacon, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/roller, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/bodybag/cryobag, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/advanced/oxycodone, SLOT_IN_ACCESSORY)
@@ -4289,7 +4289,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/icc_dpistol, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/icc_dpistol, SLOT_IN_BACKPACK)
@@ -4298,14 +4298,14 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/cans/waterbottle, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_sharpshooter, SLOT_IN_L_POUCH)
-	
+
 /datum/outfit/quick/icc/medic/icc_rifleman
 	name = "FAMAS CM Medic"
 	desc = "Equipped with a lightweight FAMAS rifle and everything you need to keep people alive."
@@ -4319,7 +4319,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
@@ -4328,7 +4328,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/cans/waterbottle, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_R_POUCH)
@@ -4337,7 +4337,7 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famas, SLOT_IN_L_POUCH)
-	
+
 /datum/outfit/quick/icc/medic/icc_smg
 	name = "L-40 PDW CM Medic"
 	desc = "Equipped with a L-40 PDW and everything you need to keep people alive, includes additional support grenades."
@@ -4351,7 +4351,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
@@ -4360,7 +4360,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/cans/waterbottle, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/icc_pdw, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/icc_pdw, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/icc_pdw, SLOT_IN_L_POUCH)
@@ -4371,7 +4371,7 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/drain, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/drain, SLOT_IN_R_POUCH)
-	
+
 /datum/outfit/quick/icc/medic/icc_smg2
 	name = "SMG-2 CM Medic"
 	desc = "Equipped with a SMG-2 and everything you need to keep people alive, includes additional support grenades."
@@ -4385,7 +4385,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/m1911, SLOT_IN_BACKPACK)
@@ -4394,7 +4394,7 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/cans/waterbottle, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/uzi, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/uzi, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/uzi, SLOT_IN_L_POUCH)
@@ -4441,11 +4441,15 @@
 
 /datum/outfit/quick/icc/guard/icc_rocket/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_HEAD)
+
+	H.equip_to_slot_or_del(new /obj/item/deployable_floodlight, SLOT_IN_SUIT)
+	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)
+
 	
 	H.equip_to_slot_or_del(new /obj/item/stack/sandbags/large_stack, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)	
@@ -4458,6 +4462,13 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rocket/icc/thermobaric, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rocket/icc/heat, SLOT_IN_L_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rocket/icc/heat, SLOT_IN_L_POUCH)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/vsd_sbr, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/vsd_sbr, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/vsd_sbr, SLOT_IN_BELT)
@@ -4480,7 +4491,7 @@
 	gloves = /obj/item/clothing/gloves/marine/veteran/pmc
 	head = /obj/item/clothing/head/helmet/marine/cmfreelancer/specialist
 	mask = /obj/item/clothing/mask/bandanna
-	wear_suit = /obj/item/clothing/suit/storage/marine/cmfreelancer	
+	wear_suit = /obj/item/clothing/suit/storage/marine/cmfreelancer
 	suit_store = /obj/item/weapon/gun/rifle/icc_coilgun
 	back = /obj/item/weapon/gun/rifle/icc_autoshotgun/guard
 	l_pocket = /obj/item/storage/pouch/firstaid/basic
@@ -4488,12 +4499,12 @@
 
 /datum/outfit/quick/icc/guard/icc_autoshotgun/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_HEAD)	
-	
+	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_HEAD)
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
@@ -4503,18 +4514,18 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_autoshotgun/frag, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_autoshotgun/frag, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_autoshotgun/frag, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/grenade_launcher/single_shot, SLOT_IN_SUIT)
-	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)	
-	
+	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)
+
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/pamphlet/shotgun, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/m15, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_ACCESSORY)
-	
+
 /datum/outfit/quick/icc/guard/icc_m16fl240
 	name = "M16 & FL-240 Guardsman"
 	desc = "Equipped with the M16-UBE,the timeless classic FL-240 flamethrower and fire-protective armor. Comes equipped with six 5.56 quadstack magazines and four flamer tanks. Perfect for burning away the weeds and entrenched enemy positions."
@@ -4532,12 +4543,12 @@
 
 /datum/outfit/quick/icc/guard/icc_m16fl240/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank/large, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank/large, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/flamer_tank/large, SLOT_IN_SUIT)
@@ -4548,20 +4559,20 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16_quadstack, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16_quadstack, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16_quadstack, SLOT_IN_BELT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/pamphlet/rifleman, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_ACCESSORY)
-	
+
 /datum/outfit/quick/icc/guard/icc_hpr
 	name = "PR-412L1 HPR & ML-120 Guardsman"
 	desc = "Equipped with a PR-412L1 HPR and an ML-120 coilgun. Comes equipped with 4 spare HPR boxes and 6 spare ML-120 canisters. Serious suppression.."
@@ -4579,12 +4590,12 @@
 
 /datum/outfit/quick/icc/guard/icc_hpr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/russian_red, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/m412l1_hpr, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/m412l1_hpr, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/m412l1_hpr, SLOT_IN_SUIT)
@@ -4595,14 +4606,14 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_coilgun, SLOT_IN_BELT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/cloak, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/cloak, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/antigas, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/tool/shovel/etool, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/food/drinks/cans/waterbottle, SLOT_IN_ACCESSORY)
@@ -4679,12 +4690,12 @@
 
 /datum/outfit/quick/icc/leader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 /datum/outfit/quick/icc/leader/icc_famas
 	name = "FAMAS CM Squad Leader"
 	desc = "Tasked with leading rapid response. Equipped with the lightweight FAMAS, CM3 Cuirass and a variety of offensive equipment. Includes a single-shot grenade launcher."
 	suit_store = /obj/item/weapon/gun/rifle/famas/iccsquadlead
-	
+
 	belt = /obj/item/belt_harness/marine
 	mask = /obj/item/clothing/mask/bandanna
 	shoes = /obj/item/clothing/shoes/marine/brown/full
@@ -4701,7 +4712,7 @@
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famasext, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famasext, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/famasext, SLOT_IN_BACKPACK)
@@ -4712,19 +4723,19 @@
 	H.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/explosive/plastique, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/grenade_launcher/single_shot, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/deployable_floodlight, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/stack/sandbags/large_stack, SLOT_IN_SUIT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/stick, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/stick, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_ACCESSORY)
@@ -4735,7 +4746,7 @@
 	name = "ML-12 CM Squad Leader"
 	desc = "In charge for close defense. Equipped with the high-caliber ML-12 confrontation rifle, SMG-2, light armor and a variety of defensive equipment."
 	suit_store = /obj/item/weapon/gun/rifle/icc_confrontationrifle/leader
-	
+
 	belt = /obj/item/storage/belt/marine/icc
 	mask = /obj/item/clothing/mask/bandanna
 	shoes = /obj/item/clothing/shoes/marine/brown/full
@@ -4748,12 +4759,12 @@
 
 /datum/outfit/quick/icc/leader/icc_confrontationrifle/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/smg/uzi/cmext, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/uzi/extended, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/smg/uzi/extended, SLOT_IN_BACKPACK)
@@ -4764,10 +4775,10 @@
 	H.equip_to_slot_or_del(new /obj/item/stack/sheet/plasteel/large_stack, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/deployable_floodlight, SLOT_IN_SUIT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_ACCESSORY)
@@ -4780,19 +4791,19 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_confrontationrifle, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_confrontationrifle, SLOT_IN_BELT)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/icc_confrontationrifle, SLOT_IN_BELT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/bullet/hefa, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/bullet/hefa, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/incendiary, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro, SLOT_IN_R_POUCH)
-	
+
 /datum/outfit/quick/icc/leader/icc_m16masterkey
 	name = "M16-Masterkey CM Squad Leader"
 	desc = "Tasked with leading breaches. Equipped with an M16, masterkey shotgun, CM3 Cuirass and a variety of breaching equipment."
 	suit_store = /obj/item/weapon/gun/rifle/m16/cmsl
-	
+
 	belt = /obj/item/belt_harness/marine
 	mask = /obj/item/clothing/mask/bandanna
 	shoes = /obj/item/clothing/shoes/marine/brown/full
@@ -4809,7 +4820,7 @@
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/rifle/m16, SLOT_IN_BACKPACK)
@@ -4822,28 +4833,28 @@
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/deployable_floodlight, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/tool/extinguisher, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/stack/sandbags/large_stack, SLOT_IN_SUIT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/buckshot, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/buckshot, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/buckshot, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/handful/buckshot, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/stack/barbed_wire/small_stack, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_ACCESSORY)
-	
+
 /datum/outfit/quick/icc/leader/icc_lmg
 	name = "ML-41AMG CM Squad Leader"
 	desc = "On point for suppression. Equipped with a high-capacity ML-41AMG machinegun, a 750-round buttpack, highpower automag, light armor and a variety of support equipment."
 	suit_store = /obj/item/weapon/gun/rifle/icc_mg/guard
-	
+
 	belt = /obj/item/ammo_magazine/icc_mg/belt
 	mask = /obj/item/clothing/mask/bandanna
 	shoes = /obj/item/clothing/shoes/marine/brown/full
@@ -4856,12 +4867,12 @@
 
 /datum/outfit/quick/icc/leader/icc_lmg/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
-	
+
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/ointment, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/stack/medical/heal_pack/gauze, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_HEAD)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/synaptizine, SLOT_IN_HEAD)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/shield/riot/marine/deployable, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/shield/riot/marine/deployable, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/weapon/shield/riot/marine/deployable, SLOT_IN_BACKPACK)
@@ -4876,23 +4887,23 @@
 	H.equip_to_slot_or_del(new /obj/item/ammo_magazine/pistol/highpower, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/MRE, SLOT_IN_BACKPACK)
 	H.equip_to_slot_or_del(new /obj/item/reagent_containers/hypospray/autoinjector/combat_advanced, SLOT_IN_BACKPACK)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/stick, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/stick, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro/alt, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/neuro/alt, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb, SLOT_IN_R_POUCH)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/weapon/gun/launcher/rocket/oneuse, SLOT_IN_SUIT)
 	H.equip_to_slot_or_del(new /obj/item/deployable_floodlight, SLOT_IN_SUIT)
-	
+
 	H.equip_to_slot_or_del(new /obj/item/binoculars/tactical/range, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/storage/box/m94, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/tool/crowbar/red, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/cloak, SLOT_IN_ACCESSORY)
 	H.equip_to_slot_or_del(new /obj/item/explosive/grenade/smokebomb/cloak, SLOT_IN_ACCESSORY)
-	
+
 /datum/outfit/quick/icc/fieldcommander // base
 	name = "CM Captain"
 	jobtype = "CM Militia Captain"
