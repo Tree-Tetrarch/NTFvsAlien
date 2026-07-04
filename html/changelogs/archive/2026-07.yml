@@ -80,3 +80,10 @@
   - bugfix: The CMP can now opeen their office on the SOM Ship
   - bugfix: The autodoc on the SOM ship now works.
   - bugfix: there is no longer random shutters in the reqline
+2026-07-04:
+  CaputCapital:
+  - rscadd: Adds the CM marksman loadout as intended.
+  Ldip999:
+  - bugfix: SOM squad jobs now have proper access
+  Meghan-Rossi:
+  - balance: Synthetics can no longer fire lethal ammunition, except on red alert
