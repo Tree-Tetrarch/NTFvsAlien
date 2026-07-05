@@ -384,7 +384,7 @@
 		return get_splurt_robot_body_icon(get_effective_robot_body_base(robot_body_base))
 	if(istype(visual_species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
 		return get_supersoldier_body_icon(supersoldier_body_base)
-	if(can_use_human_body_style(species))
+	if(can_use_human_body_style(visual_species))
 		return BODYPART_ICON_MODERN_HUMAN
 	return visual_species.icobase
 
@@ -396,7 +396,7 @@
 	if(istype(visual_species, /datum/species/human/prototype_supersoldier) && custom_supersoldier_parts)
 		var/supersoldier_base = limb_name == "head" ? supersoldier_head_base : supersoldier_body_base
 		return get_supersoldier_body_icon(supersoldier_base)
-	if(get_effective_human_body_style() == HUMAN_BODY_STYLE_SPLURT && can_use_human_body_style(species))
+	if(get_effective_human_body_style() == HUMAN_BODY_STYLE_SPLURT && can_use_human_body_style(visual_species))
 		return uses_modern_human_limb_icon(limb_name) ? BODYPART_ICON_MODERN_HUMAN : BODYPART_ICON_HUMAN
 	return get_body_icon()
 
