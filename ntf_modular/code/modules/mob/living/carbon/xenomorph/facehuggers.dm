@@ -95,8 +95,8 @@
 	if(wearer.stat == DEAD)
 		reset_attach_status()
 		return
-	if(wearer.key && (wearer.afk_status == MOB_RECENTLY_DISCONNECTED || wearer.afk_status == MOB_DISCONNECTED))
-		wearer.visible_message(span_loveextreme("[src] loses interest in [wearer] as they are SSD."))
+	if((wearer.key && (wearer.afk_status == MOB_RECENTLY_DISCONNECTED || wearer.afk_status == MOB_DISCONNECTED)) || HAS_TRAIT(wearer, TRAIT_STASIS))
+		wearer.visible_message(span_loveextreme("[src] loses interest in [wearer] as they seem absent."))
 		reset_attach_status()
 		return
 	var/as_planned = wearer?.wear_mask == src || wearer?.w_underwear == src  || wearer?.w_undershirt == src
