@@ -1,0 +1,4 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - bugfix: "Fixed syndicate factory unboxers falling back to invalid filler output when using refills without a specific antag refill type."
