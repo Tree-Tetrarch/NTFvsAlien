@@ -87,3 +87,13 @@
   - bugfix: SOM squad jobs now have proper access
   Meghan-Rossi:
   - balance: Synthetics can no longer fire lethal ammunition, except on red alert
+2026-07-05:
+  Lewdissar:
+  - bugfix: Fixes the CC/67 Import version's sprites having been deleted
+  - bugfix: Gives AGLS it's aim mode back and allows it's scope to look at the maximum
+      range of it's grenades.
+  - rscadd: Added the new Vantage Marksman carbine, OV-120 Night vision scope and
+      SPP and PZ ammunition types for 9x39mm
+  - balance: ' Valerian no longer takes bayonets, stock no longer removable, new specific
+      scope type with less range but less movespeed penalty'
+  - bugfix: Valerian and Vantage now integrally suppressed.

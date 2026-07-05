@@ -1,6 +1,0 @@
-author: "Lewdissar"
-delete-after: True
-changes:
-  - rscadd: "Added the new Vantage Marksman carbine, OV-120 Night vision scope and SPP and PZ ammunition types for 9x39mm"
-  - balance: " Valerian no longer takes bayonets, stock no longer removable, new specific scope type with less range but less movespeed penalty"
-  - bugfix: "Valerian and Vantage now integrally suppressed."
