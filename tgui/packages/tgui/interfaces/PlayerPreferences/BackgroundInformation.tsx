@@ -234,7 +234,7 @@ export const BackgroundInformation = (props) => {
       <Stack>
         <Stack.Item grow>
           <Section
-            title="Human Picture"
+            title="Human Picture (Width:300 Height :350)"
             buttons={
               <Box>
                 <Button
@@ -267,7 +267,7 @@ export const BackgroundInformation = (props) => {
         </Stack.Item>
         <Stack.Item grow>
           <Section
-            title="Human Nakie Picture"
+            title="Human Nakie Picture (Width:300 Height :350)"
             buttons={
               <Box>
                 <Button
@@ -303,7 +303,7 @@ export const BackgroundInformation = (props) => {
         </Stack.Item>
         <Stack.Item grow>
           <Section
-            title="Xeno Profile Picture"
+            title="Xeno Profile Picture (Width:300 Height :350)"
             buttons={
               <Box>
                 <Button

@@ -1,0 +1,11 @@
+author: "SpooksAnno"
+delete-after: True
+changes:
+  - bugfix: "Fixed active factory conveyors not picking up newly-produced factory parts."
+  - bugfix: "Fixed hivelords not naturally regenerating to their displayed maximum plasma."
+  - bugfix: "Fixed 14x5mm ammo handfuls using the wrong world sprite amount."
+  - bugfix: "Fixed xeno wall slams/nesting behavior so intent determines whether a dragged target is nested or slammed."
+  - bugfix: "Fixed some flashbang blur cases persisting longer than intended."
+  - bugfix: "Fixed Ripley cargo arms being dropped when climbing ladders."
+  - qol: "Fixed the Quicksex preference toggle not toggling properly."
+  - code_imp: "Added safeguards for several reported runtimes."
