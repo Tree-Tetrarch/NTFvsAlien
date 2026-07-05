@@ -5587,7 +5587,7 @@
 "Al" = (
 /obj/machinery/computer/intel_computer,
 /turf/open/floor/tile/damaged/panel,
-/area/whiskey_outpost/outside/east)
+/area/whiskey_outpost)
 "Am" = (
 /obj/item/quikdeploy/cade/plasteel,
 /obj/item/quikdeploy/cade/plasteel,
