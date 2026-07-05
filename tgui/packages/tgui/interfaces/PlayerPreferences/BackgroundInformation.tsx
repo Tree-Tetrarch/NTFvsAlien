@@ -229,12 +229,12 @@ export const BackgroundInformation = (props) => {
           </Section>
         </Stack.Item>
       </Stack>
-      Set picture to &lsquo;!clear&rsquo; to clear
+      Set picture to &lsquo;!clear&rsquo; to clear.
       <hr />
       <Stack>
         <Stack.Item grow>
           <Section
-            title="Human Picture (Width:300 Height :350)"
+            title="Human Picture"
             buttons={
               <Box>
                 <Button
@@ -250,6 +250,7 @@ export const BackgroundInformation = (props) => {
               </Box>
             }
           >
+            (Width:300 Height:350)
             <TextArea
               expensive
               fluid
@@ -267,7 +268,7 @@ export const BackgroundInformation = (props) => {
         </Stack.Item>
         <Stack.Item grow>
           <Section
-            title="Human Nakie Picture (Width:300 Height :350)"
+            title="Human Nakie Picture"
             buttons={
               <Box>
                 <Button
@@ -286,6 +287,7 @@ export const BackgroundInformation = (props) => {
               </Box>
             }
           >
+            (Width:300 Height:350)
             <TextArea
               expensive
               fluid
@@ -303,7 +305,7 @@ export const BackgroundInformation = (props) => {
         </Stack.Item>
         <Stack.Item grow>
           <Section
-            title="Xeno Profile Picture (Width:300 Height :350)"
+            title="Xeno Profile Picture"
             buttons={
               <Box>
                 <Button
@@ -322,6 +324,7 @@ export const BackgroundInformation = (props) => {
               </Box>
             }
           >
+            (Width:300 Height:350)
             <TextArea
               expensive
               fluid
