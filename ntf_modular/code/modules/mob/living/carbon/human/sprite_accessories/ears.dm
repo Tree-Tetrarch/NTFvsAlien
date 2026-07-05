@@ -145,14 +145,17 @@
 
 /datum/sprite_accessory/ears/mutant_big_hare_large
 	name = "Rabbit (Large)"
+	icon = 'modular_skyrat/master_files/icons/mob/sprite_accessory/ears_big.dmi'
 	icon_state = "bunny_large"
 
 /datum/sprite_accessory/ears/mutant_big_bunny_large
 	name = "Curved Rabbit Ears (Large)"
+	icon = 'modular_skyrat/master_files/icons/mob/sprite_accessory/ears_big.dmi'
 	icon_state = "rabbit_large"
 
 /datum/sprite_accessory/ears/mutant_big_sandfox_large
 	name = "Sandfox (Large)"
+	icon = 'modular_skyrat/master_files/icons/mob/sprite_accessory/ears_big.dmi'
 	icon_state = "sandfox_large"
 
 /datum/sprite_accessory/ears/mutant_pede
