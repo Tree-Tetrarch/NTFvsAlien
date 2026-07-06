@@ -227,6 +227,9 @@
 			SSjob.active_squads[squad.faction] += squad
 	return TRUE
 
+/datum/game_mode/infestation/secret_of_life/scale_squad_jobs()
+	return
+
 /datum/game_mode/infestation/secret_of_life/announce()
 	to_chat(world, "<b>The current game mode is - Extended Role-Playing!</b>")
 	to_chat(world, "<b>Just have fun and role-play!</b>")
