@@ -1,6 +1,0 @@
-author: "SpooksAnno"
-delete-after: True
-changes:
-  - bugfix: "Defines what the (large) ears are, now shown in game."
-  - bugfix: "Corrects bad behavior shown on cell charger"
-  - bugfix: "Synthetic jobs now pull from the updated character visualizer, instead of the old one"

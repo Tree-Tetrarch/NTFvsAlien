@@ -147,6 +147,7 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		if(!GLOB.generators_on_ground)	//Prevent division by 0
 			return PROCESS_KILL
 
+		GLOB.round_statistics.generator_seconds += 2
 		var/total_humans_groundside = 0
 		for(var/z_level in SSmapping.levels_by_trait(ZTRAIT_GROUND))
 			total_humans_groundside += length(GLOB.humans_by_zlevel["[z_level]"])
@@ -155,7 +156,6 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 			var/points_generated = GENERATOR_PSYCH_POINT_OUTPUT / GLOB.generators_on_ground
 			SSpoints.add_strategic_psy_points(corrupted, points_generated)
 			GLOB.round_statistics.strategic_psypoints_from_generators += points_generated
-			GLOB.round_statistics.generator_seconds += 2
 			SSpoints.add_tactical_psy_points(corrupted, points_generated*0.25)
 		return
 
@@ -174,6 +174,8 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 				if(100)
 					visible_message("[icon2html(src, viewers(src))] [span_notice("<b>[src]</b> rumbles loudly as the combustion and thermal chambers reach full strength.")]")
 		add_avail(power_generation_max * (power_gen_percent / 100) ) //Nope, all good, just add the power
+		if(is_ground_level(z))
+			GLOB.round_statistics.geothermal_output_ground += power_generation_max * (power_gen_percent / 100)
 
 /obj/machinery/power/geothermal/proc/check_failure()
 	cur_tick++

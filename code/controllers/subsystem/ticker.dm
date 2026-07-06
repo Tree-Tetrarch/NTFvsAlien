@@ -123,7 +123,7 @@ SUBSYSTEM_DEF(ticker)
 				seal_persistent_medals()
 				GLOB.ooc_allowed = TRUE
 				GLOB.dooc_allowed = TRUE
-				GLOB.round_statistics.round_length = (world.time - SSticker.round_start_time)
+				GLOB.round_statistics.groundside_time_total = (world.time - GLOB.round_statistics.groundside_time_start)
 				mode.declare_completion(force_ending)
 				world.TgsTriggerEvent("tg-Roundend", wait_for_completion = TRUE)
 				addtimer(CALLBACK(SSvote, TYPE_PROC_REF(/datum/controller/subsystem/vote, automatic_vote)), (2 + CONFIG_GET(number/mission_end_countdown)) SECONDS)
