@@ -160,11 +160,11 @@
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	. = ..()
 	. += span_notice("The generator has [sheets+sheet_left] units of [sheet_name] fuel left[active ? ", producing [DisplayPower(power_gen * power_output)]" : ". It is not on but if switched on would produce [DisplayPower(power_gen)] on the lowest setting" ].")
-	. += span_notice("Each sheet lasts [DisplayTimeText(time_per_sheet)] at the lowest power setting and provides [DisplayEnergy(power_gen * time_per_sheet * 2)].")
+	. += span_notice("Each sheet lasts [DisplayTimeText(time_per_sheet * 2 SECONDS)] at the lowest power setting and provides [DisplayEnergy(power_gen * time_per_sheet * 2)].")
 	if(active)
-		. += span_notice("The generator will keep running for another [DisplayTimeText(time_per_sheet * (sheets+sheet_left) / power_output)], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)].")
+		. += span_notice("The generator will keep running for another [DisplayTimeText(time_per_sheet * 2 SECONDS * (sheets+sheet_left) / power_output)], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)].")
 	else
-		. += span_notice("If switched on, on the lowest setting, the generator would run for [DisplayTimeText(time_per_sheet * (sheets+sheet_left))], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)]. ")
+		. += span_notice("If switched on, on the lowest setting, the generator would run for [DisplayTimeText(time_per_sheet * 2 SECONDS * (sheets+sheet_left))], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)]. ")
 	if(anchored)
 		. += span_notice("It is anchored to the ground.")
 	if(in_range(user, src) || isobserver(user))
@@ -294,7 +294,7 @@
 	data["power_available"] = (powernet == null ? 0 : DisplayPower(avail()))
 	data["current_heat"] = current_heat
 	data["charge_left"] = DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)
-	data["time_left"] = active ? DisplayTimeText(time_per_sheet * (sheets+sheet_left) / power_output) : "N/A"
+	data["time_left"] = active ? DisplayTimeText(time_per_sheet * 2 SECONDS * (sheets+sheet_left) / power_output) : "N/A"
 	. = data
 
 /obj/machinery/power/port_gen/pacman/ui_act(action, list/params)
