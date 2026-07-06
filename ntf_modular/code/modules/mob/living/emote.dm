@@ -117,10 +117,12 @@
 		L.Paralyze(450 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 		if(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES)
+			L.ExtinguishMob()
+			L.status_flags |= GODMODE
+			ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
+		else
 			return
-		L.ExtinguishMob()
-		L.status_flags |= GODMODE
-		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
+
 
 /datum/emote/living/carbon/xenomorph/xurrender/run_emote(mob/user, params, type_override, intentional = TRUE, prefix)
 	if(!isxeno(user))
@@ -130,6 +132,7 @@
 	. = ..()
 	var/image/surrendering = image('icons/mob/effects/talk.dmi', user, icon_state = "surrendering")
 	user.add_emote_overlay(surrendering, 90 SECONDS) // Xenos got para resist, dont change this
+
 
 /datum/emote/living/carbon/xenomorph/xurrender/proc/surrender_end(mob/living/user)
 	user.ExtinguishMob()
@@ -153,10 +156,11 @@
 		L.Paralyze(450 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 		if(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES)
+			L.ExtinguishMob()
+			L.status_flags |= GODMODE
+			ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
+		else
 			return
-		L.ExtinguishMob()
-		L.status_flags |= GODMODE
-		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
 
 /datum/emote/living/carbon/xenomorph/xubmit/run_emote(mob/user, params, type_override, intentional = TRUE, prefix)
 	if(!isxeno(user))
@@ -188,10 +192,11 @@
 		L.Paralyze(90 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 		if(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES)
+			L.ExtinguishMob()
+			L.status_flags |= GODMODE
+			ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
+		else
 			return
-		L.ExtinguishMob()
-		L.status_flags |= GODMODE
-		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
 
 /datum/emote/living/carbon/human/surrender/proc/surrender_end(mob/living/user)
 	user.ExtinguishMob()
@@ -222,10 +227,11 @@
 		L.Paralyze(90 SECONDS)
 		addtimer(CALLBACK(src, PROC_REF(surrender_end), user), 90 SECONDS, TIMER_STOPPABLE)
 		if(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES)
+			L.ExtinguishMob()
+			L.status_flags |= GODMODE
+			ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
+		else
 			return
-		L.ExtinguishMob()
-		L.status_flags |= GODMODE
-		ADD_TRAIT(L, TRAIT_SURRENDERING, "surrender")
 
 /datum/emote/living/carbon/human/submit/proc/surrender_end(mob/living/user)
 	user.ExtinguishMob()
