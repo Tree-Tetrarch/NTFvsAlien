@@ -92,6 +92,9 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	var/spanpart2 = "<span class='name'>"
 	//Speaker name
 	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
+	if(ishuman(speaker))
+		var/mob/living/carbon/human/H = speaker
+		namepart = "[H.get_visible_name()]" //represent by id if face hidden etc
 	if(face_name && ishuman(speaker))
 		var/mob/living/carbon/human/H = speaker
 		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
@@ -134,8 +137,11 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		if(!istype(J))
 			return ""
 
+		/* ntf edit, we show nothing if no id
 		paygrade = get_paygrades(J.paygrade, TRUE, gender)
 		return paygrade ? "[paygrade] " : ""
+		*/
+		return ""
 	else if(istype(speaker, /atom/movable/virtualspeaker))
 		var/atom/movable/virtualspeaker/VT = speaker
 		if(!ishuman(VT.source))
