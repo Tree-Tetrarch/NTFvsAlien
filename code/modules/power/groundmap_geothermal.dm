@@ -29,6 +29,9 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 	///whether they should generate corruption if corrupted
 	var/corruption_on = FALSE
 	var/obj/effect/miner_owner_marker/owner_marker
+#ifdef POWERDEBUG
+	var/total_charge_outputted_availscale = 0
+#endif
 
 /obj/machinery/power/geothermal/Initialize(mapload)
 	. = ..()
@@ -73,6 +76,9 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 		. += "It is claimed by the [GLOB.hive_datums[corrupted].name] hive."
 	if(isxeno(user) && !is_corruptible)
 		. += "It is reinforced, making us not able to corrupt it."
+#ifdef POWERDEBUG
+	. += span_notice("It has outputted a total of [DisplayEnergy(total_charge_outputted_availscale * 2)] (based on [total_charge_outputted_availscale] avail charge units)")
+#endif
 
 /obj/machinery/power/geothermal/should_have_node()
 	return TRUE
@@ -175,7 +181,10 @@ GLOBAL_VAR_INIT(corrupted_generators, 0)
 					visible_message("[icon2html(src, viewers(src))] [span_notice("<b>[src]</b> rumbles loudly as the combustion and thermal chambers reach full strength.")]")
 		add_avail(power_generation_max * (power_gen_percent / 100) ) //Nope, all good, just add the power
 		if(is_ground_level(z))
-			GLOB.round_statistics.geothermal_output_ground += power_generation_max * (power_gen_percent / 100)
+			GLOB.round_statistics.geothermal_output_ground += power_generation_max * (power_gen_percent * 0.02)
+#ifdef POWERDEBUG
+		total_charge_outputted_availscale += power_generation_max * (power_gen_percent * 0.01)
+#endif
 
 /obj/machinery/power/geothermal/proc/check_failure()
 	cur_tick++

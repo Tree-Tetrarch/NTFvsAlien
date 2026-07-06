@@ -467,7 +467,9 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	for(var/chain_length in GLOB.round_statistics.intel_chain_sold_by_list)
 		parts += "The first chain of length [chain_length] cashed in was cashed in by [GLOB.round_statistics.intel_chain_sold_by_list[chain_length]] for [GLOB.round_statistics.intel_chain_sold_for_list[chain_length]]."
 	for(var/sheet_name in GLOB.round_statistics.portable_stats_by_sheet_name)
-		parts += "Groundside portable generators produced [DisplayEnergy(GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["power output"])] of electricty from [GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["fuel used"]] sheets of [sheet_name] fuel."
+		parts += "Groundside generators produced [DisplayEnergy(GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["power output"])] of electricty from [GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["fuel used"]] sheets of [sheet_name] fuel."
+	parts += "Groundside Area Power Controllers were charged by a total of [DisplayEnergy(GLOB.round_statistics.apc_input_ground)] and outputted a total of [DisplayEnergy(GLOB.round_statistics.apc_output_ground)] of electricity."
+	parts += "Groundside SMESes were charged by a total of [DisplayEnergy(GLOB.round_statistics.smes_input_ground)] and outputted a total of [DisplayEnergy(GLOB.round_statistics.smes_output_ground)] of electricity."
 	parts += "Groundside geothermals produced [DisplayEnergy(GLOB.round_statistics.geothermal_output_ground)] of electricity."
 	if(GLOB.round_statistics.strategic_psypoints_from_generators)
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_generators] strategic psy points were obtained from geothermals, at an average rate of [GLOB.round_statistics.strategic_psypoints_from_generators * ((1 HOURS) /(1 SECONDS)) / GLOB.round_statistics.generator_seconds] points per geothermal per hour."

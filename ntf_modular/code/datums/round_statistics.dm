@@ -35,3 +35,7 @@
 	var/boiler_aphro_smokes = 0
 	var/portable_stats_by_sheet_name = list()
 	var/geothermal_output_ground = 0
+	var/smes_input_ground = 0
+	var/smes_output_ground = 0
+	var/apc_input_ground = 0
+	var/apc_output_ground = 0

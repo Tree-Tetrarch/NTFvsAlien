@@ -15,6 +15,11 @@
 	var/base_icon = "portgen0"
 	var/datum/looping_sound/generator/soundloop
 	var/sheet_name = ""
+#ifdef POWERDEBUG
+	var/sheets_used = 0
+	var/total_charge_outputted_availscale = 0
+	var/time_operated_processscale = 0
+#endif
 
 /obj/machinery/power/port_gen/Initialize(mapload)
 	. = ..()
@@ -85,7 +90,12 @@
 				if(!(sheet_name in GLOB.round_statistics.portable_stats_by_sheet_name))
 					GLOB.round_statistics.portable_stats_by_sheet_name += sheet_name
 					GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name] = list("fuel used" = 0, "power output" = 0)
-				GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["power output"] += power_gen * power_output
+				GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["power output"] += power_gen * power_output * 2  // avail is in watts, 1 avail for 1 tick is 2 watt-seconds = 2 joules
+#ifdef POWERDEBUG
+		if(sheet_name)
+			time_operated_processscale++
+			total_charge_outputted_availscale += power_gen * power_output
+#endif
 		UseFuel()
 		SEND_SIGNAL(src, COMSIG_PORTGEN_PROCESS)
 	else
@@ -149,16 +159,22 @@
 
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	. = ..()
-	. += span_notice("The generator has [sheets+0.01*sheet_left] units of [sheet_name] fuel left[active ? ", producing [DisplayPower(power_gen*power_output)]" : ". It is not on but if switched on would produce [DisplayPower(power_gen)] on the lowest setting" ].")
+	. += span_notice("The generator has [sheets+sheet_left] units of [sheet_name] fuel left[active ? ", producing [DisplayPower(power_gen * power_output)]" : ". It is not on but if switched on would produce [DisplayPower(power_gen)] on the lowest setting" ].")
 	. += span_notice("Each sheet lasts [DisplayTimeText(time_per_sheet)] at the lowest power setting and provides [DisplayEnergy(power_gen * time_per_sheet * 2)].")
 	if(active)
-		. += span_notice("The generator will keep running for another [DisplayTimeText(time_per_sheet * (sheets+(0.01*sheet_left)) / power_output)], providing [DisplayEnergy((sheets+(0.01*sheet_left)) * power_gen * time_per_sheet * 2)].")
+		. += span_notice("The generator will keep running for another [DisplayTimeText(time_per_sheet * (sheets+sheet_left) / power_output)], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)].")
 	else
-		. += span_notice("If switched on, on the lowest setting, the generator would run for [DisplayTimeText(time_per_sheet * (sheets+(0.01*sheet_left)))], providing [DisplayEnergy((sheets+(0.01*sheet_left)) * power_gen * time_per_sheet * 2)]. ")
+		. += span_notice("If switched on, on the lowest setting, the generator would run for [DisplayTimeText(time_per_sheet * (sheets+sheet_left))], providing [DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)]. ")
 	if(anchored)
 		. += span_notice("It is anchored to the ground.")
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: Fuel efficiency increased by <b>[(consumption*100)-100]%</b>.")
+#ifdef POWERDEBUG
+	. += span_notice("It has outputted a total of [DisplayEnergy(sheets_used * power_gen * time_per_sheet * 2)] (based on [sheets_used] sheets consumed)")
+	. += span_notice("It has outputted a total of [DisplayEnergy(total_charge_outputted_availscale * 2)] (based on [total_charge_outputted_availscale] avail charge units)")
+	. += span_notice("It has been operated for a total of [DisplayTimeText(time_operated_processscale * 2 SECONDS)] (based on [time_operated_processscale] process ticks)")
+	. += span_notice("It has been operated for a total of [DisplayTimeText(sheets_used * time_per_sheet * 2 SECONDS)] (based on [sheets_used] sheets consumed)")
+#endif
 
 /obj/machinery/power/port_gen/pacman/HasFuel()
 	if(sheets >= 1 / (time_per_sheet / power_output) - sheet_left)
@@ -185,6 +201,10 @@
 			GLOB.round_statistics.portable_stats_by_sheet_name += sheet_name
 			GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name] = list("fuel used" = 0, "power output" = 0)
 		GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["fuel used"] += temp
+#ifdef POWERDEBUG
+	if(sheet_name)
+		sheets_used += temp
+#endif
 
 	var/lower_limit = 56 + power_output * 10
 	var/upper_limit = 76 + power_output * 10
@@ -273,8 +293,8 @@
 	data["power_output"] = DisplayPower(power_gen * power_output)
 	data["power_available"] = (powernet == null ? 0 : DisplayPower(avail()))
 	data["current_heat"] = current_heat
-	data["charge_left"] = DisplayEnergy((sheets+(0.01*sheet_left)) * power_gen * time_per_sheet * 2)
-	data["time_left"] = active ? DisplayTimeText(time_per_sheet * (sheets+(0.01*sheet_left)) / power_output) : "N/A"
+	data["charge_left"] = DisplayEnergy((sheets+sheet_left) * power_gen * time_per_sheet * 2)
+	data["time_left"] = active ? DisplayTimeText(time_per_sheet * (sheets+sheet_left) / power_output) : "N/A"
 	. = data
 
 /obj/machinery/power/port_gen/pacman/ui_act(action, list/params)
