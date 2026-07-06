@@ -469,7 +469,7 @@ GLOBAL_LIST_INIT(bioscan_locations, list(
 	if(GLOB.round_statistics.strategic_psypoints_from_generators)
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_generators] strategic psy points were obtained from generators, at an average rate of [GLOB.round_statistics.strategic_psypoints_from_generators * ((1 HOURS) /(1 SECONDS)) / GLOB.round_statistics.generator_seconds] points per generator per hour."
 		var/avg_gen_time = GLOB.round_statistics.generator_seconds * 1 SECONDS / GLOB.generators_on_ground
-		parts += "The average generator was held by xenos for [DisplayTimeText(avg_gen_time)], or [100 * avg_gen_time / GLOB.round_statistics.round_length]% of the round."
+		parts += "The average generator was held by xenos for [DisplayTimeText(avg_gen_time)], or [100 * avg_gen_time / GLOB.round_statistics.groundside_time_total]% of the round."
 	if(GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards)
 		parts += "[GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards] strategic psy points were obtained from [GLOB.round_statistics.hive_target_rewards] hive target rewards, for an average of [GLOB.round_statistics.strategic_psypoints_from_hive_target_rewards/GLOB.round_statistics.hive_target_rewards] points per hive target reward claimed."
 	if(GLOB.round_statistics.total_embryos_rewarding)

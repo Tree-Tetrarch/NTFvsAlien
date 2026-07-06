@@ -22,7 +22,8 @@
 	var/cocoons = 0
 	var/psydrains = 0
 	var/hive_target_rewards = 0
-	var/round_length = 0
+	var/groundside_time_start = 0
+	var/groundside_time_total = 0
 	var/points_from_intel = 0
 	var/points_from_ambrosia = 0
 	var/monkey_orgasms = 0
