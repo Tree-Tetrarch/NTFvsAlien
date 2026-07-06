@@ -33,3 +33,5 @@
 	var/intel_chain_sold_for_list = list()
 	var/intel_chain_sold_by_list = list()
 	var/boiler_aphro_smokes = 0
+	var/portable_stats_by_sheet_name = list()
+	var/geothermal_output_ground = 0

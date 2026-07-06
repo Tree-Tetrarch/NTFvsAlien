@@ -14,6 +14,7 @@
 	var/consumption = 0
 	var/base_icon = "portgen0"
 	var/datum/looping_sound/generator/soundloop
+	var/sheet_name = ""
 
 /obj/machinery/power/port_gen/Initialize(mapload)
 	. = ..()
@@ -80,6 +81,11 @@
 			return
 		if(powernet)
 			add_avail(power_gen * power_output)
+			if(is_ground_level(z) && sheet_name)
+				if(!(sheet_name in GLOB.round_statistics.portable_stats_by_sheet_name))
+					GLOB.round_statistics.portable_stats_by_sheet_name += sheet_name
+					GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name] = list("fuel used" = 0, "power output" = 0)
+				GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["power output"] += power_gen * power_output
 		UseFuel()
 		SEND_SIGNAL(src, COMSIG_PORTGEN_PROCESS)
 	else
@@ -97,7 +103,6 @@
 	circuit = /obj/item/circuitboard/machine/pacman
 	var/sheets = 0
 	var/max_sheets = 10
-	var/sheet_name = ""
 	var/sheet_path = /obj/item/stack/sheet/mineral/phoron
 	// How much is left of the sheet
 	var/sheet_left = 0
@@ -175,6 +180,11 @@
 	if (sheet_left <= 0 && sheets > 0)
 		sheet_left = 1 - needed_sheets
 		sheets--
+	if(is_ground_level(z) && sheet_name)
+		if(!(sheet_name in GLOB.round_statistics.portable_stats_by_sheet_name))
+			GLOB.round_statistics.portable_stats_by_sheet_name += sheet_name
+			GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name] = list("fuel used" = 0, "power output" = 0)
+		GLOB.round_statistics.portable_stats_by_sheet_name[sheet_name]["fuel used"] += temp
 
 	var/lower_limit = 56 + power_output * 10
 	var/upper_limit = 76 + power_output * 10
