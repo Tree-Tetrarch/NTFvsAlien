@@ -97,3 +97,26 @@
   - balance: ' Valerian no longer takes bayonets, stock no longer removable, new specific
       scope type with less range but less movespeed penalty'
   - bugfix: Valerian and Vantage now integrally suppressed.
+2026-07-06:
+  Colfer1:
+  - rscadd: Surrender now actually works, your welcome
+  - balance: Synths can have sex now (They get sex skill)
+  SpooksAnno:
+  - bugfix: Fixed active factory conveyors not picking up newly-produced factory parts.
+  - bugfix: Fixed hivelords not naturally regenerating to their displayed maximum
+      plasma.
+  - bugfix: Fixed 14x5mm ammo handfuls using the wrong world sprite amount.
+  - bugfix: Fixed xeno wall slams/nesting behavior so intent determines whether a
+      dragged target is nested or slammed.
+  - bugfix: Fixed some flashbang blur cases persisting longer than intended.
+  - bugfix: Fixed Ripley cargo arms being dropped when climbing ladders.
+  - qol: Fixed the Quicksex preference toggle not toggling properly.
+  - code_imp: Added safeguards for several reported runtimes.
+  - bugfix: Defines what the (large) ears are, now shown in game.
+  - bugfix: Corrects bad behavior shown on cell charger
+  - bugfix: Synthetic jobs now pull from the updated character visualizer, instead
+      of the old one
+  - bugfix: Fixed syndicate factory unboxers falling back to invalid filler output
+      when using refills without a specific antag refill type.
+  Therealdoooc213:
+  - balance: Chainsaw damage nerfed from 150 to 75
