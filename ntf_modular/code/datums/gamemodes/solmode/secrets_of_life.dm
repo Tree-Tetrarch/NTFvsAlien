@@ -581,7 +581,6 @@ alt gamemodes
 		/datum/job/terragov/medical/researcher = 1,
 		/datum/job/terragov/civilian/liaison = 1,
 		/datum/job/terragov/silicon/synthetic = 4,
-		/datum/job/clf/silicon/synthetic/clf = 1,
 		/datum/job/terragov/silicon/ai = 1,
 		/datum/job/terragov/squad/engineer = 4,
 		/datum/job/terragov/squad/corpsman = 4,
