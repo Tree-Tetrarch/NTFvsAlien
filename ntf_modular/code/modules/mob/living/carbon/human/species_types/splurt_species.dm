@@ -235,7 +235,7 @@
 			carbon_owner.reagents.add_reagent(/datum/reagent/medicine/oxycodone, 5, no_overdose = TRUE)
 			addtimer(CALLBACK(src, PROC_REF(end_auras)), 20 SECONDS)
 		if(AURA_XENO_FRENZY)
-			carbon_owner.add_emitted_auras(src, AURA_HUMAN_MOVE)
+			carbon_owner.add_emitted_auras(src, AURA_HUMAN_FOCUS)
 			carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 5, no_overdose = TRUE)
 			carbon_owner.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 3, no_overdose = TRUE)
 			carbon_owner.reagents.add_reagent(/datum/reagent/medicine/hyronalin, 6, no_overdose = TRUE)
