@@ -345,6 +345,7 @@
 	sundering = 1.5
 
 /datum/ammo/bullet/shotgun/tx15_flechette/spread
+	name = "additional flechette"
 
 /datum/ammo/bullet/shotgun/tx15_slug
 	name = "shotgun slug"
