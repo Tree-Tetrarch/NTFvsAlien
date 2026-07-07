@@ -1,3 +1,1 @@
 //Do not edit manually 
-#define DEFINE_REVINFO_REVISION "05628c06da4d2bc53e12f41a5bb49d5b0a34c8cb" 
-#define DEFINE_REVINFO_COMPILE_DATE "2026-Jul-07 05:25:12" 
