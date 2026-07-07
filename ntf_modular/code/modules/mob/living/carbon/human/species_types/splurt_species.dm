@@ -118,8 +118,8 @@
 
 	sensor = new /obj/item/attachable/motiondetector/natural(owner.contents)
 	sensor.activate(carbon_owner)
-	affected_mob.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 3, no_overdose = TRUE)
-	affected_mob.reagents.add_reagent(/datum/reagent/medicine/hyronalin, 6, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 3, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/hyronalin, 6, no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/regen, 5, no_overdose = TRUE)
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/dt-sonar.ogg', 50)
 	carbon_owner.emote("me", 1, "enters a focused state.")
