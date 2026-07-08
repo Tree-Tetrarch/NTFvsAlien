@@ -82,7 +82,7 @@
 /datum/action/ability/last_stand
 	name = "Last Stand"
 	action_icon_state = "frenzy"
-	desc = "Your body is wired to go into a berserk rage when you are critically injured, granting you temporary boosts to your speed and making you withstand dying out of pure rage and determination for it's short duration, but leaving you exhausted once the effect ends. Manual triggering will be less beneficial and may make you not be able to rage when you need it. <br><br> Triggers automatically when your health drops to critical. Cooldown is automatically refreshed in 5 minutes."
+	desc = "Your body is wired to go into a rage when you are critically injured, you are able to withstand dying out of rage and determination for it's short duration, but it leaves you severely exhausted once the effect ends. Power scales with how hurt you are. <br><br> Triggers automatically when your health drops to critical. Cooldown is automatically refreshed in 5 minutes."
 	cooldown_duration = 5 MINUTES
 	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_HANDCUFFED|ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
 	COOLDOWN_DECLARE(footstep_cd)
@@ -104,24 +104,30 @@
 /datum/action/ability/last_stand/action_activate()
 	var/mob/living/carbon/carbon_owner = owner
 	if(!carbon_owner)		return FALSE
-	var/rage_power = min(0.5, (1 - ((carbon_owner.health - carbon_owner.maxHealth) / carbon_owner.maxHealth)) * 3) // Calculate the power of our rage; scales with difference between current and max HP.
-	var/rage_power_radius = CEILING(rage_power * 7, 1) //Define radius of the SFX
+	var/chealth = carbon_owner.health
+	if(chealth < 0)
+		chealth = ((-1 * chealth) + carbon_owner.maxHealth) //they lost their entire health and went negative so we consider that.
+	else
+		chealth = carbon_owner.maxHealth - chealth
+	var/rage_power = (chealth / carbon_owner.maxHealth)
+	rage_power = max(0.5, rage_power) // Calculate the power of our rage; scales with difference between current and max HP.
+	var/rage_power_radius = CEILING(rage_power, 1) //Define radius of the SFX
 
 	carbon_owner.visible_message(span_danger("\The [carbon_owner] becomes frenzied, bellowing with a roar!"), \
 	span_userdanger("You bellow as your fury overtakes you!"))
 	carbon_owner.do_jitter_animation(1000)
 
-	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, 6, no_overdose = TRUE)
+	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/adrenaline, round(rage_power*4), no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/regen, 15, no_overdose = TRUE)
 	carbon_owner.reagents.add_reagent(/datum/reagent/medicine/tramadol, 15, no_overdose = TRUE)
-	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * 0.30) //as if inaprovaline
-	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * 0.30)
+	carbon_owner.adjustBruteLoss(-carbon_owner.getBruteLoss(TRUE) * (max(0.30, rage_power/2)))
+	carbon_owner.adjustFireLoss(-carbon_owner.getFireLoss(TRUE) * (max(0.30, rage_power/2)))
 	carbon_owner.Stun(1 SECONDS)
 	carbon_owner.emote("me", 1, "slams their fist to the ground.")
 	carbon_owner.health_threshold_crit = -100 //stop when u dead
 	playsound(carbon_owner.loc, 'ntf_modular/sound/effects/ut-heavy-hit.ogg', 50)
 
-	for(var/turf/affected_tiles AS in RANGE_TURFS(rage_power_radius / 2, carbon_owner.loc))
+	for(var/turf/affected_tiles AS in RANGE_TURFS(rage_power_radius, carbon_owner.loc))
 		affected_tiles.Shake(duration = 1 SECONDS) //SFX
 
 	for(var/mob/living/affected_mob in cheap_get_living_near(carbon_owner, rage_power_radius)) //Roar that applies cool SFX
@@ -144,6 +150,7 @@
 			addtimer(CALLBACK(game_plane_master_controller, TYPE_PROC_REF(/datum, remove_filter), "rage_outcry"), 1 SECONDS)
 
 	carbon_owner.add_filter("last_stand_outline", 5, outline_filter(1.5, COLOR_RED)) //Set our cool aura; also confirmation we have the buff
+	carbon_owner.set_stagger(0)
 
 	//Too angry to be stunned/slowed/staggered/knocked down
 	ADD_TRAIT(carbon_owner, TRAIT_PAIN_IMMUNE, "[type]")
