@@ -42,14 +42,23 @@
 	Crossbreeds with resurgentis are usually sterile and with potential for disabilities such as muteness or else, due to the strange genes of resurgentis, and the said dominant genes make the crossbreeds \
 	result in largely resurgentis-appearing offspring with features from the other race. <br /><br />\
 	The resurgentis have extremely low birth rate due to the short lifespan of eggs of females and scarcer ovulation cycles, therefore putting their species at risk of extinction due to the high violence of Phantom City and overall the world, but their high libido is a compensation for such problem, barely.<br /><br /><br /><br /> \
-	They can't have black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /> \
+	They can't have black essence color, and white is considered extremely rare, being more resillient to psionics and mind control for unknown reasons and is seen as a gift from the death god, made to protect themselves from the corruption in the world.<br /><br /><br /><br /> \
 	<b>Psychology</b>:<br /><br /> \
 	They are largely human-like behaving although slightly more unhinged in terms of lewdity and more inclined to act on their impulses if not conditioned against it mentally.<br /><br /> \
 	Cryostatis is more disorienting to resurgentis than to other species, mentally and physically.<br /><br /> \
 	Resurgentis are the prime prey of Corrupted (the shadowy monsters that started emerging after the great war.), they are able to be corrupted into one of them through 'mind flayers' fog, except the white essence resurgentis, phantom city had to fight sieges of those things in the past.<br /><br />\
 	They are known for their aggressive behavior and tendency to go into a berserk rage when injured or provoked, especially if they are of weak will.<br /><br /><br /><br /> \
-	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/a1/a1/CRPdB4Ir_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/>"
-	//need force emissive on eye, hair, nipples and vaginas somehow
+	<img src=https://images2.imgbox.com/eb/ed/Ej1joSvd_o.png width=100 height=150/> <img src=https://images2.imgbox.com/a1/a1/CRPdB4Ir_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/3e/34/Grph56ZU_o.png width=100 height=150/> <img src=https://images2.imgbox.com/83/96/oDGu3zmO_o.png width=100 height=150/><br /><img src=https://images2.imgbox.com/66/71/1633KcMb_o.png width=100 height=150/><br /><br /><br /><br />\
+	<br /><br /><b>Mechanics:</b><br /><br /> \
+	-Last Stand-<br /><br />\
+	Resurgentis have a unique ability to go into a berserk rage when critically injured, granting them temporary healing, boosts to their speed and making them withstand dying out of pure rage and determination for its short duration, but leaving them exhausted once the effect ends. Cooldown is automatically refreshed in 5 minutes.<br /><br /> \
+	-Dense Muscles-<br /><br />\
+	Resurgentis have slightly more brute resistance than humans, slight more health and somewhat stronger punches.<br /><br />\
+	-Temperature unregulation-<br /><br />\
+	Resurgentis have poor body insulation and temperature regulation, making them more vulnerable to burning damage due to their larger size and phsiology.<br /><br /> \
+	-Glowing Essence-<br /><br />\
+	Resurgentis have a unique glowing neon colored 'essence' (or the mentioned blood) of many colors, which determine the color of their glowing hair, glowing iris-invisible eyes, (and glowing nipples, inner vagina) colors. <b>This makes them impossible to hide in the dark without covering those up."
+
 	inherent_actions = list(/datum/action/ability/last_stand)
 
 /datum/species/resurgentis/apply_damage(damage, damagetype, def_zone, blocked, sharp, edge, updating_health, penetration, mob/living/attacker, mob/living/carbon/human/victim)
@@ -76,6 +85,7 @@
 	desc = "Your body is wired to go into a berserk rage when you are critically injured, granting you temporary boosts to your speed and making you withstand dying out of pure rage and determination for it's short duration, but leaving you exhausted once the effect ends. Manual triggering will be less beneficial and may make you not be able to rage when you need it. <br><br> Triggers automatically when your health drops to critical. Cooldown is automatically refreshed in 5 minutes."
 	cooldown_duration = 5 MINUTES
 	use_state_flags = ABILITY_USE_BUCKLED|ABILITY_USE_BUSY|ABILITY_USE_HANDCUFFED|ABILITY_USE_INCAP|ABILITY_USE_LYING|ABILITY_USE_STAGGERED|ABILITY_USE_NOTTURF
+	COOLDOWN_DECLARE(footstep_cd)
 
 //basically stolen from rav but shittier
 /datum/action/ability/last_stand/can_use_action(silent, override_flags, selecting)
@@ -141,11 +151,17 @@
 	ADD_TRAIT(carbon_owner, TRAIT_SLOWDOWNIMMUNE, "[type]")
 	ADD_TRAIT(carbon_owner, TRAIT_STAGGERIMMUNE, "[type]")
 
+	RegisterSignal(carbon_owner, COMSIG_HUMAN_MOVED, PROC_REF(sound_footstep))
 	addtimer(CALLBACK(src, PROC_REF(rage_warning)), RAVAGER_RAGE_DURATION * RAVAGER_RAGE_WARNING)
 	addtimer(CALLBACK(src, PROC_REF(rage_deactivate)), RAVAGER_RAGE_DURATION)
 
 	succeed_activate()
 	add_cooldown()
+
+/datum/action/ability/last_stand/proc/sound_footstep()
+	if(COOLDOWN_FINISHED(src, footstep_cd))
+		COOLDOWN_START(src, footstep_cd, 0.5 SECONDS)
+		playsound(owner.loc, pick(list('ntf_modular/sound/effects/dt-step-1.ogg', 'ntf_modular/sound/effects/dt-step-2.ogg')), 100)
 
 ///Warns the user when his rage is about to end.
 /datum/action/ability/last_stand/proc/rage_warning()
@@ -157,6 +173,7 @@
 /datum/action/ability/last_stand/proc/rage_deactivate()
 	if(QDELETED(owner))
 		return
+	UnregisterSignal(owner, COMSIG_HUMAN_MOVED)
 	var/mob/living/carbon/carbon_owner = owner
 	carbon_owner.health_threshold_dead = initial(carbon_owner.health_threshold_dead)
 	carbon_owner.health_threshold_crit = initial(carbon_owner.health_threshold_crit)
