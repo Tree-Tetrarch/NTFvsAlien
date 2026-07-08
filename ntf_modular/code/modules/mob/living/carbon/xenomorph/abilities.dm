@@ -413,7 +413,7 @@
 		return FALSE
 
 	xeno_owner.face_atom(target)
-	xeno_owner.visible_message(xeno_owner, span_danger("Error. Change later."))
+	xeno_owner.visible_message(xeno_owner, span_danger("[xeno_owner] begins to produce a large fluctuation of psychic power!"))
 	if(!do_after(xeno_owner, 10 SECONDS, IGNORE_HELD_ITEM, xeno_owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(xeno_owner, TYPE_PROC_REF(/mob, break_do_after_checks), list("health" = xeno_owner.health))))
 		return FALSE
 	succeed_activate()
