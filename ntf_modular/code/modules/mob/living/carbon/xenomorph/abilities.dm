@@ -410,6 +410,8 @@
 			xeno_owner.balloon_alert(xeno_owner, "not adjacent!")
 		return FALSE
 	if (owner.status_flags & INCORPOREAL)
+		if(!silent)
+			xeno_owner.balloon_alert(xeno_owner, "cannot while incorporeal!")
 		return FALSE
 
 	xeno_owner.face_atom(target)
