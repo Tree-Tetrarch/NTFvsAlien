@@ -120,7 +120,8 @@
 	log_message("Entered healthcrit", LOG_ATTACK, color="orange")
 	in_healthcrit = TRUE
 	if(!HAS_TRAIT(src, TRAIT_CRIT_IS_DEATH))
-		emote("me", EMOTE_TYPE_VISIBLE, "gasps, looking weak and frail!")
+		ASYNC
+			emote("me", EMOTE_TYPE_VISIBLE, "gasps, looking weak and frail!")
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_ON_CRIT, src)
 		return
 	var/damage_dealt = health - get_death_threshold()
