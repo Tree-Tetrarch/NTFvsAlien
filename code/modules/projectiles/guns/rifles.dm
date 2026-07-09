@@ -772,7 +772,7 @@
 	)
 
 //RPD-M
-obj/item/weapon/gun/rifle/lmg_d/modern
+/obj/item/weapon/gun/rifle/lmg_d/modern
 	name = "\improper lMG-DM tactical light machinegun"
 	desc = "A modification of the cheap and robust 'RPD' to bring it up to standard with modern times. Chambers 7.62x39mm. The modification consists of modern polymer furniture, a threaded muzzle and a side-mount for scopes, allowing it to perform to a comparable extent to modern light machineguns in the same weight class. Though upgrading a vintage is cheaper than getting a new gun, it still isn't cheap."
 	icon = 'icons/obj/items/guns/machineguns64.dmi'
