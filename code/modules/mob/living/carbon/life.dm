@@ -84,7 +84,7 @@
 
 	if(status_flags & GODMODE)
 		if(in_healthcrit_since)
-			log_message("Left healthcrit (lasted [DisplayTimeText(world.time - in_healthcrit_since)])", LOG_ATTACK, color="orange")
+			log_message("left healthcrit (lasted [DisplayTimeText(world.time - in_healthcrit_since)])", LOG_ATTACK, color="orange")
 			in_healthcrit_since = NONE
 		return
 
@@ -112,12 +112,12 @@
 	else if(stat == UNCONSCIOUS)
 		set_stat(CONSCIOUS)
 		if(in_healthcrit_since)
-			log_message("Left healthcrit (lasted [DisplayTimeText(world.time - in_healthcrit_since)])", LOG_ATTACK, color="orange")
+			log_message("left healthcrit (lasted [DisplayTimeText(world.time - in_healthcrit_since)])", LOG_ATTACK, color="orange")
 			in_healthcrit_since = NONE
 
 ///called just after this mob goes unconscious due to taking too much dmg
 /mob/living/carbon/proc/on_crit()
-	log_message("Entered healthcrit", LOG_ATTACK, color="orange")
+	log_message("entered healthcrit", LOG_ATTACK, color="orange")
 	in_healthcrit_since = world.time
 	if(!HAS_TRAIT(src, TRAIT_CRIT_IS_DEATH))
 		ASYNC
