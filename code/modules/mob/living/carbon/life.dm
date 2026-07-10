@@ -121,7 +121,7 @@
 	in_healthcrit_since = world.time
 	if(!HAS_TRAIT(src, TRAIT_CRIT_IS_DEATH))
 		ASYNC
-			emote("me", EMOTE_TYPE_VISIBLE, "gasps, looking weak and frail!")
+			emote("healthcritgasp")
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_ON_CRIT, src)
 		return
 	var/damage_dealt = health - get_death_threshold()

@@ -63,7 +63,7 @@
 			if(!COOLDOWN_FINISHED(src, last_shock_effect)) //Check to see if we're on cooldown
 				return
 			if(!lying_angle)
-				emote("me", EMOTE_TYPE_VISIBLE, "can no longer stand, collapsing!")
+				emote("paincritgasp")
 			Paralyze(1 SECONDS)
 			COOLDOWN_START(src, last_shock_effect, LIVING_SHOCK_EFFECT_COOLDOWN) //set the cooldown.
 	if(shock_stage < 150)
