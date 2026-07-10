@@ -67,7 +67,7 @@
 	accuracy_variation = 3
 	damage = 50
 	penetration = 50
-	sundering = 12.5
+	sundering = 2
 	shrapnel_chance = 0
 	max_range = 22
 	///4 range accuracy minimum to hit a single target with windup? No and if not, see culverin stats.
