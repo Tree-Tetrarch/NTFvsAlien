@@ -52,6 +52,7 @@
 	minimal_access = ALL_ACCESS
 	skills_type = /datum/skills/spatial_agent
 	outfit = /datum/outfit/job/other/spatial_agent
+	faction = FACTION_SPATIAL_AGENT
 
 /datum/job/spatial_agent/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	. = ..()

@@ -221,6 +221,7 @@
 #include "code\modules\mob\living\living_defines.dm"
 #include "code\modules\mob\living\living_verbs.dm"
 #include "code\modules\mob\mob.dm"
+#include "code\modules\mob\mob_defines.dm"
 #include "code\modules\mob\new_player\sprite_accessories.dm"
 #include "code\modules\mob\ooc_notes.dm"
 #include "code\modules\perfmon\print_perf.dm"

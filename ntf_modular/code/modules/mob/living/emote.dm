@@ -320,3 +320,15 @@
 /datum/emote/living/carbon/human/species/robot/droid/beep/beep3
 	key = "beep3"
 	sound = "sound/items/defib_failed.ogg"
+
+/datum/emote/living/carbon/healthcritgasp
+	key = "healthcritgasp"
+	message = "gasps, looking weak and frail, unable to stand or fight!"
+	emote_type = EMOTE_TYPE_VISIBLE
+	stat_allowed = UNCONSCIOUS
+
+/datum/emote/living/carbon/paincritgasp
+	key = "paincritgasp"
+	message = "can no longer stand, collapsing!"
+	emote_type = EMOTE_TYPE_VISIBLE
+	stat_allowed = UNCONSCIOUS
