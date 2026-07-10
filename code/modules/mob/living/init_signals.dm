@@ -26,12 +26,11 @@
 	drop_all_held_items()
 	var/health_from_crit = health - get_crit_threshold()
 	var/healthcritmsg = "."
-	if(iscarbon(src))
-		var/mob/living/carbon/carbon_src = src
+	if(health_from_crit <= 0)
 		healthcritmsg = ", not yet registered as in healthcrit."
-		if(carbon_src.in_healthcrit_since)
-			var/time_in_healthcrit = world.time - carbon_src.in_healthcrit_since
-			healthcritmsg = ", [(time_in_healthcrit < 1 ? "0 seconds" : DisplayTimeText(time_in_healthcrit))] into healthcrit."
+	if(in_healthcrit_since)
+		var/time_in_healthcrit = world.time - in_healthcrit_since
+		healthcritmsg = ", [(time_in_healthcrit < 1 ? "0 seconds" : DisplayTimeText(time_in_healthcrit))] into healthcrit."
 	log_message("was knocked out, [health_from_crit] health above crit[healthcritmsg]", LOG_ATTACK, color="orange")
 	last_unconscious = world.time
 
