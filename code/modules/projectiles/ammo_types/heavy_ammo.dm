@@ -69,8 +69,7 @@
 	penetration = 50
 	sundering = 12.5
 	shrapnel_chance = 0
-	max_range = 20
-	accurate_range_min = 2
+	max_range = 22
 	///4 range accuracy minimum to hit a single target with windup? No and if not, see culverin stats.
 	///Bonus flat damage to walls, balanced around resin walls.
 	var/autocannon_wall_bonus = 50
