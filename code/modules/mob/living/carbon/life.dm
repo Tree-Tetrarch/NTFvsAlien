@@ -99,7 +99,7 @@
 		return
 
 	if(health < get_crit_threshold())
-		if(stat == UNCONSCIOUS)
+		if(in_healthcrit_since)
 			return
 		set_stat(UNCONSCIOUS)
 		on_crit()
