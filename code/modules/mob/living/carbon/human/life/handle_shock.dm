@@ -4,9 +4,6 @@
 	. = ..()
 	if(status_flags & GODMODE || analgesic || (species?.species_flags & NO_PAIN))
 		setShock_Stage(0)
-		if(in_paincrit_since)
-			log_message("left paincrit (lasted [DisplayTimeText(world.time - in_paincrit_since)])", LOG_ATTACK, color="orange")
-			in_paincrit_since = NONE
 		return //Godmode or some other pain reducers. //Analgesic avoids all traumatic shock temporarily
 
 	adjustShock_Stage(traumatic_shock)
@@ -66,11 +63,3 @@
 				emote("paincritgasp")
 			Paralyze(1 SECONDS)
 			COOLDOWN_START(src, last_shock_effect, LIVING_SHOCK_EFFECT_COOLDOWN) //set the cooldown.
-	if(shock_stage < 150)
-		if(in_paincrit_since)
-			log_message("left paincrit (lasted [DisplayTimeText(world.time - in_paincrit_since)])", LOG_ATTACK, color="orange")
-			in_paincrit_since = NONE
-	else
-		if(!in_paincrit_since)
-			in_paincrit_since = world.time
-			log_message("entered paincrit", LOG_ATTACK, color="orange")
