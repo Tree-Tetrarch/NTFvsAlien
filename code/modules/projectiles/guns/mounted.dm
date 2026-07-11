@@ -715,7 +715,6 @@
 
 	scatter = 15
 	deployed_scatter_change = -15
-	accuracy_mult = 1.2 //it's got a bipod
 	fire_delay = 0.25 SECONDS
 
 	default_ammo_type = /obj/item/ammo_magazine/icc_hmg

@@ -15,7 +15,7 @@
 	damage = 40 //Reduced damage due to vastly increased mobility
 	penetration = 40 //Reduced penetration due to vastly increased mobility
 	accuracy = 5
-	barricade_clear_distance = 2
+	accurate_range_min =  = 2
 	sundering = 5
 
 /datum/ammo/bullet/minigun
