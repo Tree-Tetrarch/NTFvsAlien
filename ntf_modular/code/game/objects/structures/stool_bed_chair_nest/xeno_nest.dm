@@ -1,8 +1,10 @@
 //nest overrides
 /obj/structure/bed/nest/post_buckle_mob(mob/living/buckling_mob)
 	. = ..()
-	if(buckling_mob.client && ishuman(buckling_mob))
+	if(buckling_mob.client && ishuman(buckling_mob) && welder_needed_unbuckle)
 		INVOKE_ASYNC(buckling_mob.client, TYPE_PROC_REF(/client, ask_reclone)) //pops up the prompt
+	else if(buckling_mob.client && ishuman(buckling_mob) && !welder_needed_unbuckle)
+		to_chat(buckling_mob, span_warning("You can resist out of this nest, but if you must, you can use 'ghost' verb to reclone etc!"))
 
 /obj/structure/bed/nest/welder_act(mob/living/user, obj/item/I)
 	if(!welder_needed_unbuckle)
@@ -35,7 +37,8 @@
 	var/list/mob/living/carbon/human/grabbing = null
 	COOLDOWN_DECLARE(tentacle_cooldown)
 	COOLDOWN_DECLARE(cum_cooldown)
-	resist_time = 4 SECONDS //gotta be able to resist quick in case this is used in combat, with the quick capture power, you WILL die so fast.
+	max_integrity = 40
+	resist_time = 3 SECONDS //gotta be able to resist quick in case this is used in combat, with the quick capture power, you WILL die so fast.
 	var/capture_time = 1 SECONDS
 	var/cooldown_time = 5 SECONDS
 	var/cum_time = 29.9 SECONDS

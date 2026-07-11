@@ -611,8 +611,17 @@
 	deployed_scatter_change = -50
 	wield_delay = 1.8 SECONDS
 	soft_armor = list(MELEE = 30, BULLET = 80, LASER = 80, ENERGY = 70, BOMB = 60, BIO = 100, FIRE = 0, ACID = 0)
-	max_integrity = 500
+	max_integrity = 600
+	integrity_failure = 100
 	deployable_item = /obj/machinery/deployable/mounted/shielded
+
+/obj/machinery/deployable/mounted/shielded/obj_break(damage_flag)
+	. = ..()
+	visible_message("[src] breaks down!")
+	if(operator)
+		on_unset_interaction(operator)
+	obj_integrity = integrity_failure + 5 //so it can be deployed and repaired again or something
+	disassemble()
 
 /obj/machinery/deployable/mounted/shielded
 	allow_pass_flags = PASS_AIR|PASS_LOW_STRUCTURE

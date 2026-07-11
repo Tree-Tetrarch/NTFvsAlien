@@ -10,7 +10,7 @@
 
 /obj/item/weapon/shield/riot/marine/soulsteel/equipped(mob/user, slot)
 	if(!user.has_movespeed_modifier(type))
-		user.add_movespeed_modifier(type, TRUE, 0, (item_flags & IMPEDE_JETPACK) ? SLOWDOWN_IMPEDE_JETPACK : NONE, TRUE, 0.7)
+		user.add_movespeed_modifier(type, TRUE, 0, (item_flags & IMPEDE_JETPACK) ? SLOWDOWN_IMPEDE_JETPACK : NONE, TRUE, 1)
 	. = ..()
 
 /obj/item/weapon/shield/riot/marine/soulsteel/unequipped(mob/unequipper, slot)
@@ -21,7 +21,7 @@
 // RPO-S, old VSD disposable rocket launcher, thermobaric firing.
 
 /obj/item/weapon/gun/launcher/rocket/oneuse/thermobaric
-	name = "\improper RPO-S Disposable Rocket Flamethrower"
+	name = "\improper RPO-S Disposable Incendiary Rocket Launcher"
 	desc = "An old design still in circulation after being produced by the millions back in the day as the relatively simple, inexpensive design allowed it to be issued in mass and thrown around like candy."
 	icon = 'ntf_modular/icons/obj/items/guns/special64.dmi'
 	icon_state = "rpo"

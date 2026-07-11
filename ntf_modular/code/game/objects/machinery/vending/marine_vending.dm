@@ -215,6 +215,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = 5,
 			/obj/item/plantable_flag/pmc = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 
@@ -929,6 +931,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = 5,
 			/obj/item/plantable_flag/vsd = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 
@@ -1661,6 +1665,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = 5,
 			/obj/item/plantable_flag/icc = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 
@@ -2851,6 +2857,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = 5,
 			/obj/item/plantable_flag/clf = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 

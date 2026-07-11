@@ -426,6 +426,8 @@
 	burst_amount = 3
 	aim_slowdown = 0.4
 	damage_mult = 1.05 //Has smaller magazines
+	scatter_unwielded = 15
+	recoil_unwielded = 5
 	akimbo_scatter_mod = 12
 
 /obj/item/weapon/gun/rifle/m412/freelancer

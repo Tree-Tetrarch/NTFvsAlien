@@ -43,7 +43,7 @@
 
 	// *** Speed *** //
 	var/speed = 1
-	var/weeds_speed_mod = -0.5
+	var/weeds_speed_mod = -0.4
 
 	// *** Regeneration Delay ***//
 	///Time after you take damage before a xenomorph can regen.

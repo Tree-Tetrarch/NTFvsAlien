@@ -314,6 +314,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = 5,
 			/obj/item/plantable_flag/ntc = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 
@@ -603,6 +605,8 @@
 			/obj/item/explosive/plastique = 12,
 			/obj/item/xeno_iff_tag = -1,
 			/obj/structure/closet/secure_closet/xeno_cage = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 
@@ -882,6 +886,8 @@
 			/obj/item/toy/dice/d20 = -1,
 			/obj/item/deployable_floodlight = -1,
 			/obj/item/plantable_flag = 10,
+			/obj/item/quikdeploy/cade = 30,
+			/obj/item/quikdeploy/cade/plasteel = 10,
 		),
 	)
 

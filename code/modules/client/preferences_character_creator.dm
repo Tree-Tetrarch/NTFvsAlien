@@ -230,6 +230,7 @@
 				"Tentacle" = "tentacle",
 				"Dentata" = "dentata",
 				"Hairy" = "hairy",
+				"Extra Hairy" = "extrahairy",
 				"Furred" = "furred",
 				"Spade" = "spade",
 				"Cloaca" = "cloaca",
