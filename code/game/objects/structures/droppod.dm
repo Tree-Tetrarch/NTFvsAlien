@@ -325,8 +325,9 @@ GLOBAL_DATUM(droppod_reservation, /datum/turf_reservation/transit/droppod)
 		if(ads.try_intercept(reservedturf, src, 1, 10))
 			to_chat(user, span_warning("[icon2html(src, user)] WARNING! DROP POD UNDER FIRE!"))
 			balloon_alert(user, "BRACE FOR IMPACT")
-			reservedturf = find_new_target(user, 15)
+			targetturf = find_new_target(user, 15)
 			explosive_entry = TRUE
+			break
 	for(var/atom/target AS in targetturf.contents)
 		if(!target.density)
 			continue
