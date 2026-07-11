@@ -1,0 +1,5 @@
+author: "Colfer1"
+delete-after: True
+changes:
+  - bugfix: "Survivors shouldn't spawn on the planet anymore, unless it is colony fall"
+  - qol: "stripper survivors have sex skill now"
