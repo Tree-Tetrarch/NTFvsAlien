@@ -150,3 +150,6 @@
   - rscadd: makes a useless copy of old title art
   SpaghettiNew:
   - bugfix: fixed missing direction signs on Container ship
+2026-07-11:
+  SQLandrusk:
+  - rscadd: Ghost title screens.
