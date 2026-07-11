@@ -135,6 +135,7 @@
 	if(!ishuman(target_mob))
 		return
 	var/mob/living/carbon/human/human_victim = target_mob
+	empulse(target_mob.loc, 0,0,0,1)
 	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
 		human_victim.adjustStaminaLoss(proj.damage)
 		human_victim.add_slowdown(0.2,1)
@@ -147,8 +148,6 @@
 			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
 			human_victim.visible_message(span_warning("[human_victim] shudders violently whilst spitting out error text before collapsing, flailing on the ground randomly."), span_blue("You are bluescreening, but you should be able to recover from this by rebooting automatically in about 15s."), span_notice("You hear a clanker glitching."))
 	else
-		if(prob(50))
-			empulse(target_mob.loc, 0,0,0,1)
 		human_victim.adjustStaminaLoss(proj.damage/2)
 		human_victim.AdjustStun(0.2 SECONDS)
 		human_victim.jitter(3)
@@ -351,6 +350,8 @@
 	if(!ishuman(target_mob))
 		return
 	var/mob/living/carbon/human/human_victim = target_mob
+	if(prob(emp_chance))
+		empulse(target_mob.loc, 0,0,0,1)
 	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
 		human_victim.adjustStaminaLoss(proj.damage)
 		human_victim.add_slowdown(0.2,1)
@@ -363,8 +364,6 @@
 			human_victim.overlay_fullscreen_timer(15 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
 			human_victim.visible_message(span_warning("[human_victim] shudders violently whilst spitting out error text before collapsing, flailing on the ground randomly."), span_blue("You are bluescreening, but you should be able to recover from this by rebooting automatically in about 15s."), span_notice("You hear a clanker glitching."))
 	else
-		if(prob(emp_chance))
-			empulse(target_mob.loc, 0,0,0,1)
 		human_victim.adjustStaminaLoss(proj.damage/2)
 		human_victim.AdjustStun(0.1 SECONDS)
 		human_victim.jitter(3)
@@ -1178,6 +1177,8 @@
 	if(!ishuman(target_mob))
 		return
 	var/mob/living/carbon/human/human_victim = target_mob
+	if(prob(emp_chance))
+		empulse(target_mob.loc, 0,0,0,1)
 	if(human_victim.species.species_flags & ROBOTIC_LIMBS)
 		human_victim.adjustStaminaLoss(proj.damage)
 		human_victim.add_slowdown(0.2,1)
@@ -1190,8 +1191,6 @@
 			human_victim.overlay_fullscreen_timer(10 SECONDS, 10, "bluescreen", /atom/movable/screen/fullscreen/dead/robot)
 			human_victim.visible_message(span_warning("[human_victim] shudders violently whilst spitting out error text before collapsing, flailing on the ground randomly."), span_blue("You are bluescreening, but you should be able to recover from this by rebooting automatically in about 15s."), span_notice("You hear a clanker glitching."))
 	else
-		if(prob(emp_chance))
-			empulse(target_mob.loc, 0,0,0,1)
 		human_victim.adjustStaminaLoss(proj.damage/2)
 		human_victim.AdjustStun(0.1 SECONDS)
 		human_victim.jitter(3)
