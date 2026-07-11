@@ -403,7 +403,7 @@
 /obj/item/clothing/mask/facehugger/latching/chemical/medical/process()
 	if(stat == DEAD)
 		return PROCESS_KILL
-	if(producing_reagent && reagents.total_volume < reagents.maximum_volume && prob(25))
+	if(producing_reagent && reagents.total_volume < reagents.maximum_volume && prob(10))
 		var/produced_amount = rand(1,2)
 		visible_message(span_notice("[src]'s balls churn as it produces some more reagents..."), vision_distance = 1)
 		playsound(get_turf(src), 'sound/effects/bubbles.ogg', 10, TRUE, 1)
