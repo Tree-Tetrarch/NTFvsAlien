@@ -153,3 +153,10 @@
 2026-07-11:
   SQLandrusk:
   - rscadd: Ghost title screens.
+2026-07-12:
+  CaputCapital:
+  - balance: nerfs MINIB 9MM spec damage and slight buff to sunder
+  Colfer1:
+  - bugfix: Survivors shouldn't spawn on the planet anymore, unless it is colony fall
+  - qol: stripper survivors have sex skill now
+  - balance: rebalanced some of widows stuff
