@@ -2684,7 +2684,6 @@
 			/obj/item/weapon/gun/rifle/m16 = 3,
 			/obj/item/ammo_magazine/rifle/m16 = 15,
 		),
-		),
 		"SMGs" = list(
 			/obj/item/weapon/gun/smg/som = 4,
 			/obj/item/ammo_magazine/smg/som = -1,
