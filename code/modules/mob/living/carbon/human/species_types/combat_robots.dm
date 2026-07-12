@@ -11,7 +11,6 @@
 
 	unarmed_type = /datum/unarmed_attack/punch/strong
 	total_health = 150
-	brute_mod = 0.9
 
 	cold_level_1 = -1
 	cold_level_2 = -1
