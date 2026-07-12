@@ -5951,7 +5951,8 @@
 /turf/open/floor/plating/ground/mars/random/cave,
 /area/deltastation/asteroidcaves/westerncaves)
 "bkZ" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/supermatter/room)
 "bla" = (
@@ -14429,7 +14430,8 @@
 /area/deltastation/service/chapel/office)
 "cZM" = (
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/cargo/lobby)
 "cZO" = (
@@ -16677,7 +16679,8 @@
 "dxn" = (
 /obj/effect/turf_decal/tile/transparent/neutral/fourcorners,
 /obj/structure/cable,
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/science/research)
 "dxx" = (
@@ -45773,7 +45776,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/storage/tech)
 "jnf" = (
@@ -48733,7 +48737,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/wood,
 /area/deltastation/service/library/abandoned)
 "jUA" = (
@@ -59803,7 +59808,8 @@
 /obj/effect/turf_decal/tile/transparent/yellow,
 /obj/effect/turf_decal/tile/transparent/yellow,
 /obj/effect/decal/cleanable/dirt,
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/engineering/supermatter/room)
 "mgW" = (
@@ -60549,7 +60555,8 @@
 /turf/open/floor/iron,
 /area/deltastation/commons/storage/primary)
 "mpK" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron/grimy,
 /area/deltastation/service/library)
 "mpL" = (
@@ -61083,7 +61090,8 @@
 /obj/effect/turf_decal/tile/transparent/red/half/contrasted{
 	dir = 4
 	},
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/security/brig)
 "mwe" = (
@@ -83347,7 +83355,8 @@
 /turf/open/floor/iron/dark,
 /area/deltastation/command/bridge)
 "qUT" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/iron,
 /area/deltastation/hallway/primary/fore)
 "qVu" = (

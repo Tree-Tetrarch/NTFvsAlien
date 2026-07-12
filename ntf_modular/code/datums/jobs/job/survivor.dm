@@ -13,12 +13,8 @@
 //Stripper Survivor
 /datum/job/survivor/stripper
 	title = "Stripper Colonist"
-	skills_type = /datum/skills/civilian/survivor/stripper
+	skills_type = /datum/skills/civilian/survivor
 	outfit = /datum/outfit/job/survivor/stripper
-
-/datum/skills/civilian/survivor/stripper
-	name = "Stripper"
-	sex = SKILL_SEX_MASTER // They gotta have an upside for being bad!
 
 //Maid Survivor
 /datum/job/survivor/maid

@@ -7,7 +7,8 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/engine)
 "ae" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/south)
 "af" = (
@@ -1620,7 +1621,8 @@
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/west)
 "qB" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/tile/dark2,
 /area/lavaland/civilian)
 "qF" = (
@@ -3407,7 +3409,8 @@
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/refine)
 "Il" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/refine)
 "Im" = (
@@ -3632,7 +3635,8 @@
 /area/lavaland/security/storage)
 "Kr" = (
 /obj/machinery/atmospherics/pipe/simple/green/hidden,
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /obj/structure/cable,
 /turf/open/floor/tile/dark2,
 /area/lavaland/engie/engine)
@@ -3875,7 +3879,8 @@
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/central)
 "MW" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /obj/structure/cable,
 /turf/open/floor/marking,
 /area/lava_outpost_v1/disused_landing_pad)
@@ -3947,7 +3952,8 @@
 /turf/open/floor/tile/white,
 /area/lavaland/medical)
 "Oi" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /turf/open/floor/plating/asteroidfloor,
 /area/lavaland/cave/northeast)
 "Ok" = (
@@ -3977,7 +3983,8 @@
 /turf/open/liquid/lava/autosmoothing/catwalk,
 /area/lavaland/cave/central)
 "Os" = (
-
+/obj/effect/landmark/start/job/survivor,
+/obj/effect/landmark/start/latejoinsurvivor,
 /obj/effect/ai_node,
 /turf/open/lavaland/basalt,
 /area/lavaland/cave/east)
