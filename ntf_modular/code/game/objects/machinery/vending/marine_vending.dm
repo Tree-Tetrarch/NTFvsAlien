@@ -2684,15 +2684,6 @@
 			/obj/item/weapon/gun/rifle/m16 = 3,
 			/obj/item/ammo_magazine/rifle/m16 = 15,
 		),
-		"Energy Weapons" = list(
-			/obj/item/cell/lasgun/lasrifle = 20,
-			/obj/item/cell/lasgun/volkite/powerpack/marine = 3,
-			/obj/item/cell/lasgun/volkite/powerpack/marine/backpack = 1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle = 2,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper = 1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine = 2,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser = 1,
-			/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol = 5,
 		),
 		"SMGs" = list(
 			/obj/item/weapon/gun/smg/som = 4,
@@ -2705,12 +2696,6 @@
 			/obj/item/ammo_magazine/smg/icc_machinepistol = -1,
 			/obj/item/weapon/gun/smg/icc_pdw = 5,
 			/obj/item/ammo_magazine/smg/icc_pdw = -1,
-		),
-		"Marksman" = list(
-			/obj/item/weapon/gun/rifle/standard_dmr = 1,
-			/obj/item/ammo_magazine/rifle/standard_dmr = -1,
-			/obj/item/weapon/gun/rifle/chambered = 1,
-			/obj/item/ammo_magazine/rifle/chamberedrifle = -1,
 		),
 		"Shotgun" = list(
 			/obj/item/weapon/gun/shotgun/pump/t35 = 2,
