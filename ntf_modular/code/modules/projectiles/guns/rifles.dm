@@ -178,6 +178,7 @@
 
 //halter bullpup rifle
 /obj/item/weapon/gun/rifle/nt_halter
+	//Abomination of AR-21, PR-412, AR-18 and MPI-KM
 	name = "\improper NT 'Halter' assault rifle"
 	desc = "The standardized NTC bullpup AR design made to be used as their default primary firearm Chambered in 7.62x38mm."
 	icon = 'ntf_modular/icons/obj/items/guns/rifles64.dmi'
@@ -259,8 +260,10 @@
 	scatter = -1
 	scatter_unwielded = 18
 	accuracy_mult_unwielded = 0.8
+	force = 20 //like mpi-km i dont see why that gets more force but yes.
 
 /obj/item/weapon/gun/rifle/nt_halter/cqb
+	//more accurate but less AP version of v34 basically without stock option since its a bullpup, it IS the stock.
 	name = "\improper NT 'Halter-CQB' carbine"
 	desc = "A variant of Halter series standardized NTC bullpup AR design made into a carbine, Chambered in 7.62x38mm. This one is altered for close combat. The smaller frame make it lighter and easier to handle in close range encounters but it suffers from range reduction and overall accuracy."
 	icon = 'ntf_modular/icons/obj/items/guns/rifles64.dmi'
@@ -271,22 +274,11 @@
 	aim_speed_modifier = 2.5
 	aim_slowdown = 0.3
 	scatter = 8
-	accuracy_mult = 0.9
 	scatter_unwielded = 14
 	wield_delay = 0.4 SECONDS
 	damage_falloff_mult = 1
 	akimbo_additional_delay = 1.5
 	damage_mult = 0.9
-
-/obj/item/weapon/gun/rifle/nt_halter/cqb/elite
-	name = "\improper NT 'Halter-CQB-E' carbine"
-	desc = "A custom variant of Halter series though not obvious from the outside, Chambered in 7.62x38mm. This one is retrofitted with custom, expensive materials and modifications that allow it to be more accurate with longer effective range yet be even lighter."
-	accuracy_mult = 1
-	scatter = 6
-	aim_speed_modifier = 2
-	wield_delay = 0.3 SECONDS
-	damage_falloff_mult = 0.7
-	damage_mult = 1
 
 //standard mag
 /obj/item/ammo_magazine/rifle/nt_halter
@@ -308,7 +300,7 @@
 /obj/item/ammo_magazine/rifle/nt_halter/extended
 	name = "\improper NT 'Halter' extended magazine (7.62x38mm)"
 	desc = "An extended magazine filled with 7.62x38mm rifle rounds for the Halter series of firearms."
-	max_rounds = 50
+	max_rounds = 58 //close to mpi-km roughly
 	icon_state = "halter_ex"
 	bonus_overlay = "halter_ex"
 	aim_speed_mod = 0.2
@@ -330,7 +322,6 @@
 	desc = "A magazine filled with specialized 7.62x38mm rifle rounds to deliver a powerful shock ontop of blunt force, for the Halter series of firearms."
 	icon_state = "halter_charged"
 	bonus_overlay = "halter_charged"
-	max_rounds = 24
 	default_ammo = /datum/ammo/bullet/rifle/heavy/halter/charged
 
 /datum/ammo/bullet/rifle/heavy/halter/charged
@@ -398,7 +389,7 @@
 	hud_state = "rifle_ap"
 	//bit less crazy than actual heavy ap
 	damage = 20
-	penetration = 15
+	penetration = 20
 	sundering = 3
 	bullet_color = COLOR_RED_LIGHT
 	//incendiary was too op for the rof so we make it less likely by using a weaker deflag
@@ -429,7 +420,7 @@
 /obj/item/ammo_magazine/rifle/nt_halter/laser/extended
 	name = "\improper NT 'Halter' extended laser magazine (7.62x38mm LE)"
 	desc = "An extended magazine filled with 7.62x38mm laser emitter rounds for the Halter series of firearms."
-	max_rounds = 50
+	max_rounds = 58
 	icon_state = "halter_laser_ex"
 	bonus_overlay = "halter_laser_ex"
 
@@ -437,7 +428,7 @@
 /obj/item/ammo_magazine/rifle/nt_halter/laser/drum
 	name = "\improper NT 'Halter' drum laser magazine (7.62x38mm)"
 	desc = "An drum magazine filled with 7.62x38mm laser emitter rounds for the Halter series of firearms."
-	max_rounds = 100
+	max_rounds = 80
 	icon_state = "halter_laser_drum"
 	bonus_overlay = "halter_laser_drum"
 
@@ -453,7 +444,7 @@
 /obj/item/ammo_magazine/rifle/nt_halter/rubber/extended
 	name = "\improper NT 'Halter' extended rubber magazine (7.62x38mm rub)"
 	desc = "An extended magazine filled with 7.62x38mm rubber rounds for the Halter series of firearms."
-	max_rounds = 50
+	max_rounds = 58
 	icon_state = "halter_rub_ex"
 	bonus_overlay = "halter_rub_ex"
 

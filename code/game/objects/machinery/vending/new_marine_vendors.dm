@@ -1249,7 +1249,6 @@
 
 /obj/effect/vendor_bundle/vanguard
 	gear_to_spawn = list(
-		/obj/item/weapon/gun/rifle/nt_halter/cqb/elite,
 		/obj/item/tweezers,
 		/obj/item/storage/holster/belt/pistol/smart_pistol/full,
 		/obj/item/reagent_containers/hypospray/advanced/oxycodone,

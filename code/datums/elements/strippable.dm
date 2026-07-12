@@ -44,7 +44,8 @@
 			return
 
 	if(isxeno(user))
-		if(!(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES) && (source.get_iff_signal() != user.get_iff_signal()))
+		var/mob/living/carbon/cuser = source
+		if(!(SSticker.mode.round_type_flags2 & MODE_2_CHILL_RULES) && (cuser.get_iff_signal() != user.get_iff_signal()))
 			return
 
 	if(over != user)
