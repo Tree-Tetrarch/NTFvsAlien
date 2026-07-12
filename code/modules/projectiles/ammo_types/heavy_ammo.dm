@@ -18,8 +18,8 @@
 	sundering = 5
 
 /datum/ammo/bullet/machinegun/mob_hmg
-	damage = 30 //Reduced damage due to vastly increased mobility
-	penetration = 30 //Reduced penetration due to vastly increased mobility
+	damage = 35
+	penetration = 35
 	accurate_range_min = 2
 	sundering = 3
 
