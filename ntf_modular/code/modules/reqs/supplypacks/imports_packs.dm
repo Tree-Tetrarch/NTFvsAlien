@@ -358,7 +358,7 @@
 /datum/supply_packs/imports/icc_hmg
 	name = "KRD-61ES Mobile Heavy Machinegun"
 	contains = list(/obj/item/weapon/gun/icc_hmg)
-	cost = 1000
+	cost = 800
 
 /datum/supply_packs/imports/icc_hmg/ammo
 	name = "KRD-61ES Ammo Box"
