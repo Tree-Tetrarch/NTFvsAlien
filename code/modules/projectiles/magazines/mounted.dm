@@ -217,8 +217,8 @@
 	magazine_flags = NONE
 	caliber = CALIBER_10X30
 	max_rounds = 50
-	default_ammo = /datum/ammo/bullet/machinegun
-	reload_delay = 5 SECONDS
+	default_ammo = /datum/ammo/bullet/machinegun/mob_hmg
+	reload_delay = 4 SECONDS
 	icon_state_mini = "mag_hmg"
 
 /obj/item/ammo_magazine/at45

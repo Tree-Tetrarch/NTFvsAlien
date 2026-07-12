@@ -15,8 +15,13 @@
 	damage = 40 //Reduced damage due to vastly increased mobility
 	penetration = 40 //Reduced penetration due to vastly increased mobility
 	accuracy = 5
-	accurate_range_min = 2
 	sundering = 5
+
+/datum/ammo/bullet/machinegun/mob_hmg
+	damage = 30 //Reduced damage due to vastly increased mobility
+	penetration = 30 //Reduced penetration due to vastly increased mobility
+	accurate_range_min = 2
+	sundering = 3
 
 /datum/ammo/bullet/minigun
 	name = "minigun bullet"
